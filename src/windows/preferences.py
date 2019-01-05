@@ -386,7 +386,7 @@ class Preferences(QDialog):
             msg = QMessageBox()
             _ = get_app()._tr
             msg.setWindowTitle(_("Restart Required"))
-            msg.setText(_("Please restart OpenShot for all preferences to take effect."))
+            msg.setText(_("Please restart for all settings to take effect."))
             msg.exec_()
 
         # Close dialog

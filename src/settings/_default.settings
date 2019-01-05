@@ -383,14 +383,6 @@
   },
   {
     "category": "Keyboard",
-    "title": "About OpenShot",
-    "restart": true,
-    "setting": "actionAbout",
-    "value": "Ctrl+H",
-    "type": "text"
-  },
-  {
-    "category": "Keyboard",
     "title": "Add Marker",
     "restart": true,
     "setting": "actionAddMarker",

@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <mime-info xmlns='http://www.freedesktop.org/standards/shared-mime-info'>
   <mime-type type="application/vnd.openshot-qt-project">
-    <comment>OpenShot 2.0 project</comment>
+    <comment>Magic VideoX Pro 2.0 project</comment>
     <glob pattern="*.osp"/>
-    <icon name="openshot"/>
+    <icon name="magicvideox"/>
   </mime-type>
 </mime-info>
 

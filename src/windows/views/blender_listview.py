@@ -488,7 +488,7 @@ class BlenderListView(QListView):
         # Handle exception
         msg = QMessageBox()
         msg.setText(_(
-            "Blender, the free open source 3D content creation suite is required for this action (http://www.blender.org).\n\nPlease check the preferences in OpenShot and be sure the Blender executable is correct.  This setting should be the path of the 'blender' executable on your computer.  Also, please be sure that it is pointing to Blender version {} or greater.\n\nBlender Path:\n{}{}").format(
+            "Blender, the free open source 3D content creation suite is required for this action (http://www.blender.org).\n\nPlease check the preferences in Magic VideoX Pro and be sure the Blender executable is correct.  This setting should be the path of the 'blender' executable on your computer.  Also, please be sure that it is pointing to Blender version {} or greater.\n\nBlender Path:\n{}{}").format(
             blender_version, s.get("blender_command"), version_message))
         msg.exec_()
 

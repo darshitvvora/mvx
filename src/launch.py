@@ -60,13 +60,13 @@ from classes.language import get_all_languages
 def main():
     """"Initialize settings (not implemented) and create main window/application."""
 
-    parser = ArgumentParser(description = 'OpenShot version ' + info.SETUP['version'])
+    parser = ArgumentParser(description = 'Magic VideoX Pro version ' + info.SETUP['version'])
     parser.add_argument('-l', '--lang', action='store',
                         help='language code for interface (overrides '
                         'preferences and system environment)')
     parser.add_argument('--list-languages', dest='list_languages',
                         action='store_true', help='List all language '
-                        'codes supported by OpenShot')
+                        'codes supported by Magic VideoX Pro')
     parser.add_argument('-V', '--version', action='store_true')
     parser.add_argument('remain', nargs=REMAINDER)
 
@@ -74,7 +74,7 @@ def main():
 
     # Display version and exit (if requested)
     if args.version:
-        print("OpenShot version %s" % info.SETUP['version'])
+        print("MagicVideoXPro version %s" % info.SETUP['version'])
         sys.exit()
 
     if args.list_languages:
@@ -93,7 +93,7 @@ def main():
     reroute_output()
 
     log.info("------------------------------------------------")
-    log.info("   OpenShot (version %s)" % info.SETUP['version'])
+    log.info("   Magic VideoX Pro (version %s)" % info.SETUP['version'])
     log.info("------------------------------------------------")
 
     # Create Qt application, pass any unprocessed arguments

@@ -2989,7 +2989,7 @@
            id="tspan4930"
            x="629.25488"
            y="544.46545"
-           style="font-size:15px;fill:#ffffff;fill-opacity:1">www.openshot.org</tspan></text>
+           style="font-size:15px;fill:#ffffff;fill-opacity:1"></tspan></text>
     </g>
     <text
        xml:space="preserve"
@@ -3002,7 +3002,7 @@
          id="tspan4955"
          x="137.2135"
          y="545.30707"
-         style="font-size:15px;fill:#ffffff;fill-opacity:1"> Copyright © 2016 OpenShot Studios, LLC</tspan></text>
+         style="font-size:15px;fill:#ffffff;fill-opacity:1"> </tspan></text>
     <g
        id="g4270"
        transform="translate(7.2046265,0)">
@@ -3011,25 +3011,25 @@
          id="text3133-3-9"
          y="290.96445"
          x="220.4989"
-         style="font-size:92.26358795px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+         style="font-size:42.26358795px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
          xml:space="preserve"><tspan
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#ffffff;fill-opacity:1;font-family:Hemi Head;-inkscape-font-specification:Hemi Head Bold Italic"
            y="290.96445"
            x="220.4989"
            id="tspan3135-85-5"
-           sodipodi:role="line">OpenShot</tspan></text>
+           sodipodi:role="line">Magic VideoX Pro</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text3133-8-4-8"
          y="319.16415"
          x="500.3743"
-         style="font-size:26.47047043px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+         style="font-size:22.47047043px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
          xml:space="preserve"><tspan
            style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#ffffff;fill-opacity:1;font-family:Hemi Head;-inkscape-font-specification:Hemi Head Bold Italic"
            y="319.16415"
-           x="500.3743"
+           x="170.3743"
            id="tspan3135-8-6-7"
-           sodipodi:role="line">Video Editor</tspan></text>
+           sodipodi:role="line">X-Factor For Composing Amazing Videos</tspan></text>
     </g>
   </g>
 </svg>
