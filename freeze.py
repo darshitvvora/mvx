@@ -223,8 +223,8 @@ elif sys.platform == "linux":
 
     # Manually add missing files (that were missed in the above step). These files are required
     # for certain distros (like Fedora, openSUSE, Debian, etc...)
-    external_so_files.append(("/lib/x86_64-linux-gnu/libssl.so.1.0.0", "libssl.so.1.0.0"))
-    external_so_files.append(("/lib/x86_64-linux-gnu/libcrypto.so.1.0.0", "libcrypto.so.1.0.0"))
+    #external_so_files.append(("/lib/x86_64-linux-gnu/libssl.so.1.0.0", "libssl.so.1.0.0"))
+    #external_so_files.append(("/lib/x86_64-linux-gnu/libcrypto.so.1.0.0", "libcrypto.so.1.0.0"))
     # Glib related files (required for some distros)
     external_so_files.append(("/usr/lib/x86_64-linux-gnu/libglib-2.0.so", "libglib-2.0.so"))
     external_so_files.append(("/usr/lib/x86_64-linux-gnu/libgio-2.0.so", "libgio-2.0.so"))

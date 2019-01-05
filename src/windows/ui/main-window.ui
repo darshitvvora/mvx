@@ -20,7 +20,7 @@
    <enum>Qt::StrongFocus</enum>
   </property>
   <property name="windowTitle">
-   <string>OpenShot Video Editor</string>
+   <string>Magic VideoX Pro</string>
   </property>
   <property name="windowIcon">
    <iconset>
@@ -101,6 +101,8 @@
     <addaction name="actionSave"/>
     <addaction name="actionSaveAs"/>
     <addaction name="separator"/>
+    <addaction name="actionPreferences"/>
+    <addaction name="separator"/>
     <addaction name="actionImportFiles"/>
     <addaction name="actionProfile"/>
     <addaction name="actionExportVideo"/>
@@ -111,20 +113,21 @@
     <property name="title">
      <string>&amp;Edit</string>
     </property>
-    <addaction name="actionUndo"/>
-    <addaction name="actionRedo"/>
-    <addaction name="separator"/>
-    <addaction name="actionClearHistory"/>
-    <addaction name="separator"/>
-    <addaction name="actionPreferences"/>
-   </widget>
-   <widget class="QMenu" name="menuTitle">
+    <widget class="QMenu" name="menuTitle">
     <property name="title">
      <string>Title</string>
     </property>
     <addaction name="actionTitle"/>
     <addaction name="actionAnimatedTitle"/>
    </widget>
+    <addaction name="actionUndo"/>
+    <addaction name="actionRedo"/>
+    <addaction name="separator"/>
+    <addaction name="actionClearHistory"/>
+    <addaction name="separator"/>
+    <addaction name="menuTitle"/>
+   </widget>
+
    <widget class="QMenu" name="menuView">
     <property name="title">
      <string>View</string>
@@ -150,19 +153,19 @@
     <property name="title">
      <string>Help</string>
     </property>
-    <addaction name="actionHelpContents"/>
+<!--    <addaction name="actionHelpContents"/>
     <addaction name="separator"/>
     <addaction name="actionTutorial"/>
     <addaction name="actionReportBug"/>
     <addaction name="actionAskQuestion"/>
     <addaction name="actionTranslate"/>
     <addaction name="actionDonate"/>
-    <addaction name="separator"/>
+    <addaction name="separator"/>-->
     <addaction name="actionAbout"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menu_Edit"/>
-   <addaction name="menuTitle"/>
+   <!--<addaction name="menuTitle"/>-->
    <addaction name="menuView"/>
    <addaction name="menuHelp"/>
   </widget>
@@ -665,10 +668,10 @@
      <normaloff>:/icons/Humanity/actions/16/system-shutdown.svg</normaloff>:/icons/Humanity/actions/16/system-shutdown.svg</iconset>
    </property>
    <property name="text">
-    <string>&amp;Quit</string>
+    <string>&amp;Exit</string>
    </property>
    <property name="toolTip">
-    <string>Quit</string>
+    <string>Exit</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+Q</string>
@@ -695,10 +698,10 @@
      <normaloff>:/icons/Humanity/actions/16/document-properties.svg</normaloff>:/icons/Humanity/actions/16/document-properties.svg</iconset>
    </property>
    <property name="text">
-    <string>&amp;Preferences</string>
+    <string>&amp;Settings</string>
    </property>
    <property name="toolTip">
-    <string>Preferences</string>
+    <string>Settings</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+Shift+P</string>
@@ -1037,10 +1040,10 @@
      <normaloff>:/icons/Humanity/mimes/16/font-x-generic.svg</normaloff>:/icons/Humanity/mimes/16/font-x-generic.svg</iconset>
    </property>
    <property name="text">
-    <string>Title</string>
+    <string>Static Title</string>
    </property>
    <property name="toolTip">
-    <string>Title</string>
+    <string>Static Title</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+T</string>
@@ -1100,10 +1103,10 @@
      <normaloff>:/icons/Humanity/actions/16/gtk-info.svg</normaloff>:/icons/Humanity/actions/16/gtk-info.svg</iconset>
    </property>
    <property name="text">
-    <string>About OpenShot</string>
+    <string>About Magic VideoX Pro</string>
    </property>
    <property name="toolTip">
-    <string>About OpenShot</string>
+    <string>About Magic VideoX Pro</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+H</string>

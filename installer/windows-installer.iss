@@ -9,9 +9,9 @@
 #endif
 
 
-#define MyAppName "OpenShot Video Editor"
-#define MyAppPublisher "OpenShot Studios, LLC"
-#define MyAppURL "http://www.openshot.org/"
+#define MyAppName "Magic VideoX Pro"
+#define MyAppPublisher "Magic VideoX Pro"
+#define MyAppURL ""
 #define MyAppExeName "launch.exe"
              
 [Setup]
@@ -30,7 +30,7 @@ AppCopyright=Copyright (c) 2008-2016 {#MyAppPublisher}
 DefaultDirName={pf}\{#MyAppName}
 DisableProgramGroupPage=yes
 LicenseFile=..\COPYING
-OutputBaseFilename=OpenShot
+OutputBaseFilename=MagicVideoX
 ArchitecturesInstallIn64BitMode={#ONLY_64_BIT}
 ArchitecturesAllowed={#ONLY_64_BIT}
 ChangesEnvironment=yes
@@ -79,7 +79,7 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 ; Remove previous installed versions of OpenShot
 Type: filesandordirs; Name: "{app}\*"
 Type: dirifempty; Name: "{app}\*"
-Type: files; Name: "{group}\OpenShot Video Editor"
+Type: files; Name: "{group}\Magic VideoX Pro"
 
 [Registry]
 ; Remove previously installed registry keys (no longer needed)
