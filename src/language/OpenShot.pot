@@ -162,7 +162,7 @@ msgstr ""
 #: /home/jonathan/apps/openshot-qt-git/src/windows/main_window.py:541
 #: /home/jonathan/apps/openshot-qt-git/src/windows/main_window.py:554
 #: /home/jonathan/apps/openshot-qt-git/src/windows/main_window.py:598
-msgid "OpenShot Project (*.osp)"
+msgid "Magic VideoX Project (*.osp)"
 msgstr ""
 
 #: /home/jonathan/apps/openshot-qt-git/src/windows/main_window.py:553
@@ -373,7 +373,7 @@ msgid "Restart Required"
 msgstr ""
 
 #: /home/jonathan/apps/openshot-qt-git/src/windows/preferences.py:381
-msgid "Please restart OpenShot for all preferences to take effect."
+msgid "Please restart Magic VideoX Pro for all preferences to take effect."
 msgstr ""
 
 #: /home/jonathan/apps/openshot-qt-git/src/windows/file_properties.py:77
