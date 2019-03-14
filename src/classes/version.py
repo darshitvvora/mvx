@@ -52,7 +52,8 @@ def get_version_from_http():
         log.info("Found current version: %s" % r.text)
 
         # Parse version
-        openshot_version = r.json()["openshot_version"]
+        # openshot_version = r.json()["openshot_version"]
+        openshot_version = "0.1.1"
 
         # Emit signal for the UI
         get_app().window.FoundVersionSignal.emit(openshot_version)
