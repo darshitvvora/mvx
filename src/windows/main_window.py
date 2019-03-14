@@ -2206,15 +2206,15 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
             self.toolBar.addWidget(spacer)
 
             # Update text for QAction
-            self.actionUpdate.setVisible(True)
-            self.actionUpdate.setText(_("Update Available"))
-            self.actionUpdate.setToolTip(_("Update Available: <b>%s</b>") % version)
+           # self.actionUpdate.setVisible(False)
+           # self.actionUpdate.setText(_("Update Available"))
+           # self.actionUpdate.setToolTip(_("Update Available: <b>%s</b>") % version)
 
             # Add update available button (with icon and text)
-            updateButton = QToolButton()
-            updateButton.setDefaultAction(self.actionUpdate)
-            updateButton.setToolButtonStyle(Qt.ToolButtonTextBesideIcon)
-            self.toolBar.addWidget(updateButton)
+           # updateButton = QToolButton()
+           # updateButton.setDefaultAction(self.actionUpdate)
+           # updateButton.setToolButtonStyle(Qt.ToolButtonTextBesideIcon)
+           # self.toolBar.addWidget(updateButton)
 
     def moveEvent(self, event):
         """ Move tutorial dialogs also (if any)"""
