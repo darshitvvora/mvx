@@ -76,7 +76,7 @@ Name: "ukrainian"; MessagesFile: "compiler:Languages\Ukrainian.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [InstallDelete]
-; Remove previous installed versions of OpenShot
+; Remove previous installed versions of Magic
 Type: filesandordirs; Name: "{app}\*"
 Type: dirifempty; Name: "{app}\*"
 Type: files; Name: "{group}\Magic VideoX Pro"
