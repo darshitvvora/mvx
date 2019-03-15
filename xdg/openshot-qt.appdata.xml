@@ -34,16 +34,16 @@
   <provides>
     <binary>openshot-qt</binary>
   </provides>
-  <url type="donation">https://www.openshot.org/donate</url>
-  <url type="help">https://www.openshot.org/user-guide</url>
-  <url type="homepage">https://www.openshot.org</url>
-  <url type="bugtracker">https://github.com/OpenShot/openshot-qt/issues</url>
+  <url type="donation">https://www.parastechnology.com/donate</url>
+  <url type="help">https://www.parastechnology.com/user-guide</url>
+  <url type="homepage">https://www.parastechnology.com</url>
+  <url type="bugtracker">https://www.parastechnology.com</url>
   <screenshots>
     <screenshot type="default">
-      <image  height="637" width="975">https://www.openshot.org/static/img/gallery/ui-example.jpg</image>
+      <image  height="637" width="975">https://www.parastechnology.com/static/img/gallery/ui-example.jpg</image>
     </screenshot>
     <screenshot>
-      <image height="555" width="780">https://www.openshot.org/static/img/gallery/title-editor.jpg</image>
+      <image height="555" width="780">https://www.parastechnology.com/static/img/gallery/title-editor.jpg</image>
     </screenshot>
   </screenshots>
   <content_rating type="oars-1.0">
