@@ -80,10 +80,10 @@ class TutorialDialog(QWidget):
             s.set("send_metrics", True)
 
             # Opt-in for metrics tracking
-            track_metric_screen("metrics-opt-in")
+            #track_metric_screen("metrics-opt-in")
         else:
             # Opt-out for metrics tracking
-            track_metric_screen("metrics-opt-out")
+            #track_metric_screen("metrics-opt-out")
 
             # Disable metric sending
             s.set("send_metrics", False)

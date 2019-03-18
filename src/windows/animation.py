@@ -64,4 +64,4 @@ class Animation(QDialog):
         _ = self.app._tr
 
         # Track metrics
-        track_metric_screen("animation-screen")
+        #track_metric_screen("animation-screen")

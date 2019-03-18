@@ -764,9 +764,9 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
         # Run the dialog event loop - blocking interaction on this window during this time
         result = win.exec_()
         if result == QDialog.Accepted:
-            log.info('About Openshot add confirmed')
+            log.info('About MagicVideoX add confirmed')
         else:
-            log.info('About Openshot add cancelled')
+            log.info('About MagicVideoX add cancelled')
 
     def actionReportBug_trigger(self, event):
         try:
@@ -2386,10 +2386,10 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
             s.set("unique_install_id", str(uuid4()))
 
             # Track 1st launch metric
-            track_metric_screen("initial-launch-screen")
+            #track_metric_screen("initial-launch-screen")
 
         # Track main screen
-        track_metric_screen("main-screen")
+        #track_metric_screen("main-screen")
 
         # Create blank tutorial manager
         self.tutorial_manager = None

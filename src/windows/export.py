@@ -71,7 +71,7 @@ class Export(QDialog):
         self.s = settings.get_settings()
 
         # Track metrics
-        track_metric_screen("export-screen")
+        #track_metric_screen("export-screen")
 
         # Dynamically load tabs from settings data
         self.settings_data = settings.get_settings().get_all_settings()

@@ -148,34 +148,36 @@ def send_metric(params):
     """Send anonymous metric over HTTP for tracking"""
     # Check if the user wants to send metrics and errors
     if s.get("send_metrics"):
+        log.info("metrics hit");
 
-        url_params = urllib.parse.urlencode(params)
-        url = "http://www.google-analytics.com/collect?%s" % url_params
+        #url_params = urllib.parse.urlencode(params)
+        #url = "http://www.google-analytics.com/collect?%s" % url_params
 
         # Send metric HTTP data
-        try:
-            r = requests.get(url, headers={"user-agent": user_agent}, verify=False)
-            log.info("Track metric: [%s] %s | (%s bytes)" % (r.status_code, r.url, len(r.content)))
+        #try:
+            #r = requests.get(url, headers={"user-agent": user_agent}, verify=False)
+            #log.info("Track metric: [%s] %s | (%s bytes)" % (r.status_code, r.url, len(r.content)))
 
-        except Exception as Ex:
-            log.error("Failed to Track metric: %s" % (Ex))
+        #except Exception as Ex:
+            #log.error("Failed to Track metric: %s" % (Ex))
 
 def send_exception(stacktrace, source):
     """Send exception stacktrace over HTTP for tracking"""
     # Check if the user wants to send metrics and errors
     if s.get("send_metrics"):
+        log.info("exception hit");
 
-        data = urllib.parse.urlencode({ "stacktrace": stacktrace,
-                                        "platform": platform.system(),
-                                        "version": info.VERSION,
-                                        "source": source,
-                                        "unique_install_id": s.get("unique_install_id" )})
-        url = "http://www.openshot.org/exception/json/"
+        #data = urllib.parse.urlencode({ "stacktrace": stacktrace,
+                                        #"platform": platform.system(),
+                                        #"version": info.VERSION,
+                                        #"source": source,
+                                        #"unique_install_id": s.get("unique_install_id" )})
+        #url = "http://www.openshot.org/exception/json/"
 
         # Send exception HTTP data
-        try:
-            r = requests.post(url, data=data, headers={"user-agent": user_agent, "content-type": "application/x-www-form-urlencoded"}, verify=False)
-            log.info("Track exception: [%s] %s | %s" % (r.status_code, r.url, r.text))
+        #try:
+            #r = requests.post(url, data=data, headers={"user-agent": user_agent, "content-type": "application/x-www-form-urlencoded"}, verify=False)
+            #log.info("Track exception: [%s] %s | %s" % (r.status_code, r.url, r.text))
 
-        except Exception as Ex:
-            log.error("Failed to Track exception: %s" % (Ex))
+        #except Exception as Ex:
+            #log.error("Failed to Track exception: %s" % (Ex))

@@ -69,7 +69,7 @@ class Profile(QDialog):
         get_app().window.actionPlay_trigger(None, force="pause")
 
         # Track metrics
-        track_metric_screen("profile-screen")
+        #track_metric_screen("profile-screen")
 
         # Loop through profiles
         self.profile_names = []
