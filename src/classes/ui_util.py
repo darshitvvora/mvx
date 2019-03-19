@@ -39,7 +39,7 @@ from PyQt5 import uic
 from classes.logger import log
 from classes import settings
 
-DEFAULT_THEME_NAME = "Humanity"
+DEFAULT_THEME_NAME = "Humanity: Dark"
 
 
 def load_theme():
