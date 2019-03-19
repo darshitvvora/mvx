@@ -117,7 +117,7 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
         self.save_settings()
 
         # Track end of session
-        track_metric_session(False)
+        # track_metric_session(False)
 
         # Stop threads
         self.StopSignal.emit()
@@ -240,7 +240,7 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
 
             # Throw exception (with last libopenshot line... if found)
             log.error("Unhandled crash detected... will attempt to recover backup project: %s" % info.BACKUP_PATH)
-            track_metric_error("unhandled-crash%s" % last_log_line, True)
+            # track_metric_error("unhandled-crash%s" % last_log_line, True)
 
             # Remove file
             self.destroy_lock_file()
@@ -2370,6 +2370,9 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
         self.mode = mode    # None or unittest (None is normal usage)
         self.initialized = False
 
+        self.setWindowFlags(Qt.FramelessWindowHint)
+
+
         # set window on app for reference during initialization of children
         get_app().window = self
         _ = get_app()._tr
@@ -2379,7 +2382,7 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
         self.recent_menu = None
 
         # Track metrics
-        track_metric_session()  # start session
+        #track_metric_session()  # start session
 
         # Set unique install id (if blank)
         if not s.get("unique_install_id"):
