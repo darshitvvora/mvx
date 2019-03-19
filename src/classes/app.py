@@ -76,7 +76,7 @@ class OpenShotApp(QApplication):
             pass
 
         # Setup application
-        self.setApplicationName('openshot')
+        self.setApplicationName('Magic-VideoX-Pro')
         self.setApplicationVersion(info.SETUP['version'])
 
         # Init settings
