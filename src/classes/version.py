@@ -69,19 +69,31 @@ def get_version_from_http():
 def get_activation_from_http():
     """Get the current version # from openshot.org"""
 
-    url = "http://www.openshot.org/version/json/"
+    url = "https://api.backendless.com/846242E4-765F-D08C-FF51-C5F92AFBA400/C472A8B9-E418-0271-FF34-59C1F84BB400/users/login"
 
     # Send metric HTTP data
     try:
-        r = requests.get(url, headers={"user-agent": "openshot-qt-%s" % info.VERSION}, verify=False)
+        payload = {"login": "test@test.com", "password": "0x163e990bdb"}
+        r = requests.post(url, data=json.dumps(payload), headers={"Content-Type": "application/json"}, verify=False)
+
+        #r = requests.post(url, data=payload)
         log.info("Found current version: %s" % r.text)
 
         # Parse version
-        # openshot_version = r.json()["openshot_version"]
-        openshot_version = "2.4.3"
+        status_code = r.status_code
+        account_activation = False
+        if status_code == 200:
+            account_activation = r.json()["account_activated"]
+
+        log.info("dddddddddddddddddddddddddddddddddddd: %s" %r.json())
+        if(account_activation == True):
+            log.info("this worked")
+
+        #openshot_version = "2.4.3"
 
         # Emit signal for the UI
-        get_app().window.FoundVersionSignal.emit(openshot_version)
+        get_app().window.FoundActivationSignal.emit(account_activation)
 
     except Exception as Ex:
-        log.error("Failed to get version from: %s" % url)
+        log.error("Failed to get activation from: %s" % Ex)
+
