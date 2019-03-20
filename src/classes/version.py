@@ -41,7 +41,32 @@ def get_current_Version():
     t = threading.Thread(target=get_version_from_http)
     t.start()
 
+def get_current_Activation():
+    """Get the current activation """
+    t = threading.Thread(target=get_activation_from_http)
+    t.start()
+
 def get_version_from_http():
+    """Get the current version # from openshot.org"""
+
+    url = "http://www.openshot.org/version/json/"
+
+    # Send metric HTTP data
+    try:
+        r = requests.get(url, headers={"user-agent": "openshot-qt-%s" % info.VERSION}, verify=False)
+        log.info("Found current version: %s" % r.text)
+
+        # Parse version
+        # openshot_version = r.json()["openshot_version"]
+        openshot_version = "2.4.3"
+
+        # Emit signal for the UI
+        get_app().window.FoundVersionSignal.emit(openshot_version)
+
+    except Exception as Ex:
+        log.error("Failed to get version from: %s" % url)
+
+def get_activation_from_http():
     """Get the current version # from openshot.org"""
 
     url = "http://www.openshot.org/version/json/"

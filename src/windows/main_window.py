@@ -739,6 +739,27 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
             QMessageBox.information(self, "Error !", "Unable to open the Help Contents. Please ensure the openshot-doc package is installed.")
             log.info("Unable to open the Help Contents")
 
+    def actionActivateFailure_trigger(self):
+        self.setWindowTitle("test")
+        self.setGeometry((self.width())/2, (self.height())/2, 320, 200)
+
+        buttonReply = QMessageBox.question(self, 'Activation Failure', "It seems like your software license is not activated",
+                                           QMessageBox.Ok, QMessageBox.Ok)
+        if buttonReply == QMessageBox.Ok:
+            self.StopSignal.emit()
+            # Process any queued events
+            QCoreApplication.processEvents()
+
+            # Close & Stop libopenshot logger
+            openshot.ZmqLogger.Instance().Close()
+            get_app().logger_libopenshot.kill()
+
+            # Destroy lock file
+            self.destroy_lock_file()
+            sys.exit()
+
+        self.show()
+
     def actionAbout_trigger(self, event):
         """Show about dialog"""
         from windows.about import About
@@ -2355,6 +2376,8 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
 
         # Track metrics
         #track_metric_session()  # start session
+
+        self.actionActivateFailure_trigger();
 
         # Set unique install id (if blank)
         if not s.get("unique_install_id"):

@@ -37,6 +37,7 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtCore import QT_VERSION_STR
 from PyQt5.Qt import PYQT_VERSION_STR
 
+
 from classes.logger import log
 from classes import info, settings, project_data, updates, language, ui_util, logger_libopenshot
 import openshot
