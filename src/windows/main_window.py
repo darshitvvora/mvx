@@ -81,6 +81,7 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
     RecoverBackup = pyqtSignal()
     FoundVersionSignal = pyqtSignal(str)
     FoundActivationSignal = pyqtSignal(bool)
+    FoundSetActivationSignal = pyqtSignal(bool)
     WaveformReady = pyqtSignal(str, list)
     TransformSignal = pyqtSignal(str)
     ExportStarted = pyqtSignal(str, int, int)
@@ -2242,6 +2243,9 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
         if account_activated == False:
             self.actionActivateFailure_trigger()
 
+    def foundSetActivation(self, account_activated):
+        log.info("Registered")
+
 
     def moveEvent(self, event):
         """ Move tutorial dialogs also (if any)"""
@@ -2386,9 +2390,11 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
         self.recent_menu = None
 
         # Register if first load
-
+        #s.set("activation_email", None)
         if not s.get("activation_email"):
             self.getActivationEmail(s)
+            self.FoundSetActivationSignal.connect(self.foundSetActivation)
+            set_current_Activation()
             #s.set("activation_email", str(uuid4()))
 
         # Track metrics

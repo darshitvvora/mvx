@@ -48,6 +48,12 @@ def get_current_Activation():
     t = threading.Thread(target=get_activation_from_http)
     t.start()
 
+def set_current_Activation():
+    """Get the current activation """
+    t = threading.Thread(target=register_new_user_from_http)
+    t.start()
+
+
 def get_version_from_http():
     """Get the current version # from openshot.org"""
 
@@ -85,16 +91,13 @@ def get_activation_from_http():
 
         r = requests.post(url, data=json.dumps(payload), headers={"Content-Type": "application/json"}, verify=False)
 
-        #r = requests.post(url, data=payload)
-        log.info("Found current version: %s" % r.text)
-
         # Parse version
         status_code = r.status_code
         account_activation = False
         if status_code == 200:
             account_activation = r.json()["account_activated"]
 
-        log.info("dddddddddddddddddddddddddddddddddddd: %s" %r.json())
+        log.info("Login Details: %s" %r.json())
         if(account_activation == True):
             log.info("this worked")
 
@@ -106,3 +109,37 @@ def get_activation_from_http():
     except Exception as Ex:
         log.error("Failed to get activation from: %s" % Ex)
 
+def register_new_user_from_http():
+    """Get the current version # from openshot.org"""
+
+    url =  "http://api.backendless.com/846242E4-765F-D08C-FF51-C5F92AFBA400/C472A8B9-E418-0271-FF34-59C1F84BB400/data/Users"
+    # Send metric HTTP data
+    try:
+
+        s = settings.get_settings()
+        email = s.get("activation_email")
+        password = hex(uuid.getnode())
+
+        payload = {"email": email, "password": password, "account_activated": False, "name": email}
+        log.info("%s", payload)
+
+        r = requests.post(url, data=json.dumps(payload), headers={"Content-Type": "application/json"})
+
+        status_code = r.status_code
+        account_activation = False
+        if status_code == 200:
+            account_activation = r.json()["account_activated"]
+
+        log.info("Login Details: %s" % r.json())
+        if (account_activation == True):
+            log.info("this worked")
+
+        # openshot_version = "2.4.3"
+
+        # Emit signal for the UI
+        get_app().window.FoundSetActivationSignal.emit(account_activation)
+
+
+
+    except Exception as Ex:
+        log.error("Failed to set activation from: %s" % Ex)
