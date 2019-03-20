@@ -2361,6 +2361,11 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
         else:
             self.is_transforming = False
 
+    def getActivationEmail(self, s):
+        text, ok = QInputDialog.getText(self, 'Registration', 'Enter Registered Email ID:')
+        if ok:
+            s.set("activation_email", str(text))
+            #self.le1.setText(str(text))
 
     def __init__(self, mode=None):
 
@@ -2380,6 +2385,12 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
         s = settings.get_settings()
         self.recent_menu = None
 
+        # Register if first load
+
+        if not s.get("activation_email"):
+            self.getActivationEmail(s)
+            #s.set("activation_email", str(uuid4()))
+
         # Track metrics
         #track_metric_session()  # start session
         self.FoundActivationSignal.connect(self.foundCurrentActivation)
@@ -2388,6 +2399,7 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
         # Set unique install id (if blank)
         if not s.get("unique_install_id"):
             s.set("unique_install_id", str(uuid4()))
+
 
             # Track 1st launch metric
             #track_metric_screen("initial-launch-screen")

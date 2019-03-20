@@ -26,10 +26,12 @@
  """
 
 import requests
+import uuid
 import threading
 from classes.app import get_app
 from classes import info
 from classes.logger import log
+from classes import  settings
 try:
     import json
 except ImportError:
@@ -73,7 +75,14 @@ def get_activation_from_http():
 
     # Send metric HTTP data
     try:
-        payload = {"login": "test@test.com", "password": "0x163e990bdb"}
+
+        s = settings.get_settings()
+        email = s.get("activation_email")
+        password = hex(uuid.getnode())
+        payload = {"login": email, "password": password}
+        log.info("email: %s" % email)
+        log.info("password: %s" % password)
+
         r = requests.post(url, data=json.dumps(payload), headers={"Content-Type": "application/json"}, verify=False)
 
         #r = requests.post(url, data=payload)
