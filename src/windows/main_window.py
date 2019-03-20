@@ -80,6 +80,7 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
     SpeedSignal = pyqtSignal(float)
     RecoverBackup = pyqtSignal()
     FoundVersionSignal = pyqtSignal(str)
+    FoundActivationSignal = pyqtSignal(bool)
     WaveformReady = pyqtSignal(str, list)
     TransformSignal = pyqtSignal(str)
     ExportStarted = pyqtSignal(str, int, int)
@@ -2237,6 +2238,11 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
            # updateButton.setToolButtonStyle(Qt.ToolButtonTextBesideIcon)
            # self.toolBar.addWidget(updateButton)
 
+    def foundCurrentActivation(self, account_activated):
+        if account_activated == False:
+            self.actionActivateFailure_trigger()
+
+
     def moveEvent(self, event):
         """ Move tutorial dialogs also (if any)"""
         QMainWindow.moveEvent(self, event)
@@ -2376,8 +2382,8 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
 
         # Track metrics
         #track_metric_session()  # start session
-
-        self.actionActivateFailure_trigger();
+        self.FoundActivationSignal.connect(self.foundCurrentActivation)
+        get_current_Activation()
 
         # Set unique install id (if blank)
         if not s.get("unique_install_id"):
