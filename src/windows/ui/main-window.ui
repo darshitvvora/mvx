@@ -475,8 +475,8 @@
   </widget>
   <action name="actionNew">
    <property name="icon">
-    <iconset theme="document-new" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/document-new.svg</normaloff>:/icons/Humanity/actions/16/document-new.svg</iconset>
+    <iconset>
+      <normaloff>../../images/Material/NewProject.png</normaloff>../../images/Material/NewProject.png</iconset>
    </property>
    <property name="text">
     <string>New Project...</string>
@@ -489,9 +489,9 @@
    </property>
   </action>
   <action name="actionOpen">
-   <property name="icon">
-    <iconset theme="document-open" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/document-open.svg</normaloff>:/icons/Humanity/actions/16/document-open.svg</iconset>
+  <property name="icon">
+    <iconset>
+      <normaloff>../../images/Material/OpenProject.png</normaloff>../../images/Material/OpenProject.png</iconset>
    </property>
    <property name="text">
     <string>Open Project...</string>
@@ -505,8 +505,8 @@
   </action>
   <action name="actionSave">
    <property name="icon">
-    <iconset theme="document-save" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/document-save.svg</normaloff>:/icons/Humanity/actions/16/document-save.svg</iconset>
+    <iconset>
+      <normaloff>../../images/Material/save.png</normaloff>../../images/Material/save.png</iconset>
    </property>
    <property name="text">
     <string>Save Project</string>
@@ -520,8 +520,8 @@
   </action>
   <action name="actionUndo">
    <property name="icon">
-    <iconset theme="edit-undo" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/edit-undo.svg</normaloff>:/icons/Humanity/actions/16/edit-undo.svg</iconset>
+    <iconset>
+      <normaloff>../../images/Material/undo.png</normaloff>../../images/Material/undo.png</iconset>
    </property>
    <property name="text">
     <string>Undo</string>
@@ -535,8 +535,8 @@
   </action>
   <action name="actionSaveAs">
    <property name="icon">
-    <iconset theme="document-save-as" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/document-save-as.svg</normaloff>:/icons/Humanity/actions/16/document-save-as.svg</iconset>
+    <iconset>
+      <normaloff>../../images/Material/saveAs.png</normaloff>../../images/Material/saveAs.png</iconset>
    </property>
    <property name="text">
     <string>Save Project As...</string>
@@ -550,8 +550,8 @@
   </action>
   <action name="actionImportFiles">
    <property name="icon">
-    <iconset theme="list-add" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/list-add.svg</normaloff>:/icons/Humanity/actions/16/list-add.svg</iconset>
+    <iconset>
+      <normaloff>../../images/Material/import.png</normaloff>../../images/Material/import.png</iconset>
    </property>
    <property name="text">
     <string>Import Files...</string>
@@ -595,8 +595,8 @@
   </action>
   <action name="actionRedo">
    <property name="icon">
-    <iconset theme="edit-redo" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/edit-redo.svg</normaloff>:/icons/Humanity/actions/16/edit-redo.svg</iconset>
+    <iconset>
+      <normaloff>../../images/Material/redo.png</normaloff>../../images/Material/redo.png</iconset>
    </property>
    <property name="text">
     <string>Redo</string>
@@ -633,9 +633,9 @@
    </property>
   </action>
   <action name="actionExportVideo">
-   <property name="icon">
-    <iconset theme="media-record" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/media-record.svg</normaloff>:/icons/Humanity/actions/16/media-record.svg</iconset>
+    <property name="icon">
+    <iconset>
+      <normaloff>../../images/Material/export.png</normaloff>../../images/Material/export.png</iconset>
    </property>
    <property name="text">
     <string>Export Video</string>
@@ -664,8 +664,8 @@
   </action>
   <action name="actionQuit">
    <property name="icon">
-    <iconset theme="system-shutdown" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/system-shutdown.svg</normaloff>:/icons/Humanity/actions/16/system-shutdown.svg</iconset>
+    <iconset>
+      <normaloff>../../images/Material/exit.png</normaloff>../../images/Material/exit.png</iconset>
    </property>
    <property name="text">
     <string>&amp;Exit</string>
@@ -693,9 +693,9 @@
    </property>
   </action>
   <action name="actionPreferences">
-   <property name="icon">
-    <iconset theme="document-properties" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/document-properties.svg</normaloff>:/icons/Humanity/actions/16/document-properties.svg</iconset>
+    <property name="icon">
+    <iconset>
+      <normaloff>../../images/Material/settings.png</normaloff>../../images/Material/settings.png</iconset>
    </property>
    <property name="text">
     <string>&amp;Settings</string>
@@ -724,8 +724,8 @@
   </action>
   <action name="actionJumpStart">
    <property name="icon">
-    <iconset theme="media-skip-backward" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/media-skip-backward.svg</normaloff>:/icons/Humanity/actions/16/media-skip-backward.svg</iconset>
+    <iconset>
+      <normaloff>../../images/Material/SkipPrevious.png</normaloff>../../images/Material/SkipPrevious.png</iconset>
    </property>
    <property name="text">
     <string>Jump To Start</string>
@@ -736,8 +736,8 @@
   </action>
   <action name="actionRewind">
    <property name="icon">
-    <iconset theme="media-seek-backward" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/media-seek-backward.svg</normaloff>:/icons/Humanity/actions/16/media-seek-backward.svg</iconset>
+    <iconset>
+      <normaloff>../../images/Material/rewind.png</normaloff>../../images/Material/rewind.png</iconset>
    </property>
    <property name="text">
     <string>Rewind</string>
@@ -748,8 +748,8 @@
   </action>
   <action name="actionFastForward">
    <property name="icon">
-    <iconset theme="media-seek-forward" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/media-seek-forward.svg</normaloff>:/icons/Humanity/actions/16/media-seek-forward.svg</iconset>
+    <iconset>
+      <normaloff>../../images/Material/fastfwd.png</normaloff>../../images/Material/fastfwd.png</iconset>
    </property>
    <property name="text">
     <string>Fast Forward</string>
@@ -760,8 +760,8 @@
   </action>
   <action name="actionJumpEnd">
    <property name="icon">
-    <iconset theme="media-skip-forward" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/media-skip-forward.svg</normaloff>:/icons/Humanity/actions/16/media-skip-forward.svg</iconset>
+    <iconset>
+      <normaloff>../../images/Material/SkipNext.png</normaloff>../../images/Material/SkipNext.png</iconset>
    </property>
    <property name="text">
     <string>Jump To End</string>
@@ -771,9 +771,9 @@
    </property>
   </action>
   <action name="actionSaveFrame">
-   <property name="icon">
-    <iconset theme="camera-photo-symbolic" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/custom/camera-photo-symbolic.svg</normaloff>:/icons/Humanity/actions/custom/camera-photo-symbolic.svg</iconset>
+  <property name="icon">
+    <iconset>
+      <normaloff>../../images/Material/camera.png</normaloff>../../images/Material/camera.png</iconset>
    </property>
    <property name="text">
     <string>Save Current Frame</string>
@@ -1006,8 +1006,8 @@
   </action>
   <action name="actionTimelineZoomIn">
    <property name="icon">
-    <iconset theme="zoom-in" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/zoom-in.png</normaloff>:/icons/Humanity/actions/16/zoom-in.png</iconset>
+    <iconset>
+      <normaloff>../../images/Material/zoomIn.png</normaloff>../../images/Material/zoomIn.png</iconset>
    </property>
    <property name="text">
     <string>Zoom In</string>
@@ -1021,8 +1021,8 @@
   </action>
   <action name="actionTimelineZoomOut">
    <property name="icon">
-    <iconset theme="zoom-out" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/zoom-out.png</normaloff>:/icons/Humanity/actions/16/zoom-out.png</iconset>
+    <iconset>
+      <normaloff>../../images/Material/zoomOut.png</normaloff>../../images/Material/zoomOut.png</iconset>
    </property>
    <property name="text">
     <string>Zoom Out</string>
@@ -1035,9 +1035,9 @@
    </property>
   </action>
   <action name="actionTitle">
-   <property name="icon">
-    <iconset theme="font" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/mimes/16/font-x-generic.svg</normaloff>:/icons/Humanity/mimes/16/font-x-generic.svg</iconset>
+    <property name="icon">
+    <iconset>
+      <normaloff>../../images/Material/title.png</normaloff>../../images/Material/title.png</iconset>
    </property>
    <property name="text">
     <string>Static Title</string>
@@ -1051,8 +1051,8 @@
   </action>
   <action name="actionAnimatedTitle">
    <property name="icon">
-    <iconset theme="video-x-generic" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/mimes/16/video-x-generic.svg</normaloff>:/icons/Humanity/mimes/16/video-x-generic.svg</iconset>
+    <iconset>
+      <normaloff>../../images/Material/animated.png</normaloff>../../images/Material/animated.png</iconset>
    </property>
    <property name="text">
     <string>Animated Title</string>
@@ -1068,9 +1068,9 @@
    <property name="checkable">
     <bool>false</bool>
    </property>
-   <property name="icon">
-    <iconset theme="view-fullscreen" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/view-fullscreen.svg</normaloff>:/icons/Humanity/actions/16/view-fullscreen.svg</iconset>
+    <property name="icon">
+    <iconset>
+      <normaloff>../../images/Material/fullscreen.png</normaloff>../../images/Material/fullscreen.png</iconset>
    </property>
    <property name="text">
     <string>Fullscreen</string>
@@ -1258,8 +1258,8 @@
   </action>
   <action name="actionProfile">
    <property name="icon">
-    <iconset theme="video-x-generic" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/mimes/16/video-x-generic.svg</normaloff>:/icons/Humanity/mimes/16/video-x-generic.svg</iconset>
+    <iconset>
+      <normaloff>../../images/Material/profile.png</normaloff>../../images/Material/profile.png</iconset>
    </property>
    <property name="text">
     <string>Choose Profile</string>
