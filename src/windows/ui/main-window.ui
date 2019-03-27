@@ -681,9 +681,9 @@
    </property>
   </action>
   <action name="actionAddTrack">
-   <property name="icon">
-    <iconset theme="list-add" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/list-add.svg</normaloff>:/icons/Humanity/actions/16/list-add.svg</iconset>
+    <property name="icon">
+    <iconset>
+      <normaloff>../../images/Material/addLayer.png</normaloff>../../images/Material/addLayer.png</iconset>
    </property>
    <property name="text">
     <string>Add Track</string>
@@ -802,8 +802,8 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/edit-cut.svg</normaloff>:/icons/Humanity/actions/16/edit-cut.svg</iconset>
+    <iconset>
+      <normaloff>../../images/Material/razor.png</normaloff>../../images/Material/razor.png</iconset>
    </property>
    <property name="text">
     <string>Razor Tool</string>
@@ -819,9 +819,9 @@
    <property name="checked">
     <bool>true</bool>
    </property>
-   <property name="icon">
-    <iconset resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/custom/snap.png</normaloff>:/icons/Humanity/actions/custom/snap.png</iconset>
+    <property name="icon">
+    <iconset>
+      <normaloff>../../images/Material/snap.png</normaloff>../../images/Material/snap.png</iconset>
    </property>
    <property name="text">
     <string>Snapping Enabled</string>
@@ -832,8 +832,8 @@
   </action>
   <action name="actionAddMarker">
    <property name="icon">
-    <iconset resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/custom/add_marker.png</normaloff>:/icons/Humanity/actions/custom/add_marker.png</iconset>
+    <iconset>
+      <normaloff>../../images/Material/addMarker.png</normaloff>../../images/Material/addMarker.png</iconset>
    </property>
    <property name="text">
     <string>Add Marker</string>
@@ -846,9 +846,9 @@
    </property>
   </action>
   <action name="actionPreviousMarker">
-   <property name="icon">
-    <iconset theme="go-first" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/go-first.svg</normaloff>:/icons/Humanity/actions/16/go-first.svg</iconset>
+  <property name="icon">
+    <iconset>
+      <normaloff>../../images/Material/leftMarker.png</normaloff>../../images/Material/leftMarker.png</iconset>
    </property>
    <property name="text">
     <string>Previous Marker</string>
@@ -859,8 +859,8 @@
   </action>
   <action name="actionNextMarker">
    <property name="icon">
-    <iconset theme="go-last" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/go-last.svg</normaloff>:/icons/Humanity/actions/16/go-last.svg</iconset>
+    <iconset>
+      <normaloff>../../images/Material/rightMarker.png</normaloff>../../images/Material/rightMarker.png</iconset>
    </property>
    <property name="text">
     <string>Next Marker</string>
@@ -914,9 +914,9 @@
    </property>
   </action>
   <action name="actionFilesClear">
-   <property name="icon">
-    <iconset theme="edit-clear" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/edit-clear.svg</normaloff>:/icons/Humanity/actions/16/edit-clear.svg</iconset>
+  <property name="icon">
+    <iconset>
+      <normaloff>../../images/Material/clear.png</normaloff>../../images/Material/clear.png</iconset>
    </property>
    <property name="text">
     <string>Clear</string>
@@ -1098,9 +1098,9 @@
    </property>
   </action>
   <action name="actionAbout">
-   <property name="icon">
-    <iconset theme="gtk-info" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/gtk-info.svg</normaloff>:/icons/Humanity/actions/16/gtk-info.svg</iconset>
+    <property name="icon">
+    <iconset>
+      <normaloff>../../images/Material/info.png</normaloff>../../images/Material/info.png</iconset>
    </property>
    <property name="text">
     <string>About Magic VideoX Pro</string>
