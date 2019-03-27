@@ -144,7 +144,7 @@ class OpenShotApp(QApplication):
         log.info('Process command-line arguments: %s' % args)
         if len(args[0]) == 2:
             path = args[0][1]
-            if ".osp" in path:
+            if ".mvxp" in path:
                 # Auto load project passed as argument
                 self.window.OpenProjectSignal.emit(path)
             else:

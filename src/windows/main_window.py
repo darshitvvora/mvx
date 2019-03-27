@@ -120,7 +120,7 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
         """Recover the backup file (if any)"""
         log.info("recover_backup")
         # Check for backup.osp file
-        recovery_path = os.path.join(info.BACKUP_PATH, "backup.osp")
+        recovery_path = os.path.join(info.BACKUP_PATH, "backup.mvxp")
 
         # Load recovery project
         if os.path.exists(recovery_path):
@@ -549,7 +549,7 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
                 return
 
         # Prompt for open project file
-        file_path, file_type = QFileDialog.getOpenFileName(self, _("Open Project..."), recommended_path, _("Magic VideoX Project (*.osp)"))
+        file_path, file_type = QFileDialog.getOpenFileName(self, _("Open Project..."), recommended_path, _("Magic VideoX Project (*.mvxp)"))
 
         # Load project file
         self.OpenProjectSignal.emit(file_path)
@@ -561,13 +561,13 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
         # Get current filepath if any, otherwise ask user
         file_path = app.project.current_filepath
         if not file_path:
-            recommended_path = os.path.join(info.HOME_PATH, "%s.osp" % _("Untitled Project"))
-            file_path, file_type = QFileDialog.getSaveFileName(self, _("Save Project..."), recommended_path, _("Magic VideoX Project (*.osp)"))
+            recommended_path = os.path.join(info.HOME_PATH, "%s.mvxp" % _("Untitled Project"))
+            file_path, file_type = QFileDialog.getSaveFileName(self, _("Save Project..."), recommended_path, _("Magic VideoX Project (*.mvxp)"))
 
         if file_path:
             # Append .osp if needed
-            if ".osp" not in file_path:
-                file_path = "%s.osp" % file_path
+            if ".mvxp" not in file_path:
+                file_path = "%s.mvxp" % file_path
 
             # Save project
             self.save_project(file_path)
@@ -582,8 +582,8 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
             if file_path:
                 # A Real project file exists
                 # Append .osp if needed
-                if ".osp" not in file_path:
-                    file_path = "%s.osp" % file_path
+                if ".mvxp" not in file_path:
+                    file_path = "%s.mvxp" % file_path
 
                 # Save project
                 log.info("Auto save project file: %s" % file_path)
@@ -591,7 +591,7 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
 
             else:
                 # No saved project found
-                recovery_path = os.path.join(info.BACKUP_PATH, "backup.osp")
+                recovery_path = os.path.join(info.BACKUP_PATH, "backup.mvxp")
                 log.info("Creating backup of project file: %s" % recovery_path)
                 get_app().project.save(recovery_path, move_temp_files=False, make_paths_relative=False)
 
@@ -605,12 +605,12 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
 
         recommended_path = app.project.current_filepath
         if not recommended_path:
-            recommended_path = os.path.join(info.HOME_PATH, "%s.osp" % _("Untitled Project"))
-        file_path, file_type = QFileDialog.getSaveFileName(self, _("Save Project As..."), recommended_path, _("Magic VideoX Project (*.osp)"))
+            recommended_path = os.path.join(info.HOME_PATH, "%s.mvxp" % _("Untitled Project"))
+        file_path, file_type = QFileDialog.getSaveFileName(self, _("Save Project As..."), recommended_path, _("Magic VideoX Project (*.mvxp)"))
         if file_path:
             # Append .osp if needed
-            if ".osp" not in file_path:
-                file_path = "%s.osp" % file_path
+            if ".mvxp" not in file_path:
+                file_path = "%s.mvxp" % file_path
 
             # Save new project
             self.save_project(file_path)
