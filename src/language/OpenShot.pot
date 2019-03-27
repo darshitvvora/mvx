@@ -162,7 +162,7 @@ msgstr ""
 #: /home/jonathan/apps/openshot-qt-git/src/windows/main_window.py:541
 #: /home/jonathan/apps/openshot-qt-git/src/windows/main_window.py:554
 #: /home/jonathan/apps/openshot-qt-git/src/windows/main_window.py:598
-msgid "Magic VideoX Project (*.osp)"
+msgid "Magic VideoX Project (*.mvxp)"
 msgstr ""
 
 #: /home/jonathan/apps/openshot-qt-git/src/windows/main_window.py:553
