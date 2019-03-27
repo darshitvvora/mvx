@@ -609,9 +609,9 @@
    </property>
   </action>
   <action name="actionRemoveClip">
-   <property name="icon">
-    <iconset theme="list-remove" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/list-remove.svg</normaloff>:/icons/Humanity/actions/16/list-remove.svg</iconset>
+    <property name="icon">
+    <iconset>
+      <normaloff>../../images/Material/minus.png</normaloff>../../images/Material/minus.png</iconset>
    </property>
    <property name="text">
     <string>Remove Clip</string>
@@ -621,9 +621,9 @@
    </property>
   </action>
   <action name="actionRemoveTransition">
-   <property name="icon">
-    <iconset theme="list-remove" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/list-remove.svg</normaloff>:/icons/Humanity/actions/16/list-remove.svg</iconset>
+    <property name="icon">
+    <iconset>
+      <normaloff>../../images/Material/minus.png</normaloff>../../images/Material/minus.png</iconset>
    </property>
    <property name="text">
     <string>Remove Transition</string>
@@ -1273,8 +1273,8 @@
   </action>
   <action name="actionAdd_to_Timeline">
    <property name="icon">
-    <iconset theme="list-add" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/list-add.svg</normaloff>:/icons/Humanity/actions/16/list-add.svg</iconset>
+    <iconset>
+      <normaloff>../../images/Material/addTimeline.png</normaloff>../../images/Material/addTimeline.png</iconset>
    </property>
    <property name="text">
     <string>Add to Timeline</string>
@@ -1287,9 +1287,9 @@
    </property>
   </action>
   <action name="actionPreview_File">
-   <property name="icon">
-    <iconset theme="media-playback-start" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/media-playback-start.svg</normaloff>:/icons/Humanity/actions/16/media-playback-start.svg</iconset>
+    <property name="icon">
+    <iconset>
+      <normaloff>../../images/Material/preview.png</normaloff>../../images/Material/preview.png</iconset>
    </property>
    <property name="text">
     <string>Preview File</string>
@@ -1299,9 +1299,9 @@
    </property>
   </action>
   <action name="actionRemove_from_Project">
-   <property name="icon">
-    <iconset theme="list-remove" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/list-remove.svg</normaloff>:/icons/Humanity/actions/16/list-remove.svg</iconset>
+    <property name="icon">
+    <iconset>
+      <normaloff>../../images/Material/minus.png</normaloff>../../images/Material/minus.png</iconset>
    </property>
    <property name="text">
     <string>Remove from Project</string>
@@ -1312,8 +1312,8 @@
   </action>
   <action name="actionFile_Properties">
    <property name="icon">
-    <iconset theme="video-x-generic" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/mimes/16/video-x-generic.svg</normaloff>:/icons/Humanity/mimes/16/video-x-generic.svg</iconset>
+    <iconset>
+      <normaloff>../../images/Material/fileProperties.png</normaloff>../../images/Material/fileProperties.png</iconset>
    </property>
    <property name="text">
     <string>File Properties</string>
@@ -1335,9 +1335,9 @@
    </property>
   </action>
   <action name="actionRemoveTrack">
-   <property name="icon">
-    <iconset theme="list-remove" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/list-remove.svg</normaloff>:/icons/Humanity/actions/16/list-remove.svg</iconset>
+    <property name="icon">
+    <iconset>
+      <normaloff>../../images/Material/minus.png</normaloff>../../images/Material/minus.png</iconset>
    </property>
    <property name="text">
     <string>Remove Track</string>
@@ -1347,9 +1347,9 @@
    </property>
   </action>
   <action name="actionRemoveMarker">
-   <property name="icon">
-    <iconset theme="list-remove" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/list-remove.svg</normaloff>:/icons/Humanity/actions/16/list-remove.svg</iconset>
+    <property name="icon">
+    <iconset>
+      <normaloff>../../images/Material/minus.png</normaloff>../../images/Material/minus.png</iconset>
    </property>
    <property name="text">
     <string>Remove Marker</string>
@@ -1359,9 +1359,9 @@
    </property>
   </action>
   <action name="actionAddTrackAbove">
-   <property name="icon">
-    <iconset theme="list-add" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/list-add.svg</normaloff>:/icons/Humanity/actions/16/list-add.svg</iconset>
+    <property name="icon">
+    <iconset>
+      <normaloff>../../images/Material/addAbove.png</normaloff>../../images/Material/addAbove.png</iconset>
    </property>
    <property name="text">
     <string>Add Track Above</string>
@@ -1371,9 +1371,9 @@
    </property>
   </action>
   <action name="actionAddTrackBelow">
-   <property name="icon">
-    <iconset theme="list-add" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/list-add.svg</normaloff>:/icons/Humanity/actions/16/list-add.svg</iconset>
+    <property name="icon">
+    <iconset>
+      <normaloff>../../images/Material/addBelow.png</normaloff>../../images/Material/addBelow.png</iconset>
    </property>
    <property name="text">
     <string>Add Track Below</string>
@@ -1383,9 +1383,9 @@
    </property>
   </action>
   <action name="actionRemoveEffect">
-   <property name="icon">
-    <iconset theme="list-remove" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/list-remove.svg</normaloff>:/icons/Humanity/actions/16/list-remove.svg</iconset>
+    <property name="icon">
+    <iconset>
+      <normaloff>../../images/Material/minus.png</normaloff>../../images/Material/minus.png</iconset>
    </property>
    <property name="text">
     <string>Remove Effect</string>
@@ -1396,8 +1396,8 @@
   </action>
   <action name="actionSplitClip">
    <property name="icon">
-    <iconset theme="edit-cut" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/edit-cut.svg</normaloff>:/icons/Humanity/actions/16/edit-cut.svg</iconset>
+    <iconset>
+      <normaloff>../../images/Material/splitClip.png</normaloff>../../images/Material/splitClip.png</iconset>
    </property>
    <property name="text">
     <string>Split Clip...</string>
@@ -1425,9 +1425,9 @@
    </property>
   </action>
   <action name="actionRenameTrack">
-   <property name="icon">
-    <iconset theme="gtk-edit" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/gtk-edit.svg</normaloff>:/icons/Humanity/actions/16/gtk-edit.svg</iconset>
+  <property name="icon">
+    <iconset>
+      <normaloff>../../images/Material/editTrack.png</normaloff>../../images/Material/editTrack.png</iconset>
    </property>
    <property name="text">
     <string>Rename Track</string>
@@ -1480,8 +1480,8 @@
   </action>
   <action name="actionLockTrack">
    <property name="icon">
-    <iconset resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/custom/lock.png</normaloff>:/icons/Humanity/actions/custom/lock.png</iconset>
+    <iconset>
+      <normaloff>../../images/Material/lock.png</normaloff>../../images/Material/lock.png</iconset>
    </property>
    <property name="text">
     <string>Lock Track</string>
@@ -1492,8 +1492,8 @@
   </action>
   <action name="actionUnlockTrack">
    <property name="icon">
-    <iconset resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/custom/lock.png</normaloff>:/icons/Humanity/actions/custom/lock.png</iconset>
+    <iconset>
+      <normaloff>../../images/Material/unlock.png</normaloff>../../images/Material/unlock.png</iconset>
    </property>
    <property name="text">
     <string>Unlock Track</string>
