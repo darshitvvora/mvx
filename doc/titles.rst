@@ -43,7 +43,7 @@ Overview
 
 Custom Titles
 -------------
-OpenShot can use any vector SVG image file as a title template. Just add an SVG image file to your */.openshot_qt/titles/*
+OpenShot can use any vector SVG image file as a title template. Just add an SVG image file to your */.mvxp_data/titles/*
 folder, and it will appear in OpenShot's title editor after you restart OpenShot. You can also right click on any SVG
 files in your **Project Files** panel, and choose **Edit Title** or **Duplicate Title**.
 

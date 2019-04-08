@@ -2382,7 +2382,7 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
         self.mode = mode    # None or unittest (None is normal usage)
         self.initialized = False
 
-        self.setWindowFlags(Qt.FramelessWindowHint)
+        # self.setWindowFlags(Qt.FramelessWindowHint)
 
 
         # set window on app for reference during initialization of children
