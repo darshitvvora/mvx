@@ -56,7 +56,7 @@ def get_version_from_http():
 def get_activation_from_http():
     """Get the current version # from openshot.org"""
 
-    url = "https://api.backendless.com/846242E4-765F-D08C-FF51-C5F92AFBA400/C472A8B9-E418-0271-FF34-59C1F84BB400/users/login"
+    url = "https://api.backendless.com/7585ECA1-8714-3061-FFAB-5ECD6D8E8000/4F4067A2-24E1-5EC2-FF3C-F1BA2AA1D900/users/login"
 
     # Send metric HTTP data
     try:
@@ -91,7 +91,7 @@ def get_activation_from_http():
 def register_new_user_from_http():
     """Get the current version # from openshot.org"""
 
-    url =  "http://api.backendless.com/846242E4-765F-D08C-FF51-C5F92AFBA400/C472A8B9-E418-0271-FF34-59C1F84BB400/data/Users"
+    url =  "http://api.backendless.com/7585ECA1-8714-3061-FFAB-5ECD6D8E8000/4F4067A2-24E1-5EC2-FF3C-F1BA2AA1D900/data/Users"
     # Send metric HTTP data
     try:
 
