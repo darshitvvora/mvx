@@ -39,6 +39,13 @@
     "setting": "unique_install_id"
   },
   {
+    "value": "",
+    "title": "",
+    "type": "hidden",
+    "category": "General",
+    "setting": "activation_email"
+  },
+  {
     "max": 10000,
     "title": "Image Length (seconds)",
     "category": "General",

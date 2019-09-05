@@ -85,6 +85,8 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
     SpeedSignal = pyqtSignal(float)
     RecoverBackup = pyqtSignal()
     FoundVersionSignal = pyqtSignal(str)
+    FoundActivationSignal = pyqtSignal(bool)
+    FoundSetActivationSignal = pyqtSignal(bool)
     WaveformReady = pyqtSignal(str, list)
     TransformSignal = pyqtSignal(str)
     ExportStarted = pyqtSignal(str, int, int)
@@ -808,6 +810,27 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
         except:
             QMessageBox.information(self, "Error !", "Unable to open the Help Contents. Please ensure the openshot-doc package is installed.")
             log.info("Unable to open the Help Contents")
+
+    def actionActivateFailure_trigger(self):
+        self.setWindowTitle("test")
+        self.setGeometry((self.width())/2, (self.height())/2, 320, 200)
+
+        buttonReply = QMessageBox.question(self, 'Activation Failure', "It seems like your software license is not activated", QMessageBox.Ok, QMessageBox.Ok)
+
+        if buttonReply == QMessageBox.Ok:
+            self.StopSignal.emit()
+            # Process any queued events
+            QCoreApplication.processEvents()
+
+            # Close & Stop libopenshot logger
+            openshot.ZmqLogger.Instance().Close()
+            get_app().logger_libopenshot.kill()
+
+            # Destroy lock file
+            self.destroy_lock_file()
+            sys.exit()
+
+        self.show()
 
     def actionAbout_trigger(self, event):
         """Show about dialog"""
@@ -2309,6 +2332,13 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
             updateButton.setToolButtonStyle(Qt.ToolButtonTextBesideIcon)
             self.toolBar.addWidget(updateButton)
 
+    def foundCurrentActivation(self, account_activated):
+        if account_activated == False:
+            self.actionActivateFailure_trigger()
+
+    def foundSetActivation(self, account_activated):
+        log.info("Registered")
+
     def moveEvent(self, event):
         """ Move tutorial dialogs also (if any)"""
         QMainWindow.moveEvent(self, event)
@@ -2427,6 +2457,11 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
         else:
             self.is_transforming = False
 
+    def getActivationEmail(self, s):
+        text, ok = QInputDialog.getText(self, 'Registration', 'Enter Registered Email ID:')
+        if ok:
+            s.set("activation_email", str(text))
+            # self.le1.setText(str(text))
 
     def __init__(self, mode=None):
 
@@ -2443,8 +2478,20 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
         s = settings.get_settings()
         self.recent_menu = None
 
+        # Register if first load
+        # s.set("activation_email", None)
+
+        if not s.get("activation_email"):
+            self.getActivationEmail(s)
+            self.FoundSetActivationSignal.connect(self.foundSetActivation)
+            set_current_Activation()
+            # s.set("activation_email", str(uuid4()))
+
         # Track metrics
         track_metric_session()  # start session
+
+        self.FoundActivationSignal.connect(self.foundCurrentActivation)
+        get_current_Activation()
 
         # Set unique install id (if blank)
         if not s.get("unique_install_id"):
