@@ -37,7 +37,7 @@ from classes import settings
 class TimelineSync(UpdateInterface):
     """ This class syncs changes from the timeline to libopenshot """
 
-    def __init__(self, window):
+    def __init__(self, window, timelineNo):
         self.app = get_app()
         self.window = window
         project = self.app.project
@@ -50,20 +50,34 @@ class TimelineSync(UpdateInterface):
         sample_rate = project.get("sample_rate")
         channels = project.get("channels")
         channel_layout = project.get("channel_layout")
-
         # Create an instance of a libopenshot Timeline object
-        self.timeline = openshot.Timeline(width, height, openshot.Fraction(fps["num"], fps["den"]), sample_rate, channels,
-                                          channel_layout)
-        self.timeline.info.channel_layout = channel_layout
-        self.timeline.info.has_audio = True
-        self.timeline.info.has_video = True
-        self.timeline.info.video_length = 99999
-        self.timeline.info.duration = 999.99
-        self.timeline.info.sample_rate = sample_rate
-        self.timeline.info.channels = channels
+        if timelineNo == 1:
+            self.timeline1 = openshot.Timeline(width, height, openshot.Fraction(fps["num"], fps["den"]), sample_rate, channels,
+                                              channel_layout)
+            self.timeline1.info.channel_layout = channel_layout
+            self.timeline1.info.has_audio = True
+            self.timeline1.info.has_video = True
+            self.timeline1.info.video_length = 99999
+            self.timeline1.info.duration = 999.99
+            self.timeline1.info.sample_rate = sample_rate
+            self.timeline1.info.channels = channels
 
-        # Open the timeline reader
-        self.timeline.Open()
+            # Open the timeline reader
+            self.timeline1.Open()
+        else:
+            self.timeline = openshot.Timeline(width, height, openshot.Fraction(fps["num"], fps["den"]), sample_rate,
+                                              channels,
+                                              channel_layout)
+            self.timeline.info.channel_layout = channel_layout
+            self.timeline.info.has_audio = True
+            self.timeline.info.has_video = True
+            self.timeline.info.video_length = 99999
+            self.timeline.info.duration = 999.99
+            self.timeline.info.sample_rate = sample_rate
+            self.timeline.info.channels = channels
+
+            # Open the timeline reader
+            self.timeline.Open()
 
         # Add self as listener to project data updates (at the beginning of the list)
         # This listener will receive events before others.

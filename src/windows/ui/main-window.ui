@@ -482,7 +482,7 @@
     <set>QDockWidget::DockWidgetFloatable|QDockWidget::DockWidgetMovable</set>
    </property>
    <property name="windowTitle">
-    <string>Timeline</string>
+    <string>Sequence 1</string>
    </property>
    <attribute name="dockWidgetArea">
     <number>8</number>
@@ -501,6 +501,37 @@
     </layout>
    </widget>
   </widget>
+  <widget class="QDockWidget" name="dockTimeline1">
+   <property name="minimumSize">
+    <size>
+     <width>250</width>
+     <height>150</height>
+    </size>
+   </property>
+   <property name="features">
+    <set>QDockWidget::DockWidgetFloatable|QDockWidget::DockWidgetMovable</set>
+   </property>
+   <property name="windowTitle">
+    <string>Sequence 2</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>8</number>
+   </attribute>
+   <widget class="QWidget" name="dockTimeline1Contents">
+    <property name="focusPolicy">
+     <enum>Qt::ClickFocus</enum>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::NoContextMenu</enum>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_7">
+     <item row="0" column="0">
+      <layout class="QVBoxLayout" name="frameWeb1"/>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+
   <action name="actionNew">
    <property name="icon">
     <iconset theme="document-new" resource="../../images/openshot.qrc">

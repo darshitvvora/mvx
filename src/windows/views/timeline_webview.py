@@ -155,6 +155,7 @@ MENU_SPLIT_AUDIO_MULTIPLE = 1
 class TimelineWebView(QWebView, updates.UpdateInterface):
     """ A WebView QWidget used to load the Timeline """
 
+
     # Path to html file
     html_path = os.path.join(info.PATH, 'timeline', 'index.html')
 
@@ -881,7 +882,13 @@ class TimelineWebView(QWebView, updates.UpdateInterface):
 
             # Find actual clip object from libopenshot
             c = None
-            clips = get_app().window.timeline_sync.timeline.Clips()
+            clips = None
+
+            if self.timelineNo == 0:
+                clips = get_app().window.timeline_sync.timeline.Clips()
+            else:
+                clips = get_app().window.timeline_sync1.timeline1.Clips()
+
             for clip_object in clips:
                 if clip_object.Id() == clip_id:
                     c = clip_object
@@ -2118,7 +2125,13 @@ class TimelineWebView(QWebView, updates.UpdateInterface):
 
                     # Find actual clip object from libopenshot
                     c = None
-                    clips = get_app().window.timeline_sync.timeline.Clips()
+                    clips = None
+
+                    if self.timelineNo == 0:
+                        clips = get_app().window.timeline_sync.timeline.Clips()
+                    else:
+                        clips = get_app().window.timeline_sync1.timeline1.Clips()
+
                     for clip_object in clips:
                         if clip_object.Id() == clip_id:
                             c = clip_object
@@ -2131,7 +2144,13 @@ class TimelineWebView(QWebView, updates.UpdateInterface):
                 if len(clip.data["volume"]["Points"]) > 1:
                     # Find actual clip object from libopenshot
                     c = None
-                    clips = get_app().window.timeline_sync.timeline.Clips()
+                    clips = None
+
+                    if self.timelineNo == 0:
+                        clips = get_app().window.timeline_sync.timeline.Clips()
+                    else:
+                        clips = get_app().window.timeline_sync1.timeline1.Clips()
+
                     for clip_object in clips:
                         if clip_object.Id() == clip_id:
                             c = clip_object
@@ -2943,10 +2962,17 @@ class TimelineWebView(QWebView, updates.UpdateInterface):
 
         # Get final cache object from timeline
         try:
-            cache_object = get_app().window.timeline_sync.timeline.GetCache()
+            if self.timelineNo == 0:
+                cache_object = get_app().window.timeline_sync.timeline.GetCache()
+            else:
+                cache_object = get_app().window.timeline_sync1.timeline1.GetCache()
+
             if cache_object and cache_object.Count() > 0:
                 # Get the JSON from the cache object (i.e. which frames are cached)
-                cache_json = get_app().window.timeline_sync.timeline.GetCache().Json()
+                if self.timelineNo == 0:
+                    cache_json = get_app().window.timeline_sync.timeline.GetCache().Json()
+                else:
+                    cache_json = get_app().window.timeline_sync1.timeline1.GetCache().Json()
                 cache_dict = json.loads(cache_json)
                 cache_version = cache_dict["version"]
 
@@ -2960,12 +2986,16 @@ class TimelineWebView(QWebView, updates.UpdateInterface):
             # ignore any errors inside the cache rendering
             pass
 
-    def __init__(self, window):
+    def __init__(self, window, timelineN):
         QWebView.__init__(self)
         self.window = window
         self.setAcceptDrops(True)
         self.last_position_frames = None
         self.document_is_ready = False
+        self.timelineNo = timelineN
+
+        print("-------------------------")
+        print(self.timelineNo)
 
         # Delete the webview when closed
         self.setAttribute(Qt.WA_DeleteOnClose)

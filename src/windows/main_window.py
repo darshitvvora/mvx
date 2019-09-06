@@ -152,10 +152,14 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
 
         # Shut down the webview
         self.timeline.close()
+        self.timeline1.close()
 
         # Close Timeline
         self.timeline_sync.timeline.Close()
         self.timeline_sync.timeline = None
+
+        self.timeline_sync1.timeline1.Close()
+        self.timeline_sync1.timeline1 = None
 
         # Close & Stop libopenshot logger
         openshot.ZmqLogger.Instance().Close()
@@ -1898,7 +1902,8 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
                 self.dockEffects,
                 self.dockVideo,
                 self.dockProperties,
-                self.dockTimeline]
+                self.dockTimeline,
+                self.dockTimeline1]
 
     def removeDocks(self):
         """ Remove all dockable widgets on main screen """
@@ -1934,6 +1939,12 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
                 dock.setFeatures(QDockWidget.DockWidgetFloatable | QDockWidget.DockWidgetMovable)
             else:
                 dock.setFeatures(QDockWidget.DockWidgetClosable | QDockWidget.DockWidgetFloatable | QDockWidget.DockWidgetMovable)
+
+            if dock is self.dockTimeline1:
+                dock.setFeatures(QDockWidget.DockWidgetFloatable | QDockWidget.DockWidgetMovable)
+            else:
+                dock.setFeatures(
+                    QDockWidget.DockWidgetClosable | QDockWidget.DockWidgetFloatable | QDockWidget.DockWidgetMovable)
 
     def hideDocks(self):
         """ Hide all dockable widgets on the main screen """
@@ -2272,6 +2283,21 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
         self.timelineToolbar.addAction(self.actionNextMarker)
         self.timelineToolbar.addSeparator()
 
+        # Add Timeline toolbar1
+        self.timelineToolbar1 = QToolBar("Timeline Toolbar", self)
+
+        self.timelineToolbar1.addAction(self.actionAddTrack)
+        self.timelineToolbar1.addSeparator()
+
+        # rest of options
+        self.timelineToolbar1.addAction(self.actionSnappingTool)
+        self.timelineToolbar1.addAction(self.actionRazorTool)
+        self.timelineToolbar1.addSeparator()
+        self.timelineToolbar1.addAction(self.actionAddMarker)
+        self.timelineToolbar1.addAction(self.actionPreviousMarker)
+        self.timelineToolbar1.addAction(self.actionNextMarker)
+        self.timelineToolbar1.addSeparator()
+
         # Get project's initial zoom value
         initial_scale = get_app().project.get("scale") or 15
         # Round non-exponential scale down to next lowest power of 2
@@ -2293,8 +2319,15 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
         self.timelineToolbar.addAction(self.actionTimelineZoomOut)
         self.timelineToolbar.addWidget(self.zoomScaleLabel)
 
+        # add zoom widgets
+        self.timelineToolbar1.addAction(self.actionTimelineZoomIn)
+        self.timelineToolbar1.addWidget(self.sliderZoom)
+        self.timelineToolbar1.addAction(self.actionTimelineZoomOut)
+        self.timelineToolbar1.addWidget(self.zoomScaleLabel)
+
         # Add timeline toolbar to web frame
         self.frameWeb.addWidget(self.timelineToolbar)
+        self.frameWeb1.addWidget(self.timelineToolbar1)
 
     def clearSelections(self):
         """Clear all selection containers"""
@@ -2532,11 +2565,15 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
             self.RecoverBackup.connect(self.recover_backup)
 
         # Create the timeline sync object (used for previewing timeline)
-        self.timeline_sync = TimelineSync(self)
+        self.timeline_sync = TimelineSync(self, 0)
+        self.timeline_sync1 = TimelineSync(self, 1)
 
         # Setup timeline
-        self.timeline = TimelineWebView(self)
+        self.timeline = TimelineWebView(self, 0)
         self.frameWeb.layout().addWidget(self.timeline)
+
+        self.timeline1 = TimelineWebView(self, 1)
+        self.frameWeb1.layout().addWidget(self.timeline1)
 
         # Configure the side docks to full-height
         self.setCorner(Qt.TopLeftCorner, Qt.LeftDockWidgetArea)
