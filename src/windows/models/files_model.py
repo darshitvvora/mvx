@@ -132,36 +132,43 @@ class FilesModel(updates.UpdateInterface):
             # Generate thumbnail for file (if needed)
             if (file.data["media_type"] == "video" or file.data["media_type"] == "image"):
                 # Determine thumb path
-                thumb_path = os.path.join(info.THUMBNAIL_PATH, "{}.png".format(file.id))
+                thumb_path = os.path.join(info.THUMBNAIL_PATH, "{}_1.png".format(file.id))
 
                 # Check if thumb exists
                 if not os.path.exists(thumb_path):
+                    iter=1
+                    iterid=1
+                    last_thumbnail_gen= int(file.data["video_length"])
+                    while iter<=last_thumbnail_gen:
+                        try:
+                            # Convert path to the correct relative path (based on this folder)
+                            file_path = file.absolute_path()
+                            filenamethumb ="{}_".format(file.id) + str(iterid) + ".png"
+                            thumb_path = os.path.join(info.THUMBNAIL_PATH, filenamethumb)
 
-                    try:
-                        # Convert path to the correct relative path (based on this folder)
-                        file_path = file.absolute_path()
+                            # Determine if video overlay should be applied to thumbnail
+                            overlay_path = ""
+                            if file.data["media_type"] == "video":
+                                overlay_path = os.path.join(info.IMAGES_PATH, "overlay.png")
 
-                        # Determine if video overlay should be applied to thumbnail
-                        overlay_path = ""
-                        if file.data["media_type"] == "video":
-                            overlay_path = os.path.join(info.IMAGES_PATH, "overlay.png")
+                            # Check for start and end attributes (optional)
+                            thumbnail_frame = iter
+                            if 'start' in file.data.keys():
+                                fps = file.data["fps"]
+                                fps_float = float(fps["num"]) / float(fps["den"])
+                                thumbnail_frame = round(float(file.data['start']) * fps_float) + 1
 
-                        # Check for start and end attributes (optional)
-                        thumbnail_frame = 1
-                        if 'start' in file.data.keys():
-                            fps = file.data["fps"]
-                            fps_float = float(fps["num"]) / float(fps["den"])
-                            thumbnail_frame = round(float(file.data['start']) * fps_float) + 1
+                            iterid = iterid + 1
+                            iter = iter + 400
+                            # Create thumbnail image
+                            GenerateThumbnail(file_path, thumb_path, thumbnail_frame, 98, 64, os.path.join(info.IMAGES_PATH, "mask.png"), overlay_path)
 
-                        # Create thumbnail image
-                        GenerateThumbnail(file_path, thumb_path, thumbnail_frame, 98, 64, os.path.join(info.IMAGES_PATH, "mask.png"), overlay_path)
-
-                    except:
-                        # Handle exception
-                        msg = QMessageBox()
-                        msg.setText(_("{} is not a valid video, audio, or image file.".format(filename)))
-                        msg.exec_()
-                        continue
+                        except:
+                            # Handle exception
+                            msg = QMessageBox()
+                            msg.setText(_("{} is not a valid video, audio, or image file.".format(filename)))
+                            msg.exec_()
+                            continue
 
             else:
                 # Audio file

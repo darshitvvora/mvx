@@ -2686,13 +2686,21 @@ class TimelineWebView(QWebView, updates.UpdateInterface):
         if not file:
             # File not found, do nothing
             return
-
+        thumb_path = []
         if (file.data["media_type"] == "video" or file.data["media_type"] == "image"):
             # Determine thumb path
-            thumb_path = os.path.join(info.THUMBNAIL_PATH, "%s.png" % file.data["id"])
+            iter = 1
+            iterid = 1
+            last_thumbnail_gen = int(file.data["video_length"])
+
+            while iter <= last_thumbnail_gen:
+                filenamethumb = "%s_" % file.data["id"]+ str(iterid) + ".png"
+                thumb_path.append(os.path.join(info.THUMBNAIL_PATH, filenamethumb))
+                iter = iter + 400
+                iterid = iterid + 1
         else:
             # Audio file
-            thumb_path = os.path.join(info.PATH, "images", "AudioThumbnail.png")
+            thumb_path.append(os.path.join(info.PATH, "images", "AudioThumbnail.png"))
 
         # Get file name
         path, filename = os.path.split(file.data["path"])
@@ -2707,7 +2715,8 @@ class TimelineWebView(QWebView, updates.UpdateInterface):
         new_clip = json.loads(c.Json())
         new_clip["file_id"] = file.id
         new_clip["title"] = filename
-        new_clip["image"] = thumb_path
+        new_clip["image"] = ','.join(map(str, thumb_path))
+
 
         # Skip any clips that are missing a 'reader' attribute
         # TODO: Determine why this even happens, as it shouldn't be possible

@@ -66,7 +66,7 @@ class TimelineModel():
             # Get thumbnail path
             if (file.data["media_type"] == "video" or file.data["media_type"] == "image"):
                 # Determine thumb path
-                thumb_path = os.path.join(info.THUMBNAIL_PATH, "%s.png" % file.data["id"])
+                thumb_path = os.path.join(info.THUMBNAIL_PATH, "%s_1.png" % file.data["id"])
             else:
                 # Audio file
                 thumb_path = os.path.join(info.PATH, "images", "AudioThumbnail.png")
