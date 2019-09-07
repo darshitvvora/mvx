@@ -48,10 +48,10 @@ def load_font(font_path):
 # this script, OpenShot will inject a dictionary of the required parameters
 # before this script is executed.
 params = {		
-			'title' : 'Oh Yeah! OpenShot!',
+			'title' : 'Oh Yeah! Edit X Pro!',
 			'Alongtimeago' : 'Some cycles ago, in The Grid\nfar, far inside....',
 			'Episode' : 'Episode I.V',
-			'EpisodeTitle' : 'A NEW OPENSHOT',
+			'EpisodeTitle' : 'A NEW Edit X Pro',
 			'TitleSpaceMovie' : 'Space\nMovie',
 			'MainText' : 'It is a period of software war. Free software developers have won some battles with free, and open-source applications. They leave the source code available for everybody in the Galaxy, allowing people to access software knowledge and truth.\n\nBut the EULA Galactic Empire is not dead and prepares its revenge with an ultimate weapon: the blue screen of DEATH. This armored system can anihilate an entire device by a simple segfault.\n\nBut the rebel hackers have a secret weapon too: an atomic penguin which protects them from almost all digital injuries...',
 

@@ -223,7 +223,7 @@ def createDissolveText(title, extrude, bevel_depth, spacemode, textsize, width, 
 # this script, OpenShot will inject a dictionary of the required parameters
 # before this script is executed.
 params = {
-    'title': 'Oh Yeah! OpenShot!',
+    'title': 'Oh Yeah! Edit X Pro!',
     'extrude': 0.05,
     'bevel_depth': 0.01,
     'spacemode': 'CENTER',

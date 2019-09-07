@@ -450,7 +450,7 @@ class ProjectDataStore(JsonDataStore, UpdateInterface):
         # Append version info
         v = openshot.GetVersion()
         project_data = {}
-        project_data["version"] = {"openshot-qt" : info.VERSION,
+        project_data["version"] = {"editxpro-qt" : info.VERSION,
                                    "libopenshot" : v.ToString()}
 
         # Get FPS from project
@@ -763,7 +763,7 @@ class ProjectDataStore(JsonDataStore, UpdateInterface):
 
         # Append version info
         v = openshot.GetVersion()
-        self._data["version"] = { "openshot-qt" : info.VERSION,
+        self._data["version"] = { "editxpro-qt" : info.VERSION,
                                   "libopenshot" : v.ToString() }
 
         # Try to save project settings file, will raise error on failure

@@ -65,7 +65,7 @@ class PreviewParent(QObject):
 
         # Only JUCE audio errors bubble up here now
         if not get_app().window.mode == "unittest":
-            QMessageBox.warning(self.parent, _("Audio Error"), _("Please fix the following error and restart OpenShot\n%s") % error)
+            QMessageBox.warning(self.parent, _("Audio Error"), _("Please fix the following error and restart Edit X Pro\n%s") % error)
 
     @pyqtSlot(object, object)
     def Init(self, parent, timeline, video_widget):

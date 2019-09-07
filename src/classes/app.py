@@ -88,11 +88,11 @@ class OpenShotApp(QApplication):
         # Log some basic system info
         try:
             log.info("------------------------------------------------")
-            log.info(("OpenShot (version %s)" % info.SETUP['version']).center(48))
+            log.info(("Edit X Pro (version %s)" % info.SETUP['version']).center(48))
             log.info("------------------------------------------------")
 
             v = openshot.GetVersion()
-            log.info("openshot-qt version: %s" % info.VERSION)
+            log.info("edit-xpro version: %s" % info.VERSION)
             log.info("libopenshot version: %s" % v.ToString())
             log.info("platform: %s" % platform.platform())
             log.info("processor: %s" % platform.processor())
@@ -107,7 +107,7 @@ class OpenShotApp(QApplication):
         self.aboutToQuit.connect(self.onLogTheEnd)
 
         # Setup application
-        self.setApplicationName('openshot')
+        self.setApplicationName('EditXPro')
         self.setApplicationVersion(info.SETUP['version'])
 
         # Init settings
@@ -158,7 +158,7 @@ class OpenShotApp(QApplication):
         except PermissionError as ex:
             log.error('Failed to create PERMISSION/test.osp file (likely permissions error): %s' % TEST_PATH_FILE)
             QMessageBox.warning(None, _("Permission Error"),
-                                      _("%(error)s. Please delete <b>%(path)s</b> and launch OpenShot again." % {"error": str(ex), "path": info.USER_PATH}))
+                                      _("%(error)s. Please delete <b>%(path)s</b> and launch Edit X Pro again." % {"error": str(ex), "path": info.USER_PATH}))
             # Stop launching and exit
             raise
             sys.exit()
@@ -253,7 +253,7 @@ class OpenShotApp(QApplication):
         try:
             from classes.logger import log
             import time
-            log.info('OpenShot\'s session ended'.center(48))
+            log.info('Edit X Pro\'s session ended'.center(48))
             log.info(time.asctime().center(48))
             log.info("================================================")
         except Exception:

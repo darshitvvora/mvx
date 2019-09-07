@@ -597,7 +597,7 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
                 return
 
         # Prompt for open project file
-        file_path, file_type = QFileDialog.getOpenFileName(self, _("Open Project..."), recommended_path, _("OpenShot Project (*.osp)"))
+        file_path, file_type = QFileDialog.getOpenFileName(self, _("Open Project..."), recommended_path, _("Edit X Pro Project (*.mvxp)"))
 
         # Load project file
         self.OpenProjectSignal.emit(file_path)
@@ -610,7 +610,7 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
         file_path = app.project.current_filepath
         if not file_path:
             recommended_path = os.path.join(info.HOME_PATH, "%s.osp" % _("Untitled Project"))
-            file_path, file_type = QFileDialog.getSaveFileName(self, _("Save Project..."), recommended_path, _("OpenShot Project (*.osp)"))
+            file_path, file_type = QFileDialog.getSaveFileName(self, _("Save Project..."), recommended_path, _("Edit X Pro Project (*.mvxp)"))
 
         if file_path:
             # Append .osp if needed
@@ -660,7 +660,7 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
         recommended_path = app.project.current_filepath
         if not recommended_path:
             recommended_path = os.path.join(info.HOME_PATH, "%s.osp" % _("Untitled Project"))
-        file_path, file_type = QFileDialog.getSaveFileName(self, _("Save Project As..."), recommended_path, _("OpenShot Project (*.osp)"))
+        file_path, file_type = QFileDialog.getSaveFileName(self, _("Save Project As..."), recommended_path, _("Edit X Pro Project (*.mvxp)"))
         if file_path:
             # Append .osp if needed
             if ".osp" not in file_path:
@@ -2027,14 +2027,14 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
         # Is this a saved project?
         if not get_app().project.current_filepath:
             # Not saved yet
-            self.setWindowTitle("%s %s [%s] - %s" % (save_indicator, _("Untitled Project"), profile, "OpenShot Video Editor"))
+            self.setWindowTitle("%s %s [%s] - %s" % (save_indicator, _("Untitled Project"), profile, "Edit X Pro"))
         else:
             # Yes, project is saved
             # Get just the filename
             parent_path, filename = os.path.split(get_app().project.current_filepath)
             filename, ext = os.path.splitext(filename)
             filename = filename.replace("_", " ").replace("-", " ").capitalize()
-            self.setWindowTitle("%s %s [%s] - %s" % (save_indicator, filename, profile, "OpenShot Video Editor"))
+            self.setWindowTitle("%s %s [%s] - %s" % (save_indicator, filename, profile, "Edit X Pro"))
 
     # Update undo and redo buttons enabled/disabled to available changes
     def updateStatusChanged(self, undo_status, redo_status):

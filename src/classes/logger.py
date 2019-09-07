@@ -58,12 +58,12 @@ logging.basicConfig(format="%(module)12s:%(levelname)s %(message)s",
 formatter = logging.Formatter('%(module)12s:%(levelname)s %(message)s')
 
 # Get logger instance & set level
-log = logging.getLogger('OpenShot')
+log = logging.getLogger('EditXpro')
 log.setLevel(logging.INFO)
 
 # Add rotation file handler
 fh = RotatingFileHandler(
-    os.path.join(info.USER_PATH, 'openshot-qt.log'), encoding="utf-8", maxBytes=25*1024*1024, backupCount=3)
+    os.path.join(info.USER_PATH, 'editxpro-qt.log'), encoding="utf-8", maxBytes=25*1024*1024, backupCount=3)
 fh.setFormatter(formatter)
 log.addHandler(fh)
 

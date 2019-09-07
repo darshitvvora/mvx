@@ -48,7 +48,7 @@ def load_font(font_path):
 # this script, OpenShot will inject a dictionary of the required parameters
 # before this script is executed.
 params = {		
-			'title' : 'Oh Yeah! OpenShot!',
+			'title' : 'Oh Yeah! Edit X Pro!',
 			'extrude' : 0.1,
 			'bevel_depth' : 0.02,
 			'spacemode' : 'LEFT',

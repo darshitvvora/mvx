@@ -78,24 +78,24 @@ class About(QDialog):
                         # Ignore decoding errors
                         pass
 
-        create_text = _('Create &amp; Edit Amazing Videos and Movies')
-        description_text = _('OpenShot Video Editor 2.x is the next generation of the award-winning <br/>OpenShot video editing platform.')
+        create_text = _('Create &amp; Edit Amazing Movies')
+        description_text = _('Edit X Pro is the next generation wedding and short movie <br/>video editing platform.')
         learnmore_text = _('Learn more')
-        copyright_text = _('Copyright &copy; %(begin_year)s-%(current_year)s') % {'begin_year': '2008', 'current_year': str(datetime.datetime.today().year) }
-        about_html = '<html><head/><body><hr/><p align="center"><span style=" font-size:10pt; font-weight:600;">%s</span></p><p align="center"><span style=" font-size:10pt;">%s </span><a href="https://www.openshot.org/%s?r=about-us"><span style=" font-size:10pt; text-decoration: none; color:#55aaff;">%s</span></a><span style=" font-size:10pt;">.</span></p></body></html>' % (create_text, description_text, info.website_language(), learnmore_text)
-        company_html = '<html><head/><body style="font-size:11pt; font-weight:400; font-style:normal;">\n<hr />\n<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt; font-weight:600;">%s </span><a href="http://www.openshotstudios.com?r=about-us"><span style=" font-size:10pt; font-weight:600; text-decoration: none; color:#55aaff;">OpenShot Studios, LLC<br /></span></a></p></body></html>' % (copyright_text)
+        copyright_text = _('Copyright &copy; %(begin_year)s-%(current_year)s') % {'begin_year': '2018', 'current_year': str(datetime.datetime.today().year) }
+        about_html = '<html><head/><body><hr/><p align="center"><span style=" font-size:10pt; font-weight:600;">%s</span></p><p align="center"><span style=" font-size:10pt;">%s </span><a href="https://www.editxpro.com/%s?r=about-us"><span style=" font-size:10pt; text-decoration: none; color:#55aaff;">%s</span></a><span style=" font-size:10pt;">.</span></p></body></html>' % (create_text, description_text, info.website_language(), learnmore_text)
+        company_html = '<html><head/><body style="font-size:11pt; font-weight:400; font-style:normal;">\n<hr />\n<p align="center" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:10pt; font-weight:600;">%s </span><a href="http://www.editxpro.com?r=about-us"><span style=" font-size:10pt; font-weight:600; text-decoration: none; color:#55aaff;">Edit X Pro<br /></span></a></p></body></html>' % (copyright_text)
 
         # Set description and company labels
         self.lblAboutDescription.setText(about_html)
         self.lblAboutCompany.setText(company_html)
 
         # set events handlers
-        self.btncredit.clicked.connect(self.load_credit)
+        #self.btncredit.clicked.connect(self.load_credit)
         self.btnlicense.clicked.connect(self.load_license)
         self.btnchangelog.clicked.connect(self.load_changelog)
 
         # Init some variables
-        self.txtversion.setText(_("Version: %s") % info.VERSION)
+        self.txtversion.setText(_("Version: 1.0.0"))
         self.txtversion.setAlignment(Qt.AlignCenter)
 
         # Track metrics
