@@ -482,7 +482,7 @@
     <set>QDockWidget::DockWidgetFloatable|QDockWidget::DockWidgetMovable</set>
    </property>
    <property name="windowTitle">
-    <string>Timeline</string>
+    <string>Sequencer</string>
    </property>
    <attribute name="dockWidgetArea">
     <number>8</number>
@@ -495,8 +495,11 @@
      <enum>Qt::NoContextMenu</enum>
     </property>
     <layout class="QGridLayout" name="gridLayout_7">
-     <item row="0" column="0">
+     <item row="0" column="1">
       <layout class="QVBoxLayout" name="frameWeb"/>
+     </item>
+      <item row="0" column="0">
+      <layout class="QHBoxLayout" name="frameWeb1"/>
      </item>
     </layout>
    </widget>
@@ -1262,7 +1265,7 @@
   <action name="actionShow_All">
    <property name="icon">
     <iconset theme="zoom-in" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/zoom-in.png</normaloff>:/icons/Humanity/actions/16/zoom-in.png</iconset>
+     <normaloff>:/icons/Humanity/actions/16/view-all.svg</normaloff>:/icons/Humanity/actions/16/view-all.svg</iconset>
    </property>
    <property name="text">
     <string>Show All</string>
@@ -1508,7 +1511,7 @@
   <action name="actionLockTrack">
    <property name="icon">
     <iconset resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/custom/lock.png</normaloff>:/icons/Humanity/actions/custom/lock.png</iconset>
+     <normaloff>:/icons/Humanity/actions/custom/lock.svg</normaloff>:/icons/Humanity/actions/custom/lock.svg</iconset>
    </property>
    <property name="text">
     <string>Lock Track</string>
@@ -1520,7 +1523,7 @@
   <action name="actionUnlockTrack">
    <property name="icon">
     <iconset resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/custom/lock.png</normaloff>:/icons/Humanity/actions/custom/lock.png</iconset>
+     <normaloff>:/icons/Humanity/actions/custom/unlock.png</normaloff>:/icons/Humanity/actions/custom/unlock.png</iconset>
    </property>
    <property name="text">
     <string>Unlock Track</string>
@@ -1586,7 +1589,7 @@
   <action name="actionImportEDL">
    <property name="icon">
     <iconset theme="view-list-details" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/view-list-details.png</normaloff>:/icons/Humanity/actions/16/view-list-details.png</iconset>
+     <normaloff>:/icons/Humanity/actions/16/import-edl.svg</normaloff>:/icons/Humanity/actions/16/import-edl.svg</iconset>
    </property>
    <property name="text">
     <string>Import EDL</string>
@@ -1601,16 +1604,16 @@
      <normaloff>:/icons/Humanity/actions/16/view-list-details.png</normaloff>:/icons/Humanity/actions/16/view-list-details.png</iconset>
    </property>
    <property name="text">
-    <string>Import XML (Final Cut Pro)</string>
+    <string>Import XML (Apple Final Cut Pro)</string>
    </property>
    <property name="toolTip">
-    <string>Import XML (Final Cut Pro)</string>
+    <string>Import XML (Apple Final Cut Pro)</string>
    </property>
   </action>
   <action name="actionExportEDL">
    <property name="icon">
     <iconset theme="view-list-details" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/view-list-details.png</normaloff>:/icons/Humanity/actions/16/view-list-details.png</iconset>
+     <normaloff>:/icons/Humanity/actions/16/export-edl.svg</normaloff>:/icons/Humanity/actions/16/export-edl.svg</iconset>
    </property>
    <property name="text">
     <string>Export EDL</string>
@@ -1625,10 +1628,10 @@
      <normaloff>:/icons/Humanity/actions/16/view-list-details.png</normaloff>:/icons/Humanity/actions/16/view-list-details.png</iconset>
    </property>
    <property name="text">
-    <string>Export XML (Final Cut Pro)</string>
+    <string>Export XML (Apple Final Cut Pro)</string>
    </property>
    <property name="toolTip">
-    <string>Export XML (Final Cut Pro)</string>
+    <string>Export XML (Apple Final Cut Pro)</string>
    </property>
   </action>
  </widget>

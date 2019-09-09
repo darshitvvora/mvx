@@ -2258,19 +2258,23 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
         self.tabVideo.layout().addWidget(self.videoToolbar)
 
         # Add Timeline toolbar
-        self.timelineToolbar = QToolBar("Timeline Toolbar", self)
+        self.timelineToolbar = QToolBar("Timeline ToolbarH", self)
+        self.timelineToolbarV = QToolBar("Timeline ToolbarV", self)
 
-        self.timelineToolbar.addAction(self.actionAddTrack)
-        self.timelineToolbar.addSeparator()
+        self.timelineToolbarV.addAction(self.actionAddTrack)
+        self.timelineToolbarV.addSeparator()
 
         # rest of options
-        self.timelineToolbar.addAction(self.actionSnappingTool)
-        self.timelineToolbar.addAction(self.actionRazorTool)
-        self.timelineToolbar.addSeparator()
-        self.timelineToolbar.addAction(self.actionAddMarker)
-        self.timelineToolbar.addAction(self.actionPreviousMarker)
-        self.timelineToolbar.addAction(self.actionNextMarker)
-        self.timelineToolbar.addSeparator()
+        self.timelineToolbarV.addAction(self.actionSnappingTool)
+        self.timelineToolbarV.addAction(self.actionRazorTool)
+        self.timelineToolbarV.addSeparator()
+        self.timelineToolbarV.addAction(self.actionAddMarker)
+        self.timelineToolbarV.addAction(self.actionPreviousMarker)
+        self.timelineToolbarV.addAction(self.actionNextMarker)
+        self.timelineToolbarV.addSeparator()
+        self.timelineToolbarV.setOrientation(Qt.Vertical)
+
+        self.frameWeb1.addWidget(self.timelineToolbarV)
 
         # Get project's initial zoom value
         initial_scale = get_app().project.get("scale") or 15
