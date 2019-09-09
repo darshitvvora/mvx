@@ -1,4 +1,4 @@
-OpenShot Video Editor is an award-winning free and open-source video editor 
+ Edit X Pro is an award-winning free and open-source video editor 
 for Linux, Mac, and Windows, and is dedicated to delivering high quality 
 video editing and animation solutions to the world.
 
@@ -113,16 +113,16 @@ of openshot-qt)
 ## Copyright
 
 Copyright (c) 2008-2019 OpenShot Studios, LLC. This file is part of
-OpenShot Video Editor (https://www.openshot.org), an open-source project
+ Edit X Pro (https://www.openshot.org), an open-source project
 dedicated to delivering high quality video editing and animation solutions
 to the world.
 
-OpenShot Video Editor is free software: you can redistribute it and/or modify
+ Edit X Pro is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 
-OpenShot Video Editor is distributed in the hope that it will be useful,
+ Edit X Pro is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.

@@ -4,14 +4,14 @@
   <launchable type="desktop-id">org.openshot.OpenShot.desktop</launchable>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-or-later</project_license>
-  <name>OpenShot Video Editor</name>
+  <name>Edit X Pro</name>
   <developer_name>OpenShot Studios, LLC</developer_name>
   <summary>
     An easy to use, quick to learn, and surprisingly powerful video editor
   </summary>
   <description>
     <p>
-      OpenShot Video Editor is a free, open-source, non-linear video editor. It
+       Edit X Pro is a free, open-source, non-linear video editor. It
       can create and edit videos and movies using many popular video, audio,
       image formats. Create videos for YouTube, Flickr, Vimeo, Metacafe, iPod,
       Xbox, and more!

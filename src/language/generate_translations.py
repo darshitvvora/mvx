@@ -312,7 +312,7 @@ log.info("-----------------------------------------------------")
 
 # header of POT file
 header_text = ""
-header_text = header_text + '# OpenShot Video Editor POT Template File.\n'
+header_text = header_text + '# Edit X Pro POT Template File.\n'
 header_text = header_text + '# Copyright (C) 2008-2018 OpenShot Studios, LLC\n'
 header_text = header_text + '# This file is distributed under the same license as OpenShot.\n'
 header_text = header_text + '# Jonathan Thomas <Jonathan.Oomph@gmail.com>, 2018.\n'
@@ -320,7 +320,7 @@ header_text = header_text + '#\n'
 header_text = header_text + '#, fuzzy\n'
 header_text = header_text + 'msgid ""\n'
 header_text = header_text + 'msgstr ""\n'
-header_text = header_text + '"Project-Id-Version: OpenShot Video Editor (version: %s)\\n"\n' % info.VERSION
+header_text = header_text + '"Project-Id-Version: Edit X Pro (version: %s)\\n"\n' % info.VERSION
 header_text = header_text + '"Report-Msgid-Bugs-To: Jonathan Thomas <Jonathan.Oomph@gmail.com>\\n"\n'
 header_text = header_text + '"POT-Creation-Date: %s\\n"\n' % datetime.datetime.now()
 header_text = header_text + '"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\\n"\n'

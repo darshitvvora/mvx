@@ -1,4 +1,4 @@
-## How to contribute to OpenShot Video Editor
+## How to contribute to Edit X Pro
 
 #### **Did you find a bug?**
 
@@ -31,7 +31,7 @@
 
 * Before submitting, please ensure your PR passes all build / compilation / and unit tests.
 
-OpenShot Video Editor is a volunteer effort, and a labor of love. Please be patient with any issues you find, and feel free to get involved and help us fix them! 
+Edit X Pro is a volunteer effort, and a labor of love. Please be patient with any issues you find, and feel free to get involved and help us fix them! 
 
 
 Thanks!

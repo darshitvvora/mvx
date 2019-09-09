@@ -1,7 +1,7 @@
 [Desktop Entry]
-Name=OpenShot Video Editor
+Name=Edit X Pro
 GenericName=Video Editor
-X-GNOME-FullName=OpenShot Video Editor
+X-GNOME-FullName=Edit X Pro
 Comment=Create and edit amazing videos and movies
 Exec=openshot-qt %F
 Terminal=false

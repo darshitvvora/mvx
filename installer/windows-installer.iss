@@ -9,7 +9,7 @@
 #endif
 
 
-#define MyAppName "OpenShot Video Editor"
+#define MyAppName " Edit X Pro"
 #define MyAppShortName "OpenShot"
 #define MyAppProjectFileDesc "OpenShot Project File"
 #define MyAppPublisher "OpenShot Studios, LLC"
@@ -118,7 +118,7 @@ Name: "firewall"; Description: "Add an exception to the Windows Firewall"; Group
 ; Remove previous installed versions of OpenShot
 Type: filesandordirs; Name: "{app}\*"
 Type: dirifempty; Name: "{app}\*"
-Type: files; Name: "{group}\OpenShot Video Editor"; BeforeInstall: DeleteInvalidFiles
+Type: files; Name: "{group}\Edit X Pro"; BeforeInstall: DeleteInvalidFiles
 
 [Registry]
 ; Remove previously installed registry keys (no longer needed)

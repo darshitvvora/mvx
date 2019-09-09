@@ -1,15 +1,15 @@
-.. Copyright (c) 2008-2018 OpenShot Studios, LLC
+.. Copyright (c) 2008-2018  Edit X Pro Studios, LLC
  (http://www.openshotstudios.com). This file is part of
- OpenShot Video Editor (http://www.openshot.org), an open-source project
+ Edit X Pro (http://www.openshot.org), an open-source project
  dedicated to delivering high quality video editing and animation solutions
  to the world.
 
-.. OpenShot Video Editor is free software: you can redistribute it and/or modify
+..  Edit X Pro is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
  the Free Software Foundation, either version 3 of the License, or
  (at your option) any later version.
 
-.. OpenShot Video Editor is distributed in the hope that it will be useful,
+..  Edit X Pro is distributed in the hope that it will be useful,
  but WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  GNU General Public License for more details.
@@ -71,7 +71,7 @@ Did you write a patch that fixes a bug?
 -  Before submitting, please ensure your PR passes all build /
    compilation / and unit tests.
 
-OpenShot Video Editor is a volunteer effort, and a labor of love. Please
+ Edit X Pro is a volunteer effort, and a labor of love. Please
 be patient with any issues you find, and feel free to get involved and
 help us fix them!
 

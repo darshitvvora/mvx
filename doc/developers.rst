@@ -1,10 +1,10 @@
 .. Copyright (c) 2008-2016 OpenShot Studios, LLC
  (http://www.openshotstudios.com). This file is part of
- OpenShot Video Editor (http://www.openshot.org), an open-source project
+  Edit X Pro (http://www.openshot.org), an open-source project
  dedicated to delivering high quality video editing and animation solutions
  to the world.
 
-.. OpenShot Video Editor is free software: you can redistribute it and/or modify
+..  Edit X Pro is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
  the Free Software Foundation, either version 3 of the License, or
  (at your option) any later version.
@@ -26,7 +26,7 @@ the following sections will explain how to get started and get involved!
 
 The Big Picture
 ---------------
-OpenShot Video Editor has 3 main components, a Python & PyQt user interface
+ Edit X Pro has 3 main components, a Python & PyQt user interface
 (`openshot-qt <https://github.com/OpenShot/openshot-qt>`_), a C++ audio library
 (`libopenshot-audio <https://github.com/OpenShot/libopenshot-audio>`_) and a C++ video library
 (`libopenshot <https://github.com/OpenShot/libopenshot>`_). If you are not familiar with Python,
@@ -150,7 +150,7 @@ OpenShot... you should now see your changes!
 
 GitHub Issues
 -------------
-Now that you have successfully compiled and launched OpenShot Video Editor, be sure to check out our list
+Now that you have successfully compiled and launched  Edit X Pro, be sure to check out our list
 of bug reports on GitHub: https://github.com/OpenShot/openshot-qt/issues. Also, feel free to send me an
 email: jonathan@openshot.org and introduce yourself! I'm always here to help if you have any questions.
 

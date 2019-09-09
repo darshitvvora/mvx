@@ -4,12 +4,12 @@
  dedicated to delivering high quality video editing and animation solutions
  to the world.
 
-.. OpenShot Video Editor is free software: you can redistribute it and/or modify
+..  Edit X Pro is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
  the Free Software Foundation, either version 3 of the License, or
  (at your option) any later version.
 
-.. OpenShot Video Editor is distributed in the hope that it will be useful,
+..  Edit X Pro is distributed in the hope that it will be useful,
  but WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  GNU General Public License for more details.
@@ -20,7 +20,7 @@
 Main Window
 ===========
 
-OpenShot Video Editor has one main window which contains most of the information, buttons,
+ Edit X Pro has one main window which contains most of the information, buttons,
 and menus needed to edit your video project.
 
 Overview

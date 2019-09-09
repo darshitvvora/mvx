@@ -332,7 +332,7 @@ try:
 
         # Create .desktop file
         with open(os.path.join(app_dir_path, "org.openshot.OpenShot.desktop"), "w") as f:
-            f.write('[Desktop Entry]\nName=OpenShot Video Editor\nGenericName=Video Editor\nX-GNOME-FullName=OpenShot Video Editor\nComment=Create and edit amazing videos and movies\nExec=openshot-qt.wrapper %F\nTerminal=false\nIcon=openshot-qt\nType=Application')
+            f.write('[Desktop Entry]\nName=Edit X Pro\nGenericName=Video Editor\nX-GNOME-FullName=OpenShot Video Editor\nComment=Create and edit amazing videos and movies\nExec=openshot-qt.wrapper %F\nTerminal=false\nIcon=openshot-qt\nType=Application')
 
         # Copy some installation-related files
         shutil.copyfile(os.path.join(PATH, "xdg", "openshot-qt.svg"), os.path.join(app_dir_path, "openshot-qt.svg"))
@@ -504,7 +504,7 @@ try:
 
         # Sign the installer
         key_sign_success = True
-        key_sign_command = '"kSignCMD.exe" /f "%s%s" /p "%s" /d "OpenShot Video Editor" /du "http://www.openshot.org" "%s"' % (windows_key, only_64_bit, windows_key_password, app_build_path)
+        key_sign_command = '"kSignCMD.exe" /f "%s%s" /p "%s" /d "Edit X Pro" /du "http://www.openshot.org" "%s"' % (windows_key, only_64_bit, windows_key_password, app_build_path)
         key_sign_output = ""
         # Sign MSI
         for line in run_command(key_sign_command):
@@ -531,7 +531,7 @@ try:
 
         # Create torrent and upload
         torrent_path = "%s.torrent" % app_build_path
-        torrent_command = 'mktorrent -a "udp://tracker.openbittorrent.com:80/announce, udp://tracker.publicbt.com:80/announce, udp://tracker.opentrackr.org:1337" -c "OpenShot Video Editor %s" -w "%s" -o "%s" "%s"' % (version, download_url, "%s.torrent" % app_name, app_name)
+        torrent_command = 'mktorrent -a "udp://tracker.openbittorrent.com:80/announce, udp://tracker.publicbt.com:80/announce, udp://tracker.opentrackr.org:1337" -c "Edit X Pro %s" -w "%s" -o "%s" "%s"' % (version, download_url, "%s.torrent" % app_name, app_name)
         torrent_output = ""
 
         # Remove existing torrents (if any found)

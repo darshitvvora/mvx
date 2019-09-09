@@ -6,7 +6,7 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenShot Video Editor (version: 2.4.4-dev1)\n"
+"Project-Id-Version: Edit X Pro (version: 2.4.4-dev1)\n"
 "Report-Msgid-Bugs-To: Jonathan Thomas <Jonathan.Oomph@gmail.com>\n"
 "POT-Creation-Date: 2019-05-16 14:44:43.801060\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -476,7 +476,7 @@ msgstr ""
 
 #: /home/jonathan/apps/openshot-qt-git/src/windows/about.py:86
 msgid ""
-"OpenShot Video Editor 2.x is the next generation of the award-winning <br/"
+"Edit X Pro 2.x is the next generation of the award-winning <br/"
 ">OpenShot video editing platform."
 msgstr ""
 
@@ -543,7 +543,7 @@ msgstr ""
 
 #: /home/jonathan/apps/openshot-qt-git/src/windows/views/tutorial.py:314
 msgid ""
-"<b>Welcome!</b> OpenShot Video Editor is an award-winning, open-source video "
+"<b>Welcome!</b> Edit X Pro is an award-winning, open-source video "
 "editing application! This tutorial will walk you through the basics."
 "<br><br>Would you like to automatically send errors and metrics to help "
 "improve OpenShot?"
@@ -3979,7 +3979,7 @@ msgid "Output"
 msgstr ""
 
 #: /home/jonathan/apps/openshot-qt-git/src/windows/ui/main-window.ui:23
-msgid "OpenShot Video Editor"
+msgid "Edit X Pro"
 msgstr ""
 
 #: /home/jonathan/apps/openshot-qt-git/src/windows/ui/main-window.ui:95
