@@ -116,7 +116,7 @@ bpy.data.actions[0].fcurves[2].keyframe_points[0].co.y = params["blur_amount_y"]
 bpy.data.actions[0].fcurves[2].keyframe_points[3].co.y = params["blur_amount_y"]
 
 # Set the render options.  It is important that these are set
-# to the same values as the current OpenShot project.  These
+# to the same values as the current EditXPro Project .  These
 # params are automatically set by OpenShot
 bpy.context.scene.render.filepath = params["output_path"]
 bpy.context.scene.render.fps = params["fps"]

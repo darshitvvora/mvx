@@ -176,7 +176,7 @@ msgstr ""
 #: /home/jonathan/apps/openshot-qt-git/src/windows/main_window.py:579
 #: /home/jonathan/apps/openshot-qt-git/src/windows/main_window.py:592
 #: /home/jonathan/apps/openshot-qt-git/src/windows/main_window.py:642
-msgid "OpenShot Project (*.osp)"
+msgid "EditXPro Project  (*.mvxp)"
 msgstr ""
 
 #: /home/jonathan/apps/openshot-qt-git/src/windows/main_window.py:591
@@ -184,7 +184,7 @@ msgstr ""
 #: /home/jonathan/apps/openshot-qt-git/src/windows/main_window.py:733
 #: /home/jonathan/apps/openshot-qt-git/src/windows/main_window.py:2068
 #: /home/jonathan/apps/openshot-qt-git/src/windows/export.py:158
-msgid "Untitled Project"
+msgid "New Project "
 msgstr ""
 
 #: /home/jonathan/apps/openshot-qt-git/src/windows/main_window.py:592

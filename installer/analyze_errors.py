@@ -17,7 +17,7 @@ c_mangled_regex = re.compile(r"ZN(\w*)\s")
 openshot_version_regex = re.compile(r"\((.*)\)")
 
 # Message folder with exported archived error messages
-messages_folder = "/home/jonathan/Downloads/OpenShot Project Slack export Jul 9 2018 - Aug 8 2018/python-exceptions"
+messages_folder = "/home/jonathan/Downloads/EditXPro Project  Slack export Jul 9 2018 - Aug 8 2018/python-exceptions"
 cache_path = local_path = os.path.join(messages_folder, "cache")
 version_starts_with = "2.4.2"
 scan_cache = False

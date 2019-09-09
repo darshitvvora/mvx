@@ -439,7 +439,7 @@ class ProjectDataStore(JsonDataStore, UpdateInterface):
         get_app().updates.load(self._data)
 
     def read_legacy_project_file(self, file_path):
-        """Attempt to read a legacy version 1.x openshot project file"""
+        """Attempt to read a legacy version 1.x EditXPro Project  file"""
         import sys, pickle
         from classes.query import File, Track, Clip, Transition
         from classes.app import get_app
@@ -487,7 +487,7 @@ class ProjectDataStore(JsonDataStore, UpdateInterface):
 
         with open(file_path.encode('UTF-8'), 'rb') as f:
             try:
-                # Unpickle legacy openshot project file
+                # Unpickle legacy EditXPro Project  file
                 v1_data = pickle.load(f, fix_imports=True, encoding="UTF-8")
                 file_lookup = {}
 
@@ -867,7 +867,7 @@ class ProjectDataStore(JsonDataStore, UpdateInterface):
 
     def add_to_recent_files(self, file_path):
         """ Add this project to the recent files list """
-        if not file_path or "backup.osp" in file_path:
+        if not file_path or "backup.mvxp" in file_path:
             # Ignore backup recovery project
             return
 

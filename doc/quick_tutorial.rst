@@ -64,7 +64,7 @@ buttons.
 Step 5 – Export your Video
 ---------------------------
 Once you are happy with your photo slide-show video, the next step is to export your video.
-This will convert your OpenShot project into a single video file, which will work on most
+This will convert your EditXPro Project  into a single video file, which will work on most
 media players (such as VLC) or websites (such as YouTube, Vimeo, etc...).
 
 Click on the Export Video icon at the top of the screen (or use the **File > Export Video** menu).

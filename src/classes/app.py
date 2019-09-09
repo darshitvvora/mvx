@@ -147,7 +147,7 @@ class OpenShotApp(QApplication):
         try:
             # Create test paths
             TEST_PATH_DIR = os.path.join(info.USER_PATH, 'PERMISSION')
-            TEST_PATH_FILE = os.path.join(TEST_PATH_DIR, 'test.osp')
+            TEST_PATH_FILE = os.path.join(TEST_PATH_DIR, 'test.mvxp')
             os.makedirs(TEST_PATH_DIR, exist_ok=True)
             with open(TEST_PATH_FILE, 'w') as f:
                 f.write('{}')
@@ -156,7 +156,7 @@ class OpenShotApp(QApplication):
             os.unlink(TEST_PATH_FILE)
             os.rmdir(TEST_PATH_DIR)
         except PermissionError as ex:
-            log.error('Failed to create PERMISSION/test.osp file (likely permissions error): %s' % TEST_PATH_FILE)
+            log.error('Failed to create PERMISSION/test.mvxp file (likely permissions error): %s' % TEST_PATH_FILE)
             QMessageBox.warning(None, _("Permission Error"),
                                       _("%(error)s. Please delete <b>%(path)s</b> and launch Edit X Pro again." % {"error": str(ex), "path": info.USER_PATH}))
             # Stop launching and exit
@@ -217,7 +217,7 @@ class OpenShotApp(QApplication):
         log.info('Process command-line arguments: %s' % args)
         if len(args[0]) == 2:
             path = args[0][1]
-            if ".osp" in path:
+            if ".mvxp" in path:
                 # Auto load project passed as argument
                 self.window.OpenProjectSignal.emit(path)
             else:

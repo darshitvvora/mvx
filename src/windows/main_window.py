@@ -167,8 +167,8 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
     def recover_backup(self):
         """Recover the backup file (if any)"""
         log.info("recover_backup")
-        # Check for backup.osp file
-        recovery_path = os.path.join(info.BACKUP_PATH, "backup.osp")
+        # Check for backup.mvxp file
+        recovery_path = os.path.join(info.BACKUP_PATH, "backup.mvxp")
 
         # Load recovery project
         if os.path.exists(recovery_path):
@@ -570,7 +570,7 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
                 os.mkdir(info.ASSETS_PATH)
 
             # Clear any backups
-            backup_path = os.path.join(info.BACKUP_PATH, "backup.osp")
+            backup_path = os.path.join(info.BACKUP_PATH, "backup.mvxp")
             if os.path.exists(backup_path):
                 log.info("Clear backup: %s" % backup_path)
                 # Remove backup file
@@ -609,13 +609,13 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
         # Get current filepath if any, otherwise ask user
         file_path = app.project.current_filepath
         if not file_path:
-            recommended_path = os.path.join(info.HOME_PATH, "%s.osp" % _("Untitled Project"))
+            recommended_path = os.path.join(info.HOME_PATH, "%s.mvxp" % _("New Project "))
             file_path, file_type = QFileDialog.getSaveFileName(self, _("Save Project..."), recommended_path, _("Edit X Pro Project (*.mvxp)"))
 
         if file_path:
-            # Append .osp if needed
-            if ".osp" not in file_path:
-                file_path = "%s.osp" % file_path
+            # Append .mvxp if needed
+            if ".mvxp" not in file_path:
+                file_path = "%s.mvxp" % file_path
 
             # Save project
             self.save_project(file_path)
@@ -629,23 +629,23 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
 
             if file_path:
                 # A Real project file exists
-                # Append .osp if needed
-                if ".osp" not in file_path:
-                    file_path = "%s.osp" % file_path
+                # Append .mvxp if needed
+                if ".mvxp" not in file_path:
+                    file_path = "%s.mvxp" % file_path
 
                 # Save project
                 log.info("Auto save project file: %s" % file_path)
                 self.save_project(file_path)
 
-                # Remove backup.osp (if any)
-                recovery_path = os.path.join(info.BACKUP_PATH, "backup.osp")
+                # Remove backup.mvxp (if any)
+                recovery_path = os.path.join(info.BACKUP_PATH, "backup.mvxp")
                 if os.path.exists(recovery_path):
-                    # Delete backup.osp since we just saved the actual project
+                    # Delete backup.mvxp since we just saved the actual project
                     os.unlink(recovery_path)
 
             else:
                 # No saved project found
-                recovery_path = os.path.join(info.BACKUP_PATH, "backup.osp")
+                recovery_path = os.path.join(info.BACKUP_PATH, "backup.mvxp")
                 log.info("Creating backup of project file: %s" % recovery_path)
                 get_app().project.save(recovery_path, move_temp_files=False, make_paths_relative=False)
 
@@ -659,12 +659,12 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
 
         recommended_path = app.project.current_filepath
         if not recommended_path:
-            recommended_path = os.path.join(info.HOME_PATH, "%s.osp" % _("Untitled Project"))
+            recommended_path = os.path.join(info.HOME_PATH, "%s.mvxp" % _("New Project "))
         file_path, file_type = QFileDialog.getSaveFileName(self, _("Save Project As..."), recommended_path, _("Edit X Pro Project (*.mvxp)"))
         if file_path:
-            # Append .osp if needed
-            if ".osp" not in file_path:
-                file_path = "%s.osp" % file_path
+            # Append .mvxp if needed
+            if ".mvxp" not in file_path:
+                file_path = "%s.mvxp" % file_path
 
             # Save new project
             self.save_project(file_path)
@@ -2027,7 +2027,7 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
         # Is this a saved project?
         if not get_app().project.current_filepath:
             # Not saved yet
-            self.setWindowTitle("%s %s [%s] - %s" % (save_indicator, _("Untitled Project"), profile, "Edit X Pro"))
+            self.setWindowTitle("%s %s [%s] - %s" % (save_indicator, _("New Project "), profile, "Edit X Pro"))
         else:
             # Yes, project is saved
             # Get just the filename

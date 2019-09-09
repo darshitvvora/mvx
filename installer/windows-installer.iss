@@ -11,7 +11,7 @@
 
 #define MyAppName " Edit X Pro"
 #define MyAppShortName "OpenShot"
-#define MyAppProjectFileDesc "OpenShot Project File"
+#define MyAppProjectFileDesc "EditXPro Project  File"
 #define MyAppPublisher "OpenShot Studios, LLC"
 #define MyPublisherURL "https://www.openshot.org/"
 #define MySupportURL "https://www.reddit.com/r/OpenShot/"
@@ -111,7 +111,7 @@ Name: "slovak"; MessagesFile: "compiler:Languages\Slovak.isl"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
-Name: "fileassoc"; Description: "{cm:AssocFileExtension,{#MyAppName},.osp}"; GroupDescription: "{cm:AdditionalIcons}";
+Name: "fileassoc"; Description: "{cm:AssocFileExtension,{#MyAppName},.mvxp}"; GroupDescription: "{cm:AdditionalIcons}";
 Name: "firewall"; Description: "Add an exception to the Windows Firewall"; GroupDescription: "{cm:AdditionalIcons}";
 
 [InstallDelete]
@@ -125,11 +125,11 @@ Type: files; Name: "{group}\Edit X Pro"; BeforeInstall: DeleteInvalidFiles
 Root: HKLM; Subkey: "System\CurrentControlSet\Control\Session Manager\Environment"; ValueName:"QT_PLUGIN_PATH"; ValueType: none; Flags: deletevalue;
 Root: HKLM; Subkey: "System\CurrentControlSet\Control\Session Manager\Environment"; ValueName:"MAGICK_CONFIGURE_PATH"; ValueType: none; Flags: deletevalue;
 
-; Associate .osp files with the installed application. Uninstaller will clean them up, when run.
+; Associate .mvxp files with the installed application. Uninstaller will clean them up, when run.
 
-; Filename extension .osp
-Root: HKLM; Subkey: "Software\Classes\.osp"; ValueType: string; ValueName: ""; ValueData: "OpenShotProject"; Flags: uninsdeletevalue; Tasks: fileassoc
-; .osp file description, "OpenShot Project File" (OpenShotProject, internally)
+; Filename extension .mvxp
+Root: HKLM; Subkey: "Software\Classes\.mvxp"; ValueType: string; ValueName: ""; ValueData: "OpenShotProject"; Flags: uninsdeletevalue; Tasks: fileassoc
+; .mvxp file description, "EditXPro Project  File" (OpenShotProject, internally)
 Root: HKLM; Subkey: "Software\Classes\OpenShotProject"; ValueType: string; ValueName: ""; ValueData: "{#MyAppProjectFileDesc}"; Flags: uninsdeletekey; Tasks: fileassoc
 ; Launcher association for data files of type OpenShotProject
 Root: HKLM; Subkey: "Software\Classes\OpenShotProject\shell\open\command"; ValueType: string;  ValueName: ""; ValueData: """{app}\{#MyAppExeName}"" ""%1"""; Tasks: fileassoc

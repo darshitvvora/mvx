@@ -277,7 +277,7 @@ print(material_object)
 material_object.node_tree.nodes[1].inputs[17].default_value = params["diffuse_color"]
 
 # Set the render options.  It is important that these are set
-# to the same values as the current OpenShot project.  These
+# to the same values as the current EditXPro Project .  These
 # params are automatically set by OpenShot
 bpy.context.scene.render.filepath = params["output_path"]
 bpy.context.scene.render.fps = params["fps"]

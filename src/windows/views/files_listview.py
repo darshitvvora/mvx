@@ -265,7 +265,7 @@ class FilesListView(QListView):
             filepath = uri.toLocalFile()
             if os.path.exists(filepath) and os.path.isfile(filepath):
                 log.info('Adding file: {}'.format(filepath))
-                if ".osp" in filepath:
+                if ".mvxp" in filepath:
                     # Auto load project passed as argument
                     self.win.OpenProjectSignal.emit(filepath)
                     event.accept()

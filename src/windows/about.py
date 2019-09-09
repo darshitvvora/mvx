@@ -1,6 +1,6 @@
 """
  @file
- @brief This file loads the About dialog (i.e about Openshot Project)
+ @brief This file loads the About dialog (i.e about EditXPro Project )
  @author Jonathan Thomas <jonathan@openshot.org>
  @author Olivier Girard <olivier@openshot.org>
 

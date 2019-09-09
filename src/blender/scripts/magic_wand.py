@@ -114,7 +114,7 @@ particle_object.effector_weights.gravity = params["particles_gravity"]
 particle_object.object_align_factor = (params["velocity_x"], params["velocity_y"], params["velocity_z"])
 
 # Set the render options.  It is important that these are set
-# to the same values as the current OpenShot project.  These
+# to the same values as the current EditXPro Project .  These
 # params are automatically set by OpenShot
 bpy.context.scene.render.filepath = params["output_path"]
 bpy.context.scene.render.fps = params["fps"]

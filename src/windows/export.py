@@ -151,7 +151,7 @@ class Export(QDialog):
         # Is this a saved project?
         if not get_app().project.current_filepath:
             # Not saved yet
-            self.txtFileName.setText(_("Untitled Project"))
+            self.txtFileName.setText(_("New Project "))
         else:
             # Yes, project is saved
             # Get just the filename
@@ -705,7 +705,7 @@ class Export(QDialog):
         export_type = self.cboExportTo.currentText()
 
         # Determine final exported file path (and replace blank paths with default ones)
-        default_filename = "Untitled Project"
+        default_filename = "New Project "
         default_folder = os.path.join(info.HOME_PATH)
         if export_type != _("Image Sequence"):
             file_name_with_ext = "%s.%s" % (self.txtFileName.text().strip() or default_filename, self.txtVideoFormat.text().strip())
