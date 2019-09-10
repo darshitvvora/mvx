@@ -719,8 +719,8 @@
   </action>
   <action name="actionAddTrack">
    <property name="icon">
-    <iconset theme="list-add" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/list-add.svg</normaloff>:/icons/Humanity/actions/16/list-add.svg</iconset>
+    <iconset theme="add-track" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/add-track.svg</normaloff>:/icons/Humanity/actions/16/add-track.svg</iconset>
    </property>
    <property name="text">
     <string>Add Track</string>
@@ -1044,7 +1044,7 @@
   <action name="actionTimelineZoomIn">
    <property name="icon">
     <iconset theme="zoom-in" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/zoom-in.png</normaloff>:/icons/Humanity/actions/16/zoom-in.png</iconset>
+     <normaloff>:/icons/Humanity/actions/16/zoom-in.svg</normaloff>:/icons/Humanity/actions/16/zoom-in.svg</iconset>
    </property>
    <property name="text">
     <string>Zoom In</string>
@@ -1059,7 +1059,7 @@
   <action name="actionTimelineZoomOut">
    <property name="icon">
     <iconset theme="zoom-out" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/zoom-out.png</normaloff>:/icons/Humanity/actions/16/zoom-out.png</iconset>
+     <normaloff>:/icons/Humanity/actions/16/zoom-out.svg</normaloff>:/icons/Humanity/actions/16/zoom-out.svg</iconset>
    </property>
    <property name="text">
     <string>Zoom Out</string>
