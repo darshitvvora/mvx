@@ -246,6 +246,9 @@
       <number>9</number>
      </property>
      <item row="0" column="0">
+      <layout class="QVBoxLayout" name="tabFiles1"/>
+     </item>
+     <item row="0" column="1">
       <layout class="QVBoxLayout" name="tabFiles"/>
      </item>
     </layout>
@@ -306,6 +309,9 @@
       <number>9</number>
      </property>
      <item row="0" column="0">
+      <layout class="QVBoxLayout" name="tabTransitions1"/>
+     </item>
+     <item row="0" column="1">
       <layout class="QVBoxLayout" name="tabTransitions"/>
      </item>
     </layout>
@@ -1253,7 +1259,7 @@
   <action name="actionUn_Freeze_View">
    <property name="icon">
     <iconset theme="locked" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/locked.svg</normaloff>:/icons/Humanity/actions/16/locked.svg</iconset>
+     <normaloff>:/icons/Humanity/actions/16/unlock.png</normaloff>:/icons/Humanity/actions/16/unlock.png</iconset>
    </property>
    <property name="text">
     <string>Un-Freeze View</string>
@@ -1391,7 +1397,7 @@
   <action name="actionAddTrackAbove">
    <property name="icon">
     <iconset theme="list-add" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/list-add.svg</normaloff>:/icons/Humanity/actions/16/list-add.svg</iconset>
+     <normaloff>:/icons/Humanity/actions/16/add-track.svg</normaloff>:/icons/Humanity/actions/16/add-track.svg</iconset>
    </property>
    <property name="text">
     <string>Add Track Above</string>
@@ -1403,7 +1409,7 @@
   <action name="actionAddTrackBelow">
    <property name="icon">
     <iconset theme="list-add" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/list-add.svg</normaloff>:/icons/Humanity/actions/16/list-add.svg</iconset>
+     <normaloff>:/icons/Humanity/actions/16/add-track.svg</normaloff>:/icons/Humanity/actions/16/add-track.svg</iconset>
    </property>
    <property name="text">
     <string>Add Track Below</string>

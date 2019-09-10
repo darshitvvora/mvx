@@ -2191,12 +2191,19 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
         self.filesToolbar.addAction(self.actionFilesShowVideo)
         self.filesToolbar.addAction(self.actionFilesShowAudio)
         self.filesToolbar.addAction(self.actionFilesShowImage)
+
+
+        self.filesToolbar.setOrientation(Qt.Vertical)
+
+        self.tabFiles1.layout().addWidget(self.filesToolbar)
+
+
         self.filesFilter = QLineEdit()
         self.filesFilter.setObjectName("filesFilter")
         self.filesFilter.setPlaceholderText(_("Filter"))
         self.filesFilter.setClearButtonEnabled(True)
-        self.filesToolbar.addWidget(self.filesFilter)
-        self.tabFiles.layout().addWidget(self.filesToolbar)
+        self.tabFiles.layout().addWidget(self.filesFilter)
+        #self.tabFiles.layout().addWidget(self.filesToolbar)
 
         # Add transitions toolbar
         self.transitionsToolbar = QToolBar("Transitions Toolbar")
@@ -2207,12 +2214,16 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
         self.actionTransitionsShowAll.setChecked(True)
         self.transitionsToolbar.addAction(self.actionTransitionsShowAll)
         self.transitionsToolbar.addAction(self.actionTransitionsShowCommon)
+        self.transitionsToolbar.setOrientation(Qt.Vertical)
+        self.tabTransitions1.layout().addWidget(self.transitionsToolbar)
+
+
         self.transitionsFilter = QLineEdit()
         self.transitionsFilter.setObjectName("transitionsFilter")
         self.transitionsFilter.setPlaceholderText(_("Filter"))
         self.transitionsFilter.setClearButtonEnabled(True)
-        self.transitionsToolbar.addWidget(self.transitionsFilter)
-        self.tabTransitions.layout().addWidget(self.transitionsToolbar)
+        self.tabTransitions.layout().addWidget(self.transitionsFilter)
+        #self.tabTransitions.layout().addWidget(self.transitionsToolbar)
 
         # Add effects toolbar
         self.effectsToolbar = QToolBar("Effects Toolbar")
