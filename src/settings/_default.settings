@@ -17,16 +17,8 @@
     "translate_values": true,
     "values": [
       {
-        "value": "Humanity",
-        "name": "Humanity"
-      },
-      {
         "value": "Humanity: Dark",
-        "name": "Humanity: Dark"
-      },
-      {
-        "value": "No Theme",
-        "name": "No Theme"
+        "name": "Material: Dark"
       }
     ],
     "restart": true
@@ -345,7 +337,7 @@
     "restart": true
   },
   {
-    "value": true,
+    "value": false,
     "title": "Send Anonymous Metrics and Errors",
     "type": "bool",
     "category": "Debug",
