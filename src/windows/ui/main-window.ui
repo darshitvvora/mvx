@@ -23,8 +23,8 @@
    <string>Edit X Pro</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>../../images/openshot.png</normaloff>../../images/openshot.png</iconset>
+   <iconset resource="../../images/openshot.qrc">
+    <normaloff>:/openshot.svg</normaloff>:/openshot.svg</iconset>
   </property>
   <property name="documentMode">
    <bool>false</bool>
@@ -221,6 +221,9 @@
       <number>9</number>
      </property>
      <item row="0" column="0">
+       <layout class="QVBoxLayout" name="tabFiles1"/>
+     </item>
+     <item row="0" column="1">
       <layout class="QVBoxLayout" name="tabFiles"/>
      </item>
     </layout>
@@ -281,6 +284,9 @@
       <number>9</number>
      </property>
      <item row="0" column="0">
+      <layout class="QVBoxLayout" name="tabTransitions1"/>
+     </item>
+     <item row="0" column="1">
       <layout class="QVBoxLayout" name="tabTransitions"/>
      </item>
     </layout>
@@ -454,7 +460,7 @@
     <set>QDockWidget::DockWidgetFloatable|QDockWidget::DockWidgetMovable</set>
    </property>
    <property name="windowTitle">
-    <string>Timeline</string>
+    <string>Sequencer</string>
    </property>
    <attribute name="dockWidgetArea">
     <number>8</number>
@@ -467,19 +473,22 @@
      <enum>Qt::NoContextMenu</enum>
     </property>
     <layout class="QGridLayout" name="gridLayout_7">
-     <item row="0" column="0">
+     <item row="0" column="1">
       <layout class="QVBoxLayout" name="frameWeb"/>
+     </item>
+     <item row="0" column="0">
+      <layout class="QHBoxLayout" name="frameWeb1"/>
      </item>
     </layout>
    </widget>
   </widget>
   <action name="actionNew">
    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/NewProject.png</normaloff>../../images/Material/NewProject.png</iconset>
+    <iconset theme="document-new" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/document-new.svg</normaloff>:/icons/Humanity/actions/16/document-new.svg</iconset>
    </property>
    <property name="text">
-    <string>New Project...</string>
+    <string>New Project</string>
    </property>
    <property name="toolTip">
     <string>New Project</string>
@@ -489,9 +498,9 @@
    </property>
   </action>
   <action name="actionOpen">
-  <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/OpenProject.png</normaloff>../../images/Material/OpenProject.png</iconset>
+   <property name="icon">
+    <iconset theme="document-open" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/document-open.svg</normaloff>:/icons/Humanity/actions/16/document-open.svg</iconset>
    </property>
    <property name="text">
     <string>Open Project...</string>
@@ -505,8 +514,8 @@
   </action>
   <action name="actionSave">
    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/save.png</normaloff>../../images/Material/save.png</iconset>
+    <iconset theme="document-save" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/document-save.svg</normaloff>:/icons/Humanity/actions/16/document-save.svg</iconset>
    </property>
    <property name="text">
     <string>Save Project</string>
@@ -520,8 +529,8 @@
   </action>
   <action name="actionUndo">
    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/undo.png</normaloff>../../images/Material/undo.png</iconset>
+    <iconset theme="edit-undo" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/edit-undo.svg</normaloff>:/icons/Humanity/actions/16/edit-undo.svg</iconset>
    </property>
    <property name="text">
     <string>Undo</string>
@@ -535,8 +544,8 @@
   </action>
   <action name="actionSaveAs">
    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/saveAs.png</normaloff>../../images/Material/saveAs.png</iconset>
+    <iconset theme="document-save-as" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/document-save-as.svg</normaloff>:/icons/Humanity/actions/16/document-save-as.svg</iconset>
    </property>
    <property name="text">
     <string>Save Project As...</string>
@@ -550,8 +559,8 @@
   </action>
   <action name="actionImportFiles">
    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/import.png</normaloff>../../images/Material/import.png</iconset>
+    <iconset theme="list-add" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/list-add.svg</normaloff>:/icons/Humanity/actions/16/list-add.svg</iconset>
    </property>
    <property name="text">
     <string>Import Files...</string>
@@ -595,8 +604,8 @@
   </action>
   <action name="actionRedo">
    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/redo.png</normaloff>../../images/Material/redo.png</iconset>
+    <iconset theme="edit-redo" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/edit-redo.svg</normaloff>:/icons/Humanity/actions/16/edit-redo.svg</iconset>
    </property>
    <property name="text">
     <string>Redo</string>
@@ -609,9 +618,9 @@
    </property>
   </action>
   <action name="actionRemoveClip">
-    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/minus.png</normaloff>../../images/Material/minus.png</iconset>
+   <property name="icon">
+    <iconset theme="list-remove" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/list-remove.svg</normaloff>:/icons/Humanity/actions/16/list-remove.svg</iconset>
    </property>
    <property name="text">
     <string>Remove Clip</string>
@@ -621,9 +630,9 @@
    </property>
   </action>
   <action name="actionRemoveTransition">
-    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/minus.png</normaloff>../../images/Material/minus.png</iconset>
+   <property name="icon">
+    <iconset theme="list-remove" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/list-remove.svg</normaloff>:/icons/Humanity/actions/16/list-remove.svg</iconset>
    </property>
    <property name="text">
     <string>Remove Transition</string>
@@ -633,9 +642,9 @@
    </property>
   </action>
   <action name="actionExportVideo">
-    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/export.png</normaloff>../../images/Material/export.png</iconset>
+   <property name="icon">
+    <iconset theme="media-record" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/media-record.svg</normaloff>:/icons/Humanity/actions/16/media-record.svg</iconset>
    </property>
    <property name="text">
     <string>Export Video</string>
@@ -664,8 +673,8 @@
   </action>
   <action name="actionQuit">
    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/exit.png</normaloff>../../images/Material/exit.png</iconset>
+    <iconset theme="system-shutdown" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/system-shutdown.svg</normaloff>:/icons/Humanity/actions/16/system-shutdown.svg</iconset>
    </property>
    <property name="text">
     <string>&amp;Exit</string>
@@ -681,9 +690,9 @@
    </property>
   </action>
   <action name="actionAddTrack">
-    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/addLayer.png</normaloff>../../images/Material/addLayer.png</iconset>
+   <property name="icon">
+    <iconset theme="add-track" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/add-track.svg</normaloff>:/icons/Humanity/actions/16/add-track.svg</iconset>
    </property>
    <property name="text">
     <string>Add Track</string>
@@ -693,9 +702,9 @@
    </property>
   </action>
   <action name="actionPreferences">
-    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/settings.png</normaloff>../../images/Material/settings.png</iconset>
+   <property name="icon">
+    <iconset theme="document-properties" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/document-properties.svg</normaloff>:/icons/Humanity/actions/16/document-properties.svg</iconset>
    </property>
    <property name="text">
     <string>&amp;Settings</string>
@@ -724,8 +733,8 @@
   </action>
   <action name="actionJumpStart">
    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/SkipPrevious.png</normaloff>../../images/Material/SkipPrevious.png</iconset>
+    <iconset theme="media-skip-backward" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/media-skip-backward.svg</normaloff>:/icons/Humanity/actions/16/media-skip-backward.svg</iconset>
    </property>
    <property name="text">
     <string>Jump To Start</string>
@@ -736,8 +745,8 @@
   </action>
   <action name="actionRewind">
    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/rewind.png</normaloff>../../images/Material/rewind.png</iconset>
+    <iconset theme="media-seek-backward" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/media-seek-backward.svg</normaloff>:/icons/Humanity/actions/16/media-seek-backward.svg</iconset>
    </property>
    <property name="text">
     <string>Rewind</string>
@@ -748,8 +757,8 @@
   </action>
   <action name="actionFastForward">
    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/fastfwd.png</normaloff>../../images/Material/fastfwd.png</iconset>
+    <iconset theme="media-seek-forward" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/media-seek-forward.svg</normaloff>:/icons/Humanity/actions/16/media-seek-forward.svg</iconset>
    </property>
    <property name="text">
     <string>Fast Forward</string>
@@ -760,8 +769,8 @@
   </action>
   <action name="actionJumpEnd">
    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/SkipNext.png</normaloff>../../images/Material/SkipNext.png</iconset>
+    <iconset theme="media-skip-forward" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/media-skip-forward.svg</normaloff>:/icons/Humanity/actions/16/media-skip-forward.svg</iconset>
    </property>
    <property name="text">
     <string>Jump To End</string>
@@ -771,9 +780,9 @@
    </property>
   </action>
   <action name="actionSaveFrame">
-  <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/camera.png</normaloff>../../images/Material/camera.png</iconset>
+   <property name="icon">
+    <iconset theme="camera-photo-symbolic" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/custom/camera-photo-symbolic.svg</normaloff>:/icons/Humanity/actions/custom/camera-photo-symbolic.svg</iconset>
    </property>
    <property name="text">
     <string>Save Current Frame</string>
@@ -802,8 +811,8 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/razor.png</normaloff>../../images/Material/razor.png</iconset>
+    <iconset resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/edit-cut.svg</normaloff>:/icons/Humanity/actions/16/edit-cut.svg</iconset>
    </property>
    <property name="text">
     <string>Razor Tool</string>
@@ -819,9 +828,9 @@
    <property name="checked">
     <bool>true</bool>
    </property>
-    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/snap.png</normaloff>../../images/Material/snap.png</iconset>
+   <property name="icon">
+    <iconset resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/custom/snap.png</normaloff>:/icons/Humanity/actions/custom/snap.png</iconset>
    </property>
    <property name="text">
     <string>Snapping Enabled</string>
@@ -832,8 +841,8 @@
   </action>
   <action name="actionAddMarker">
    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/addMarker.png</normaloff>../../images/Material/addMarker.png</iconset>
+    <iconset resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/custom/add_marker.png</normaloff>:/icons/Humanity/actions/custom/add_marker.png</iconset>
    </property>
    <property name="text">
     <string>Add Marker</string>
@@ -846,9 +855,9 @@
    </property>
   </action>
   <action name="actionPreviousMarker">
-  <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/leftMarker.png</normaloff>../../images/Material/leftMarker.png</iconset>
+   <property name="icon">
+    <iconset theme="go-first" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/go-first.svg</normaloff>:/icons/Humanity/actions/16/go-first.svg</iconset>
    </property>
    <property name="text">
     <string>Previous Marker</string>
@@ -859,8 +868,8 @@
   </action>
   <action name="actionNextMarker">
    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/rightMarker.png</normaloff>../../images/Material/rightMarker.png</iconset>
+    <iconset theme="go-last" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/go-last.svg</normaloff>:/icons/Humanity/actions/16/go-last.svg</iconset>
    </property>
    <property name="text">
     <string>Next Marker</string>
@@ -914,9 +923,9 @@
    </property>
   </action>
   <action name="actionFilesClear">
-  <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/clear.png</normaloff>../../images/Material/clear.png</iconset>
+   <property name="icon">
+    <iconset theme="edit-clear" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/edit-clear.svg</normaloff>:/icons/Humanity/actions/16/edit-clear.svg</iconset>
    </property>
    <property name="text">
     <string>Clear</string>
@@ -1006,8 +1015,8 @@
   </action>
   <action name="actionTimelineZoomIn">
    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/zoomIn.png</normaloff>../../images/Material/zoomIn.png</iconset>
+    <iconset theme="zoom-in" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/zoom-in.svg</normaloff>:/icons/Humanity/actions/16/zoom-in.svg</iconset>
    </property>
    <property name="text">
     <string>Zoom In</string>
@@ -1021,8 +1030,8 @@
   </action>
   <action name="actionTimelineZoomOut">
    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/zoomOut.png</normaloff>../../images/Material/zoomOut.png</iconset>
+    <iconset theme="zoom-out" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/zoom-out.svg</normaloff>:/icons/Humanity/actions/16/zoom-out.svg</iconset>
    </property>
    <property name="text">
     <string>Zoom Out</string>
@@ -1035,15 +1044,15 @@
    </property>
   </action>
   <action name="actionTitle">
-    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/title.png</normaloff>../../images/Material/title.png</iconset>
+   <property name="icon">
+    <iconset theme="font" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/mimes/16/font-x-generic.svg</normaloff>:/icons/Humanity/mimes/16/font-x-generic.svg</iconset>
    </property>
    <property name="text">
-    <string>Static Title</string>
+    <string>Title</string>
    </property>
    <property name="toolTip">
-    <string>Static Title</string>
+    <string>Title</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+T</string>
@@ -1051,8 +1060,8 @@
   </action>
   <action name="actionAnimatedTitle">
    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/animated.png</normaloff>../../images/Material/animated.png</iconset>
+    <iconset resource="../../images/openshot.qrc">
+     <normaloff>:/about/blender.svg</normaloff>:/about/blender.svg</iconset>
    </property>
    <property name="text">
     <string>Animated Title</string>
@@ -1068,9 +1077,9 @@
    <property name="checkable">
     <bool>false</bool>
    </property>
-    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/fullscreen.png</normaloff>../../images/Material/fullscreen.png</iconset>
+   <property name="icon">
+    <iconset theme="view-fullscreen" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/view-fullscreen.svg</normaloff>:/icons/Humanity/actions/16/view-fullscreen.svg</iconset>
    </property>
    <property name="text">
     <string>Fullscreen</string>
@@ -1086,9 +1095,8 @@
    <property name="checkable">
     <bool>true</bool>
    </property>
-   <property name="icon">
-    <iconset theme="zoom-in" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/zoom-in.png</normaloff>:/icons/Humanity/actions/16/zoom-in.png</iconset>
+   <property name="checked">
+    <bool>true</bool>
    </property>
    <property name="text">
     <string>View Toolbar</string>
@@ -1098,9 +1106,9 @@
    </property>
   </action>
   <action name="actionAbout">
-    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/info.png</normaloff>../../images/Material/info.png</iconset>
+   <property name="icon">
+    <iconset theme="gtk-info" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/gtk-info.svg</normaloff>:/icons/Humanity/actions/16/gtk-info.svg</iconset>
    </property>
    <property name="text">
     <string>About Edit X Pro</string>
@@ -1223,7 +1231,7 @@
   <action name="actionUn_Freeze_View">
    <property name="icon">
     <iconset theme="locked" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/locked.svg</normaloff>:/icons/Humanity/actions/16/locked.svg</iconset>
+     <normaloff>:/icons/Humanity/actions/16/unlock.png</normaloff>:/icons/Humanity/actions/16/unlock.png</iconset>
    </property>
    <property name="text">
     <string>Un-Freeze View</string>
@@ -1235,7 +1243,7 @@
   <action name="actionShow_All">
    <property name="icon">
     <iconset theme="zoom-in" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/zoom-in.png</normaloff>:/icons/Humanity/actions/16/zoom-in.png</iconset>
+     <normaloff>:/icons/Humanity/actions/16/view-all.svg</normaloff>:/icons/Humanity/actions/16/view-all.svg</iconset>
    </property>
    <property name="text">
     <string>Show All</string>
@@ -1258,8 +1266,8 @@
   </action>
   <action name="actionProfile">
    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/profile.png</normaloff>../../images/Material/profile.png</iconset>
+    <iconset theme="video-x-generic" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/mimes/16/video-x-generic.svg</normaloff>:/icons/Humanity/mimes/16/video-x-generic.svg</iconset>
    </property>
    <property name="text">
     <string>Choose Profile</string>
@@ -1273,8 +1281,8 @@
   </action>
   <action name="actionAdd_to_Timeline">
    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/addTimeline.png</normaloff>../../images/Material/addTimeline.png</iconset>
+    <iconset theme="list-add" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/list-add.svg</normaloff>:/icons/Humanity/actions/16/list-add.svg</iconset>
    </property>
    <property name="text">
     <string>Add to Timeline</string>
@@ -1287,9 +1295,9 @@
    </property>
   </action>
   <action name="actionPreview_File">
-    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/preview.png</normaloff>../../images/Material/preview.png</iconset>
+   <property name="icon">
+    <iconset theme="media-playback-start" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/media-playback-start.svg</normaloff>:/icons/Humanity/actions/16/media-playback-start.svg</iconset>
    </property>
    <property name="text">
     <string>Preview File</string>
@@ -1299,9 +1307,9 @@
    </property>
   </action>
   <action name="actionRemove_from_Project">
-    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/minus.png</normaloff>../../images/Material/minus.png</iconset>
+   <property name="icon">
+    <iconset theme="list-remove" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/list-remove.svg</normaloff>:/icons/Humanity/actions/16/list-remove.svg</iconset>
    </property>
    <property name="text">
     <string>Remove from Project</string>
@@ -1312,8 +1320,8 @@
   </action>
   <action name="actionFile_Properties">
    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/fileProperties.png</normaloff>../../images/Material/fileProperties.png</iconset>
+    <iconset theme="video-x-generic" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/mimes/16/video-x-generic.svg</normaloff>:/icons/Humanity/mimes/16/video-x-generic.svg</iconset>
    </property>
    <property name="text">
     <string>File Properties</string>
@@ -1335,9 +1343,9 @@
    </property>
   </action>
   <action name="actionRemoveTrack">
-    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/minus.png</normaloff>../../images/Material/minus.png</iconset>
+   <property name="icon">
+    <iconset theme="list-remove" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/list-remove.svg</normaloff>:/icons/Humanity/actions/16/list-remove.svg</iconset>
    </property>
    <property name="text">
     <string>Remove Track</string>
@@ -1347,9 +1355,9 @@
    </property>
   </action>
   <action name="actionRemoveMarker">
-    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/minus.png</normaloff>../../images/Material/minus.png</iconset>
+   <property name="icon">
+    <iconset theme="list-remove" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/list-remove.svg</normaloff>:/icons/Humanity/actions/16/list-remove.svg</iconset>
    </property>
    <property name="text">
     <string>Remove Marker</string>
@@ -1359,9 +1367,9 @@
    </property>
   </action>
   <action name="actionAddTrackAbove">
-    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/addAbove.png</normaloff>../../images/Material/addAbove.png</iconset>
+   <property name="icon">
+    <iconset theme="list-add" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/add-track.svg</normaloff>:/icons/Humanity/actions/16/add-track.svg</iconset>
    </property>
    <property name="text">
     <string>Add Track Above</string>
@@ -1371,9 +1379,9 @@
    </property>
   </action>
   <action name="actionAddTrackBelow">
-    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/addBelow.png</normaloff>../../images/Material/addBelow.png</iconset>
+   <property name="icon">
+    <iconset theme="list-add" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/add-track.svg</normaloff>:/icons/Humanity/actions/16/add-track.svg</iconset>
    </property>
    <property name="text">
     <string>Add Track Below</string>
@@ -1383,9 +1391,9 @@
    </property>
   </action>
   <action name="actionRemoveEffect">
-    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/minus.png</normaloff>../../images/Material/minus.png</iconset>
+   <property name="icon">
+    <iconset theme="list-remove" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/list-remove.svg</normaloff>:/icons/Humanity/actions/16/list-remove.svg</iconset>
    </property>
    <property name="text">
     <string>Remove Effect</string>
@@ -1396,8 +1404,8 @@
   </action>
   <action name="actionSplitClip">
    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/splitClip.png</normaloff>../../images/Material/splitClip.png</iconset>
+    <iconset theme="edit-cut" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/edit-cut.svg</normaloff>:/icons/Humanity/actions/16/edit-cut.svg</iconset>
    </property>
    <property name="text">
     <string>Split Clip...</string>
@@ -1425,9 +1433,9 @@
    </property>
   </action>
   <action name="actionRenameTrack">
-  <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/editTrack.png</normaloff>../../images/Material/editTrack.png</iconset>
+   <property name="icon">
+    <iconset theme="gtk-edit" resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/16/gtk-edit.svg</normaloff>:/icons/Humanity/actions/16/gtk-edit.svg</iconset>
    </property>
    <property name="text">
     <string>Rename Track</string>
@@ -1480,8 +1488,8 @@
   </action>
   <action name="actionLockTrack">
    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/lock.png</normaloff>../../images/Material/lock.png</iconset>
+    <iconset resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/custom/lock.svg</normaloff>:/icons/Humanity/actions/custom/lock.svg</iconset>
    </property>
    <property name="text">
     <string>Lock Track</string>
@@ -1492,8 +1500,8 @@
   </action>
   <action name="actionUnlockTrack">
    <property name="icon">
-    <iconset>
-      <normaloff>../../images/Material/unlock.png</normaloff>../../images/Material/unlock.png</iconset>
+    <iconset resource="../../images/openshot.qrc">
+     <normaloff>:/icons/Humanity/actions/custom/unlock.png</normaloff>:/icons/Humanity/actions/custom/unlock.png</iconset>
    </property>
    <property name="text">
     <string>Unlock Track</string>

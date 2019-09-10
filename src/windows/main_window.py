@@ -95,7 +95,7 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
         self.save_settings()
 
         # Track end of session
-        # track_metric_session(False)
+        track_metric_session(False)
 
         # Stop threads
         self.StopSignal.emit()
@@ -561,7 +561,7 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
         # Get current filepath if any, otherwise ask user
         file_path = app.project.current_filepath
         if not file_path:
-            recommended_path = os.path.join(info.HOME_PATH, "%s.mvxp" % _("Untitled Project"))
+            recommended_path = os.path.join(info.HOME_PATH, "%s.mvxp" % _("New Project "))
             file_path, file_type = QFileDialog.getSaveFileName(self, _("Save Project..."), recommended_path, _("Edit X Pro Project (*.mvxp)"))
 
         if file_path:
@@ -605,7 +605,7 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
 
         recommended_path = app.project.current_filepath
         if not recommended_path:
-            recommended_path = os.path.join(info.HOME_PATH, "%s.mvxp" % _("Untitled Project"))
+            recommended_path = os.path.join(info.HOME_PATH, "%s.mvxp" % _("New Project "))
         file_path, file_type = QFileDialog.getSaveFileName(self, _("Save Project As..."), recommended_path, _("Edit X Pro Project (*.mvxp)"))
         if file_path: 
             # Append .osp if needed
@@ -2099,13 +2099,19 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
         self.filesToolbar.addAction(self.actionFilesShowVideo)
         self.filesToolbar.addAction(self.actionFilesShowAudio)
         self.filesToolbar.addAction(self.actionFilesShowImage)
+
+
+        self.filesToolbar.setOrientation(Qt.Vertical)
+
+        self.tabFiles1.layout().addWidget(self.filesToolbar)
+
+
         self.filesFilter = QLineEdit()
         self.filesFilter.setObjectName("filesFilter")
         self.filesFilter.setPlaceholderText(_("Filter"))
-        self.filesToolbar.addWidget(self.filesFilter)
-        self.actionFilesClear.setEnabled(False)
-        self.filesToolbar.addAction(self.actionFilesClear)
-        self.tabFiles.layout().addWidget(self.filesToolbar)
+        self.filesFilter.setClearButtonEnabled(True)
+        self.tabFiles.layout().addWidget(self.filesFilter)
+        #self.tabFiles.layout().addWidget(self.filesToolbar)
 
         # Add transitions toolbar
         self.transitionsToolbar = QToolBar("Transitions Toolbar")
@@ -2116,22 +2122,24 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
         self.actionTransitionsShowAll.setChecked(True)
         self.transitionsToolbar.addAction(self.actionTransitionsShowAll)
         self.transitionsToolbar.addAction(self.actionTransitionsShowCommon)
+        self.transitionsToolbar.setOrientation(Qt.Vertical)
+        self.tabTransitions1.layout().addWidget(self.transitionsToolbar)
+
+
         self.transitionsFilter = QLineEdit()
         self.transitionsFilter.setObjectName("transitionsFilter")
         self.transitionsFilter.setPlaceholderText(_("Filter"))
-        self.transitionsToolbar.addWidget(self.transitionsFilter)
-        self.actionTransitionsClear.setEnabled(False)
-        self.transitionsToolbar.addAction(self.actionTransitionsClear)
-        self.tabTransitions.layout().addWidget(self.transitionsToolbar)
+        self.transitionsFilter.setClearButtonEnabled(True)
+        self.tabTransitions.layout().addWidget(self.transitionsFilter)
+        #self.tabTransitions.layout().addWidget(self.transitionsToolbar)
 
         # Add effects toolbar
         self.effectsToolbar = QToolBar("Effects Toolbar")
         self.effectsFilter = QLineEdit()
         self.effectsFilter.setObjectName("effectsFilter")
         self.effectsFilter.setPlaceholderText(_("Filter"))
+        self.effectsFilter.setClearButtonEnabled(True)
         self.effectsToolbar.addWidget(self.effectsFilter)
-        self.actionEffectsClear.setEnabled(False)
-        self.effectsToolbar.addAction(self.actionEffectsClear)
         self.tabEffects.layout().addWidget(self.effectsToolbar)
 
         # Add Video Preview toolbar
@@ -2169,19 +2177,23 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
         self.tabVideo.layout().addWidget(self.videoToolbar)
 
         # Add Timeline toolbar
-        self.timelineToolbar = QToolBar("Timeline Toolbar", self)
+        self.timelineToolbar = QToolBar("Timeline ToolbarH", self)
+        self.timelineToolbarV = QToolBar("Timeline ToolbarV", self)
 
-        self.timelineToolbar.addAction(self.actionAddTrack)
-        self.timelineToolbar.addSeparator()
+        self.timelineToolbarV.addAction(self.actionAddTrack)
+        self.timelineToolbarV.addSeparator()
 
         # rest of options
-        self.timelineToolbar.addAction(self.actionSnappingTool)
-        self.timelineToolbar.addAction(self.actionRazorTool)
-        self.timelineToolbar.addSeparator()
-        self.timelineToolbar.addAction(self.actionAddMarker)
-        self.timelineToolbar.addAction(self.actionPreviousMarker)
-        self.timelineToolbar.addAction(self.actionNextMarker)
-        self.timelineToolbar.addSeparator()
+        self.timelineToolbarV.addAction(self.actionSnappingTool)
+        self.timelineToolbarV.addAction(self.actionRazorTool)
+        self.timelineToolbarV.addSeparator()
+        self.timelineToolbarV.addAction(self.actionAddMarker)
+        self.timelineToolbarV.addAction(self.actionPreviousMarker)
+        self.timelineToolbarV.addAction(self.actionNextMarker)
+        self.timelineToolbarV.addSeparator()
+        self.timelineToolbarV.setOrientation(Qt.Vertical)
+
+        self.frameWeb1.addWidget(self.timelineToolbarV)
 
         # Get project's initial zoom value
         initial_scale = get_app().project.get(["scale"]) or 15
