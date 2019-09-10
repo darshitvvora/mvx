@@ -1,6 +1,6 @@
 """
  @file openshot_qt/__init__.py
- @brief Initialization code used when running Magic VideoX Pro installed as a Python module
+ @brief Initialization code used when running EditX Pro installed as a Python module
 
  """
 

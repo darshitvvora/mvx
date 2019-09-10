@@ -2,9 +2,9 @@
 
 """ 
  @file
- @brief This file is used to launch Magic VideoX Pro
+ @brief This file is used to launch EditX Pro
 
- @mainpage Magic VideoX Pro
+ @mainpage EditX Pro
  
 
  """

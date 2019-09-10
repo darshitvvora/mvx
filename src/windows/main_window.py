@@ -1946,14 +1946,14 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
         # Is this a saved project?
         if not get_app().project.current_filepath:
             # Not saved yet
-            self.setWindowTitle("%s %s [%s] - %s" % (save_indicator, _("Untitled Project"), profile, "Magic VideoX Pro"))
+            self.setWindowTitle("%s %s [%s] - %s" % (save_indicator, _("Untitled Project"), profile, "EditX Pro"))
         else:
             # Yes, project is saved
             # Get just the filename
             parent_path, filename = os.path.split(get_app().project.current_filepath)
             filename, ext = os.path.splitext(filename)
             filename = filename.replace("_", " ").replace("-", " ").capitalize()
-            self.setWindowTitle("%s %s [%s] - %s" % (save_indicator, filename, profile, "Magic VideoX Pro"))
+            self.setWindowTitle("%s %s [%s] - %s" % (save_indicator, filename, profile, "EditX Pro"))
 
     # Update undo and redo buttons enabled/disabled to available changes
     def updateStatusChanged(self, undo_status, redo_status):

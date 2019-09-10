@@ -1,7 +1,7 @@
 [Desktop Entry]
-Name=Magic VideoX Pro
+Name=EditX Pro
 GenericName=Video Editor
-X-GNOME-FullName=Magic VideoX Pro
+X-GNOME-FullName=EditX Pro
 Comment=Your X-Factor for composing awesome video
 Exec=magicvideox-qt %F
 Terminal=false

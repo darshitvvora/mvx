@@ -1,6 +1,6 @@
 """ 
  @file
- @brief This file contains the current version number of Magic VideoX Pro, along with other global settings.
+ @brief This file contains the current version number of EditX Pro, along with other global settings.
 
  """
 

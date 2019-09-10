@@ -6,7 +6,7 @@ VERSION=$(grep -E '^VERSION = "(.*)"' src/classes/info.py | awk '{print $3}' | t
 echo "Found Version $VERSION"
 
 # Set path to app bundle
-OS_APP_NAME="Magic VideoX Pro.app"
+OS_APP_NAME="EditX Pro.app"
 OS_DMG_NAME="MagicVideoX-$VERSION.dmg"
 OS_PATH="build/$OS_APP_NAME/Contents"
 echo "Fixing App Bundle ($OS_PATH)"
@@ -52,7 +52,7 @@ if [ -d "$OS_PATH/MacOS/python3.6" ]; then
 fi
 
 echo "Code Sign App Bundle (deep)"
-codesign -s "Magic VideoX Pro" "build/$OS_APP_NAME" --deep --force
+codesign -s "EditX Pro" "build/$OS_APP_NAME" --deep --force
 
 echo "Verifying App Signing"
 spctl -a -vv "build/$OS_APP_NAME"
@@ -61,7 +61,7 @@ echo "Building Custom DMG"
 appdmg installer/dmg-template.json build/$OS_DMG_NAME
 
 echo "Code Sign DMG"
-codesign -s "Magic VideoX Pro" "build/$OS_DMG_NAME" --force
+codesign -s "EditX Pro" "build/$OS_DMG_NAME" --force
 
 echo "Verifying DMG Signing"
 spctl -a -vv "build/$OS_DMG_NAME"
