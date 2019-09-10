@@ -266,8 +266,9 @@ class Preferences(QDialog):
                         value_list = []
                         # Loop through audio devices
                         value_list.append({"name": "Default", "value": ""})
-                        for audio_device in get_app().window.preview_thread.player.GetAudioDeviceNames():
-                            value_list.append({"name":"%s: %s" % (audio_device.type, audio_device.name), "value":audio_device.name})
+                        if hasattr(get_app().window.preview_thread.player,'GetAudioDeviceNames'):
+                            for audio_device in get_app().window.preview_thread.player.GetAudioDeviceNames():
+                                value_list.append({"name":"%s: %s" % (audio_device.type, audio_device.name), "value":audio_device.name})
 
                     # Overwrite value list (for language dropdown)
                     if param["setting"] == "default-language":
@@ -528,8 +529,9 @@ class Preferences(QDialog):
             return True
 
         # Keep track of previous settings
-        current_decoder = openshot.Settings.Instance().HARDWARE_DECODER
-        current_decoder_card = openshot.Settings.Instance().HW_DE_DEVICE_SET
+        if hasattr(openshot.Settings.Instance(),'HARDWARE_DECODER'):
+            current_decoder = openshot.Settings.Instance().HARDWARE_DECODER
+            current_decoder_card = openshot.Settings.Instance().HW_DE_DEVICE_SET
 
         try:
             # Temp override hardware settings (to test them)
@@ -557,8 +559,9 @@ class Preferences(QDialog):
             log.warning("Exception trying to test hardware decoding in preferences (this is expected): %s-%s" % (decoder, decoder_card))
 
         # Resume current settings
-        openshot.Settings.Instance().HARDWARE_DECODER = current_decoder
-        openshot.Settings.Instance().HW_DE_DEVICE_SET = current_decoder_card
+        if hasattr(openshot.Settings.Instance(),'HARDWARE_DECODER'):
+            openshot.Settings.Instance().HARDWARE_DECODER = current_decoder
+            openshot.Settings.Instance().HW_DE_DEVICE_SET = current_decoder_card
 
         return is_supported
 
