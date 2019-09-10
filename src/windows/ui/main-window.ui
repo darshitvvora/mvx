@@ -20,7 +20,7 @@
    <enum>Qt::StrongFocus</enum>
   </property>
   <property name="windowTitle">
-   <string>Magic VideoX Pro</string>
+   <string>Edit X Pro</string>
   </property>
   <property name="windowIcon">
    <iconset>
@@ -1103,10 +1103,10 @@
       <normaloff>../../images/Material/info.png</normaloff>../../images/Material/info.png</iconset>
    </property>
    <property name="text">
-    <string>About Magic VideoX Pro</string>
+    <string>About Edit X Pro</string>
    </property>
    <property name="toolTip">
-    <string>About Magic VideoX Pro</string>
+    <string>About Edit X Pro</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+H</string>

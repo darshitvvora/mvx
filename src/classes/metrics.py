@@ -55,10 +55,10 @@ user_agent = "Mozilla/5.0 (%s) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.
 params = {
     "cid" : s.get("unique_install_id"),     # Unique install ID
     "v" : 1,                                # Google Measurement API version
-    "tid" : "UA-4381101-5",                 # Google Analytic Tracking ID
+    "tid" : "UA-147188224-1",                 # Google Analytic Tracking ID
     "an" : info.PRODUCT_NAME,               # App Name
     "aip" : 1,                              # Anonymize IP
-    "aid" : "org.openshot.%s" % info.NAME,  # App ID
+    "aid" : "org.editxpro.%s" % info.NAME,  # App ID
     "av" : info.VERSION,                    # App Version
     "ul" : language.get_current_locale().replace('_','-').lower(),   # Current Locale
     "ua" : user_agent,                      # Custom User Agent (for OS, Processor, and OS version)

@@ -154,7 +154,7 @@ def createExplodeTxt(title,particle_number,extrude,bevel_depth,spacemode,textsiz
 # this script, OpenShot will inject a dictionary of the required parameters
 # before this script is executed.
 params = {		
-			'title' : 'Oh Yeah! OpenShot!',
+			'title' : 'Oh Yeah! Edit X Pro!',
 			'particle_number' : 100,
 			'ground_on_off' : 1,
 			'extrude' : 0.1,

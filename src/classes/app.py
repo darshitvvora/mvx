@@ -42,7 +42,7 @@ class OpenShotApp(QApplication):
         # Log some basic system info
         try:
             v = openshot.GetVersion()
-            log.info("openshot-qt version: %s" % info.VERSION)
+            log.info("editxpro-qt version: %s" % info.VERSION)
             log.info("libopenshot version: %s" % v.ToString())
             log.info("platform: %s" % platform.platform())
             log.info("processor: %s" % platform.processor())
@@ -54,7 +54,7 @@ class OpenShotApp(QApplication):
             pass
 
         # Setup application
-        self.setApplicationName('Magic-VideoX-Pro')
+        self.setApplicationName('EditXPro')
         self.setApplicationVersion(info.SETUP['version'])
 
         # Init settings
@@ -117,14 +117,14 @@ class OpenShotApp(QApplication):
             self.setStyle(QStyleFactory.create("Fusion"))
 
             darkPalette = self.palette()
-            darkPalette.setColor(QPalette.Window, QColor(38, 50, 56))
-            darkPalette.setColor(QPalette.WindowText, QColor(236, 239, 241))
-            darkPalette.setColor(QPalette.Base, QColor(55, 71, 79))
-            darkPalette.setColor(QPalette.AlternateBase, QColor(69, 90, 100))
+            darkPalette.setColor(QPalette.Window, QColor(64, 64, 64))
+            darkPalette.setColor(QPalette.WindowText,  QColor(236, 239, 241))
+            darkPalette.setColor(QPalette.Base, QColor(44, 44, 44))
+            darkPalette.setColor(QPalette.AlternateBase,  QColor(64, 64, 64))
             darkPalette.setColor(QPalette.ToolTipBase, QColor(236, 239, 241))
             darkPalette.setColor(QPalette.ToolTipText, QColor(236, 239, 241))
-            darkPalette.setColor(QPalette.Text, QColor(236, 239, 241))
-            darkPalette.setColor(QPalette.Button, QColor(38, 50, 56))
+            darkPalette.setColor(QPalette.Text, QColor(212, 208, 200))
+            darkPalette.setColor(QPalette.Button, QColor(64, 64, 64))
             darkPalette.setColor(QPalette.ButtonText, QColor(236, 239, 241))
             darkPalette.setColor(QPalette.BrightText, Qt.red)
             darkPalette.setColor(QPalette.Highlight, QColor(42, 130, 218))

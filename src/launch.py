@@ -29,13 +29,13 @@ from classes.language import get_all_languages
 def main():
     """"Initialize settings (not implemented) and create main window/application."""
 
-    parser = ArgumentParser(description = 'Magic VideoX Pro version ' + info.SETUP['version'])
+    parser = ArgumentParser(description = 'Edit X Pro version ' + info.SETUP['version'])
     parser.add_argument('-l', '--lang', action='store',
                         help='language code for interface (overrides '
                         'preferences and system environment)')
     parser.add_argument('--list-languages', dest='list_languages',
                         action='store_true', help='List all language '
-                        'codes supported by Magic VideoX Pro')
+                        'codes supported by Edit X Pro')
     parser.add_argument('-V', '--version', action='store_true')
     parser.add_argument('remain', nargs=REMAINDER)
 
@@ -62,7 +62,7 @@ def main():
     reroute_output()
 
     log.info("------------------------------------------------")
-    log.info("   Magic VideoX Pro (version %s)" % info.SETUP['version'])
+    log.info("   Edit X Pro (version %s)" % info.SETUP['version'])
     log.info("------------------------------------------------")
 
     # Create Qt application, pass any unprocessed arguments

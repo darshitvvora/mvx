@@ -549,7 +549,7 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
                 return
 
         # Prompt for open project file
-        file_path, file_type = QFileDialog.getOpenFileName(self, _("Open Project..."), recommended_path, _("Magic VideoX Project (*.mvxp)"))
+        file_path, file_type = QFileDialog.getOpenFileName(self, _("Open Project..."), recommended_path, _("Edit X Pro Project (*.mvxp)"))
 
         # Load project file
         self.OpenProjectSignal.emit(file_path)
@@ -562,7 +562,7 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
         file_path = app.project.current_filepath
         if not file_path:
             recommended_path = os.path.join(info.HOME_PATH, "%s.mvxp" % _("Untitled Project"))
-            file_path, file_type = QFileDialog.getSaveFileName(self, _("Save Project..."), recommended_path, _("Magic VideoX Project (*.mvxp)"))
+            file_path, file_type = QFileDialog.getSaveFileName(self, _("Save Project..."), recommended_path, _("Edit X Pro Project (*.mvxp)"))
 
         if file_path:
             # Append .osp if needed
@@ -606,8 +606,8 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
         recommended_path = app.project.current_filepath
         if not recommended_path:
             recommended_path = os.path.join(info.HOME_PATH, "%s.mvxp" % _("Untitled Project"))
-        file_path, file_type = QFileDialog.getSaveFileName(self, _("Save Project As..."), recommended_path, _("Magic VideoX Project (*.mvxp)"))
-        if file_path:
+        file_path, file_type = QFileDialog.getSaveFileName(self, _("Save Project As..."), recommended_path, _("Edit X Pro Project (*.mvxp)"))
+        if file_path: 
             # Append .osp if needed
             if ".mvxp" not in file_path:
                 file_path = "%s.mvxp" % file_path

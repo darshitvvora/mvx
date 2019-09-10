@@ -31,7 +31,7 @@ def load_font(font_path):
 # this script, OpenShot will inject a dictionary of the required parameters
 # before this script is executed.
 params = {		
-			'title' : 'Oh Yeah! OpenShot!',
+			'title' : 'Oh Yeah! Edit X Pro!',
 			'Alongtimeago' : 'Some cycles ago, in The Grid\nfar, far inside....',
 			'Episode' : 'Episode I.V',
 			'EpisodeTitle' : 'A NEW OPENSHOT',

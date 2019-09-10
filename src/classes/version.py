@@ -1,21 +1,41 @@
 """
  @file
- @brief This file get the current version of and license validity
+ @brief This file get the current version of openshot from the openshot.org website
+ @author Jonathan Thomas <jonathan@openshot.org>
 
+ @section LICENSE
+
+ Copyright (c) 2008-2018 OpenShot Studios, LLC
+ (http://www.openshotstudios.com). This file is part of
+ OpenShot Video Editor (http://www.openshot.org), an open-source project
+ dedicated to delivering high quality video editing and animation solutions
+ to the world.
+
+ OpenShot Video Editor is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ OpenShot Video Editor is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with OpenShot Library.  If not, see <http://www.gnu.org/licenses/>.
  """
 
 import requests
+import sys
 import uuid
 import threading
+import datetime
+from datetime import date
 from classes.app import get_app
 from classes import info
 from classes.logger import log
 from classes import  settings
-try:
-    import json
-except ImportError:
-    import simplejson as json
-
+import json
 
 def get_current_Version():
     """Get the current version """
@@ -28,10 +48,9 @@ def get_current_Activation():
     t.start()
 
 def set_current_Activation():
-    """Get the current activation """
+    """Set the current activation """
     t = threading.Thread(target=register_new_user_from_http)
     t.start()
-
 
 def get_version_from_http():
     """Get the current version # from openshot.org"""
@@ -44,7 +63,7 @@ def get_version_from_http():
         log.info("Found current version: %s" % r.text)
 
         # Parse version
-        # openshot_version = r.json()["openshot_version"]
+        #openshot_version = r.json()["openshot_version"]
         openshot_version = "2.4.3"
 
         # Emit signal for the UI
@@ -54,42 +73,50 @@ def get_version_from_http():
         log.error("Failed to get version from: %s" % url)
 
 def get_activation_from_http():
-    """Get the current version # from openshot.org"""
+    """Get activation details from backendless"""
 
     url = "https://api.backendless.com/7585ECA1-8714-3061-FFAB-5ECD6D8E8000/4F4067A2-24E1-5EC2-FF3C-F1BA2AA1D900/users/login"
 
     # Send metric HTTP data
     try:
-
         s = settings.get_settings()
         email = s.get("activation_email")
         password = hex(uuid.getnode())
         payload = {"login": email, "password": password}
         log.info("email: %s" % email)
         log.info("password: %s" % password)
-
         r = requests.post(url, data=json.dumps(payload), headers={"Content-Type": "application/json"}, verify=False)
+
 
         # Parse version
         status_code = r.status_code
         account_activation = False
         if status_code == 200:
             account_activation = r.json()["account_activated"]
+            validity = r.json()["validity"]
+            now = datetime.datetime.now()
+            valid_date = datetime.datetime.fromtimestamp(validity / 1000)
 
-        log.info("Login Details: %s" %r.json())
-        if(account_activation == True):
-            log.info("this worked")
+            if valid_date < now:
+                log.info("Validity Expired. Please contact developers")
+                account_activation = False
 
-        #openshot_version = "2.4.3"
+        log.info("Login Details: %s" % r.json())
+
+
+
+        # openshot_version = "2.4.3"
 
         # Emit signal for the UI
         get_app().window.FoundActivationSignal.emit(account_activation)
 
     except Exception as Ex:
         log.error("Failed to get activation from: %s" % Ex)
+        account_activation = False
+        get_app().window.FoundActivationSignal.emit(account_activation)
 
 def register_new_user_from_http():
-    """Get the current version # from openshot.org"""
+    """Register new device to backendless"""
 
     url =  "http://api.backendless.com/7585ECA1-8714-3061-FFAB-5ECD6D8E8000/4F4067A2-24E1-5EC2-FF3C-F1BA2AA1D900/data/Users"
     # Send metric HTTP data

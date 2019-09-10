@@ -11,16 +11,16 @@ from PyQt5.QtCore import QDir
 VERSION = "2.4.3-dev3"
 MINIMUM_LIBOPENSHOT_VERSION = "0.2.2"
 DATE = "20180922000000"
-NAME = "openshot-qt"
-PRODUCT_NAME = "Magic VideoX Pro"
+NAME = "editxpro-qt"
+PRODUCT_NAME = "Edit X Pro"
 GPL_VERSION = "3"
-DESCRIPTION = "Create and edit stunning videos, movies, and animations"
-COMPANY_NAME = "OpenShot Studios, LLC"
+DESCRIPTION = "Create and edit amazing wedding videos and movies"
+COMPANY_NAME = "Edit X Pro"
 COPYRIGHT = "Copyright (c) 2019 %s" % COMPANY_NAME
 CWD = os.getcwd()
 PATH = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))  # Primary openshot folder
 HOME_PATH = os.path.join(os.path.expanduser("~"))
-USER_PATH = os.path.join(HOME_PATH, ".mvxp_data")
+USER_PATH = os.path.join(HOME_PATH, ".editxpro_qt")
 BACKUP_PATH = os.path.join(USER_PATH, "backup")
 BLENDER_PATH = os.path.join(USER_PATH, "blender")
 ASSETS_PATH = os.path.join(USER_PATH, "assets")
@@ -43,7 +43,7 @@ for folder in [USER_PATH, THUMBNAIL_PATH, CACHE_PATH, BLENDER_PATH, ASSETS_PATH,
         os.makedirs(folder, exist_ok=True)
 
 # names of all contributors, using "u" for unicode encoding
-JT = {"name": u"Jonathan Thomas", "email": "jonathan@openshot.org", "website":"http://openshot.org/developers/jonathan"}
+JT = {"name": u"D V", "email": "hello@editxpro.com", "website":"http://editxpro.org/"}
 
 # Languages
 CMDLINE_LANGUAGE = None
@@ -72,19 +72,19 @@ SETUP = {
     "author_email": JT["email"],
     "maintainer": JT["name"],
     "maintainer_email": JT["email"],
-    "url": "http://www.openshot.org/",
+    "url": "http://www.editxpr.com/",
     "license": "GNU GPL v." + GPL_VERSION,
     "description": DESCRIPTION,
     "long_description": "Create and edit videos and movies\n"
-                        " OpenShot Video Editor is a free, open-source, non-linear video editor. It\n"
+                        " Edit X Pro is a non-linear video editor. It\n"
                         " can create and edit videos and movies using many popular video, audio, \n"
-                        " image formats.  Create videos for YouTube, Flickr, Vimeo, Metacafe, iPod,\n"
-                        " Xbox, and many more common formats!\n"
+                        " image formats.  This is specially designed for wedding video. It can be exported for\n"
+                        " DVD, TV, Youtube, Xbox, and many more common formats!\n"
                         ".\n"
                         " Features include:\n"
-                        "  * Multiple tracks (layers)\n"
-                        "  * Compositing, image overlays, and watermarks\n"
-                        "  * Support for image sequences (rotoscoping)\n"
+                        "  * Unlimited tracks Sequencer\n"
+                        "  * Video Compositing, image overlays, and watermarks\n"
+                        "  * Creating image sequences (rotoscoping)\n"
                         "  * Key-frame animation\n  * Video and audio effects (chroma-key)\n"
                         "  * Transitions (lumas and masks)\n"
                         "  * 3D animation (titles and simulations)\n"
