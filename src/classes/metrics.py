@@ -55,7 +55,7 @@ user_agent = "Mozilla/5.0 (%s) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.
 params = {
     "cid" : s.get("unique_install_id"),     # Unique install ID
     "v" : 1,                                # Google Measurement API version
-    "tid" : "UA-4381101-5",                 # Google Analytic Tracking ID
+    "tid" : "UA-147188224-1",                 # Google Analytic Tracking ID
     "an" : info.PRODUCT_NAME,               # App Name
     "aip" : 1,                              # Anonymize IP
     "aid" : "org.openshot.%s" % info.NAME,  # App ID
@@ -126,19 +126,19 @@ def track_metric_session(is_start=True):
 def send_metric(params):
     """Send anonymous metric over HTTP for tracking"""
     # Check if the user wants to send metrics and errors
-    if s.get("send_metrics"):
-        log.info("metrics hit");
+    #if s.get("send_metrics"):
+    log.info("metrics hit");
 
-        #url_params = urllib.parse.urlencode(params)
-        #url = "http://www.google-analytics.com/collect?%s" % url_params
+    url_params = urllib.parse.urlencode(params)
+    url = "http://www.google-analytics.com/collect?%s" % url_params
 
-        # Send metric HTTP data
-        #try:
-            #r = requests.get(url, headers={"user-agent": user_agent}, verify=False)
-            #log.info("Track metric: [%s] %s | (%s bytes)" % (r.status_code, r.url, len(r.content)))
+    # Send metric HTTP data
+    try:
+        r = requests.get(url, headers={"user-agent": user_agent}, verify=False)
+        log.info("Track metric: [%s] %s | (%s bytes)" % (r.status_code, r.url, len(r.content)))
 
-        #except Exception as Ex:
-            #log.error("Failed to Track metric: %s" % (Ex))
+    except Exception as Ex:
+        log.error("Failed to Track metric: %s" % (Ex))
 
 def send_exception(stacktrace, source):
     """Send exception stacktrace over HTTP for tracking"""

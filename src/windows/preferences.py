@@ -49,7 +49,7 @@ class Preferences(QDialog):
         self.settings_data = settings.get_settings().get_all_settings()
 
         # Track metrics
-        #track_metric_screen("preferences-screen")
+        track_metric_screen("preferences-screen")
 
         # Load all user values
         self.params = {}

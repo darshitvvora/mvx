@@ -2397,10 +2397,10 @@ class MainWindow(QMainWindow, updates.UpdateWatcher):
 
 
             # Track 1st launch metric
-            #track_metric_screen("initial-launch-screen")
+            track_metric_screen("initial-launch-screen")
 
         # Track main screen
-        #track_metric_screen("main-screen")
+        track_metric_screen("main-screen")
 
         # Create blank tutorial manager
         self.tutorial_manager = None

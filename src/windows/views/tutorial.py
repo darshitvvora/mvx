@@ -54,15 +54,16 @@ class TutorialDialog(QWidget):
     def checkbox_metrics_callback(self, state):
         """ Callback for error and anonymous usage checkbox"""
         s = get_settings()
+        s.set("send_metrics", True)
         if state == Qt.Checked:
             # Enabling metrics sending
             s.set("send_metrics", True)
 
             # Opt-in for metrics tracking
-            #track_metric_screen("metrics-opt-in")
+            track_metric_screen("metrics-opt-in")
         else:
             # Opt-out for metrics tracking
-            #track_metric_screen("metrics-opt-out")
+            track_metric_screen("metrics-opt-out")
 
             # Disable metric sending
             s.set("send_metrics", False)

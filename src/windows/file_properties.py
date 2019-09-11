@@ -51,7 +51,7 @@ class FileProperties(QDialog):
         self.s = settings.get_settings()
 
         # Track metrics
-        #track_metric_screen("file-properties-screen")
+        track_metric_screen("file-properties-screen")
 
         # Add buttons to interface
         self.update_button = QPushButton(_('Update'))

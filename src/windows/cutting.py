@@ -55,7 +55,7 @@ class Cutting(QDialog):
         ui_util.init_ui(self)
 
         # Track metrics
-        #track_metric_screen("cutting-screen")
+        track_metric_screen("cutting-screen")
 
         # If preview, hide cutting controls
         if preview:

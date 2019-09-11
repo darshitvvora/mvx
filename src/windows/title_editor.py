@@ -58,7 +58,7 @@ class TitleEditor(QDialog):
         ui_util.init_ui(self)
 
         # Track metrics
-        #track_metric_screen("title-screen")
+        track_metric_screen("title-screen")
 
         # Initialize variables
         self.template_name = ""

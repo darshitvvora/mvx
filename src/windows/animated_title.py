@@ -51,7 +51,7 @@ class AnimatedTitle(QDialog):
         ui_util.init_ui(self)
 
         # Track metrics
-        #track_metric_screen("animated-title-screen")
+        track_metric_screen("animated-title-screen")
 
         # Add blender treeview
         self.blenderTreeView = BlenderListView(self)

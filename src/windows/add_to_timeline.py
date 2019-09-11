@@ -437,7 +437,7 @@ class AddToTimeline(QDialog):
         _ = self.app._tr
 
         # Track metrics
-        #track_metric_screen("add-to-timeline-screen")
+        track_metric_screen("add-to-timeline-screen")
 
         # Add custom treeview to window
         self.treeFiles = TimelineTreeView(self)

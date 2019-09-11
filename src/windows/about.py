@@ -63,6 +63,6 @@ class About(QDialog):
         self.txtversion.setAlignment(Qt.AlignCenter)
 
         # Track metrics
-        #track_metric_screen("about-screen")
+        track_metric_screen("about-screen")
 
 
