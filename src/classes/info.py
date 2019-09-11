@@ -1,6 +1,6 @@
 """ 
  @file
- @brief This file contains the current version number of Magic VideoX Pro, along with other global settings.
+ @brief This file contains the current version number of EditX Pro, along with other global settings.
 
  """
 
@@ -8,14 +8,14 @@ import os
 
 from PyQt5.QtCore import QDir
 
-VERSION = "2.4.3-dev3"
+VERSION = "0.1.1-dev2"
 MINIMUM_LIBOPENSHOT_VERSION = "0.2.2"
 DATE = "20180922000000"
-NAME = "openshot-qt"
-PRODUCT_NAME = "Magic VideoX Pro"
+NAME = "magic-xpro"
+PRODUCT_NAME = "EditX Pro"
 GPL_VERSION = "3"
 DESCRIPTION = "Create and edit stunning videos, movies, and animations"
-COMPANY_NAME = "OpenShot Studios, LLC"
+COMPANY_NAME = "PT"
 COPYRIGHT = "Copyright (c) 2019 %s" % COMPANY_NAME
 CWD = os.getcwd()
 PATH = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))  # Primary openshot folder
@@ -43,7 +43,7 @@ for folder in [USER_PATH, THUMBNAIL_PATH, CACHE_PATH, BLENDER_PATH, ASSETS_PATH,
         os.makedirs(folder, exist_ok=True)
 
 # names of all contributors, using "u" for unicode encoding
-JT = {"name": u"Jonathan Thomas", "email": "jonathan@openshot.org", "website":"http://openshot.org/developers/jonathan"}
+JT = {"name": u"DV", "email": "darshitvvora@gmail.com", "website":"http://parastechnology.com"}
 
 # Languages
 CMDLINE_LANGUAGE = None
@@ -72,11 +72,11 @@ SETUP = {
     "author_email": JT["email"],
     "maintainer": JT["name"],
     "maintainer_email": JT["email"],
-    "url": "http://www.openshot.org/",
+    "url": "http://www.pt.com/",
     "license": "GNU GPL v." + GPL_VERSION,
     "description": DESCRIPTION,
     "long_description": "Create and edit videos and movies\n"
-                        " OpenShot Video Editor is a free, open-source, non-linear video editor. It\n"
+                        " EditX Pro is a video editor. It\n"
                         " can create and edit videos and movies using many popular video, audio, \n"
                         " image formats.  Create videos for YouTube, Flickr, Vimeo, Metacafe, iPod,\n"
                         " Xbox, and many more common formats!\n"
@@ -114,11 +114,7 @@ SETUP = {
 
 def website_language():
     """Get the current website language code for URLs"""
-    if CURRENT_LANGUAGE == "zh_CN":
-        return "zh-hans/"
-    elif CURRENT_LANGUAGE == "zh_TW":
-        return "zh-hant/"
-    elif CURRENT_LANGUAGE == "en_US":
-        return ""
-    else:
-        return "%s/" % CURRENT_LANGUAGE.split("_")[0].lower()
+    website_lang = "www"
+    if CURRENT_LANGUAGE != "en_US":
+        website_lang = CURRENT_LANGUAGE
+    return website_lang

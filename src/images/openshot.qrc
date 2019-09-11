@@ -258,8 +258,10 @@
         <file>Humanity/actions/16/media-seek-backward.svg</file>
         <file>Humanity/actions/16/media-record.svg</file>
         <file>Humanity/actions/16/media-playback-stop.svg</file>
-        <file>Humanity/actions/16/media-playback-start.svg</file>
+        <file>Humanity/actions/16/media-playback-play.svg</file>
         <file>Humanity/actions/16/media-playback-pause.svg</file>
+        <file>Humanity/actions/16/play.png</file>
+        <file>Humanity/actions/16/pause.png</file>
         <file>Humanity/actions/16/media-import-audio-cd.svg</file>
         <file>Humanity/actions/16/media-eject.svg</file>
         <file>Humanity/actions/16/mail-send-receive.svg</file>

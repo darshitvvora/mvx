@@ -86,7 +86,7 @@ if os.path.exists(os.path.join(PATH, "src")):
     copytree(os.path.join(PATH, "src"), os.path.join(PATH, "openshot_qt"))
 
     # Make a copy of the launch.py script (to name it more appropriately)
-    copy(os.path.join(PATH, "src", "launch.py"), os.path.join(PATH, "openshot_qt", "launch-magic"))
+    copy(os.path.join(PATH, "src", "launch.py"), os.path.join(PATH, "openshot_qt", "launch-Edit"))
 
 if os.path.exists(os.path.join(PATH, "openshot_qt")):
     # Append path to system path
@@ -193,7 +193,7 @@ elif sys.platform == "linux":
     src_files.append((os.path.join(PATH, "xdg", iconFile), iconFile))
 
     # Shorten name (since RPM can't have spaces)
-    info.PRODUCT_NAME = "magic-xpro"
+    info.PRODUCT_NAME = "Edit-xpro"
 
     # Add custom launcher script for frozen linux version
     src_files.append((os.path.join(PATH, "installer", "launch-linux.sh"), "launch-linux.sh"))

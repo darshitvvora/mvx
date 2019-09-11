@@ -5,8 +5,11 @@
  """
 
 import requests
+import sys
 import uuid
 import threading
+import datetime
+from datetime import date
 from classes.app import get_app
 from classes import info
 from classes.logger import log
@@ -75,10 +78,16 @@ def get_activation_from_http():
         account_activation = False
         if status_code == 200:
             account_activation = r.json()["account_activated"]
+            validity = r.json()["validity"]
+            now = datetime.datetime.now()
+            valid_date = datetime.datetime.fromtimestamp(validity/1000)          
+            
+            if valid_date < now:
+                log.info("Validity Expired. Please contact developers")
+                account_activation=False
 
-        log.info("Login Details: %s" %r.json())
-        if(account_activation == True):
-            log.info("this worked")
+
+        log.info("Login Details: %s" %r.json())   
 
         #openshot_version = "2.4.3"
 
@@ -109,16 +118,11 @@ def register_new_user_from_http():
         if status_code == 200:
             account_activation = r.json()["account_activated"]
 
-        log.info("Login Details: %s" % r.json())
-        if (account_activation == True):
-            log.info("this worked")
+        #log.info("Login Details: %s" % r.json())       
 
-        # openshot_version = "2.4.3"
 
         # Emit signal for the UI
         get_app().window.FoundSetActivationSignal.emit(account_activation)
-
-
 
     except Exception as Ex:
         log.error("Failed to set activation from: %s" % Ex)

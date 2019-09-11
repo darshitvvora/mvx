@@ -79,8 +79,7 @@ class Export(QDialog):
         self.txtChannels.setVisible(False)
 
         # Set OMP thread disabled flag (for stability)
-        openshot.Settings.Instance().WAIT_FOR_VIDEO_PROCESSING_TASK = True
-        openshot.Settings.Instance().HIGH_QUALITY_SCALING = True
+        os.environ['OS2_OMP_THREADS'] = "0"
 
         # Get the original timeline settings
         width = get_app().window.timeline_sync.timeline.info.width
@@ -89,9 +88,6 @@ class Export(QDialog):
         sample_rate = get_app().window.timeline_sync.timeline.info.sample_rate
         channels = get_app().window.timeline_sync.timeline.info.channels
         channel_layout = get_app().window.timeline_sync.timeline.info.channel_layout
-
-        # No keyframe rescaling has happened yet (due to differences in FPS)
-        self.keyframes_rescaled = False
 
         # Create new "export" openshot.Timeline object
         self.timeline = openshot.Timeline(width, height, openshot.Fraction(fps.num, fps.den),
@@ -331,13 +327,6 @@ class Export(QDialog):
         self.progressExportVideo.setMinimum(self.txtStartFrame.value())
         self.progressExportVideo.setMaximum(self.txtEndFrame.value())
         self.progressExportVideo.setValue(self.txtStartFrame.value())
-
-        # Calculate differences between editing/preview FPS and export FPS
-        current_fps = get_app().project.get(["fps"])
-        current_fps_float = float(current_fps["num"]) / float(current_fps["den"])
-        new_fps_float = float(self.txtFrameRateNum.value()) / float(self.txtFrameRateDen.value())
-        self.export_fps_factor = new_fps_float / current_fps_float
-        self.original_fps_factor = current_fps_float / new_fps_float
 
     def cboSimpleProjectType_index_changed(self, widget, index):
         selected_project = widget.itemData(index)
@@ -599,14 +588,6 @@ class Export(QDialog):
                     measurement = "mb"
                     bit_rate_bytes = raw_number * 1000.0 * 1000.0
 
-                elif "crf" in raw_measurement:
-                    measurement = "crf"
-                    if raw_number > 63:
-                        raw_number = 63
-                    if raw_number < 0:
-                        raw_number = 0
-                    bit_rate_bytes = raw_number
-
         except:
             pass
 
@@ -703,18 +684,6 @@ class Export(QDialog):
         export_cache_object = openshot.CacheMemory(250)
         self.timeline.SetCache(export_cache_object)
 
-        # Rescale all keyframes and reload project
-        if self.export_fps_factor != 1.0:
-            self.keyframes_rescaled = True
-            get_app().project.rescale_keyframes(self.export_fps_factor)
-
-            # Load the "export" Timeline reader with the JSON from the real timeline
-            json_timeline = json.dumps(get_app().project._data)
-            self.timeline.SetJson(json_timeline)
-
-            # Re-update the timeline FPS again (since the timeline just got clobbered)
-            self.updateFrameRate()
-
         # Create FFmpegWriter
         try:
             w = openshot.FFmpegWriter(export_file_path)
@@ -742,18 +711,28 @@ class Export(QDialog):
                                   audio_settings.get("channel_layout"),
                                   audio_settings.get("audio_bitrate"))
 
-            # Prepare the streams
-            w.PrepareStreams()
-
+            # Open the writer
+            w.Open()
             # These extra options should be set in an extra method
             # No feedback is given to the user
             # TODO: Tell user if option is not avaliable
             # Set the quality in case crf was selected
-            if "crf" in self.txtVideoBitRate.text():
-                w.SetOption(openshot.VIDEO_STREAM, "crf", str(int(video_settings.get("video_bitrate"))) )
-
-            # Open the writer
-            w.Open()
+            crf_bitrate = self.txtVideoBitRate.text()
+            s = crf_bitrate.lower().split(" ")
+            if len(s) >= 2:
+                raw_number_string = s[0]
+                raw_measurement = s[1]
+                raw_number = locale.atof(raw_number_string)
+                # Only the range for all crf settings is checked here
+                # The main check is in libopenshot FFmpegWriter.cpp
+                if "crf" in raw_measurement:
+                    measurement = "crf"
+                    if raw_number > 63:
+                        raw_number = 63
+                    if raw_number < 0:
+                        raw_number = 0
+                    bit_rate_bytes = raw_number
+                    w.SetOption(openshot.VIDEO_STREAM, "crf", str(int(bit_rate_bytes)) )
 
             # Notify window of export started
             export_file_path = ""
@@ -838,16 +817,9 @@ class Export(QDialog):
 
         # Re-set OMP thread enabled flag
         if self.s.get("omp_threads_enabled"):
-            openshot.Settings.Instance().WAIT_FOR_VIDEO_PROCESSING_TASK = False
+            os.environ['OS2_OMP_THREADS'] = "1"
         else:
-            openshot.Settings.Instance().WAIT_FOR_VIDEO_PROCESSING_TASK = True
-
-        # Return scale mode to lower quality scaling (for faster previews)
-        openshot.Settings.Instance().HIGH_QUALITY_SCALING = False
-
-        # Return keyframes to preview scaling
-        if self.keyframes_rescaled:
-            get_app().project.rescale_keyframes(self.original_fps_factor)
+            os.environ['OS2_OMP_THREADS'] = "0"
 
         # Accept dialog
         super(Export, self).accept()
@@ -855,16 +827,9 @@ class Export(QDialog):
     def reject(self):
         # Re-set OMP thread enabled flag
         if self.s.get("omp_threads_enabled"):
-            openshot.Settings.Instance().WAIT_FOR_VIDEO_PROCESSING_TASK = False
+            os.environ['OS2_OMP_THREADS'] = "1"
         else:
-            openshot.Settings.Instance().WAIT_FOR_VIDEO_PROCESSING_TASK = True
-
-        # Return scale mode to lower quality scaling (for faster previews)
-        openshot.Settings.Instance().HIGH_QUALITY_SCALING = False
-
-        # Return keyframes to preview scaling
-        if self.keyframes_rescaled:
-            get_app().project.rescale_keyframes(self.original_fps_factor)
+            os.environ['OS2_OMP_THREADS'] = "0"
 
         # Cancel dialog
         self.exporting = False

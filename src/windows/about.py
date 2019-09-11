@@ -44,7 +44,7 @@ class About(QDialog):
         _ = self.app._tr
 
         #create_text = _('Your X-Factor for composing amazing videos')
-        description_text = _('Magic VideoX Pro is simple, intuitive and amazing video editing software. Your X-Factor for composing amazing videos')
+        description_text = _('EditX Pro is simple, intuitive and amazing video editing software. Your X-Factor for composing amazing videos')
         #learnmore_text = _('Learn more')
         #copyright_text = _('Copyright &copy; %(begin_year)s-%(current_year)s') % {'begin_year': '2008', 'current_year': str(datetime.datetime.today().year) }
         #about_html = '<html><head/><body><hr/><p align="center"><span style=" font-size:10pt; font-weight:600;">%s</span></p><p align="center"><span style=" font-size:10pt;">%s </span><a href="http://%s.openshot.org?r=about-us"><span style=" font-size:10pt; text-decoration: none; color:#55aaff;">%s</span></a><span style=" font-size:10pt;">.</span></p></body></html>' % (create_text, description_text, info.website_language(), learnmore_text)

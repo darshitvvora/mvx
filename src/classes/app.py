@@ -13,6 +13,7 @@ from PyQt5.QtGui import QPalette, QColor, QFontDatabase, QFont
 from PyQt5.QtCore import Qt
 from PyQt5.QtCore import QT_VERSION_STR
 from PyQt5.Qt import PYQT_VERSION_STR
+import socket
 
 
 from classes.logger import log
@@ -31,6 +32,15 @@ def get_app():
     """ Returns the current QApplication instance of OpenShot """
     return QApplication.instance()
 
+def is_connected():
+    try:
+        # connect to the host -- tells us if the host is actually
+        # reachable
+        socket.create_connection(("www.google.com", 80))
+        return True
+    except OSError:
+        pass
+    return False
 
 class OpenShotApp(QApplication):
     """ This class is the primary QApplication for OpenShot.
@@ -78,6 +88,11 @@ class OpenShotApp(QApplication):
             # Stop launching and exit
             sys.exit()
 
+
+        if is_connected() == False:
+            log.info("Internet Connection Not Available")
+            sys.exit()
+
         # Tests of project data loading/saving
         self.project = project_data.ProjectDataStore()
 
@@ -117,14 +132,14 @@ class OpenShotApp(QApplication):
             self.setStyle(QStyleFactory.create("Fusion"))
 
             darkPalette = self.palette()
-            darkPalette.setColor(QPalette.Window, QColor(38, 50, 56))
-            darkPalette.setColor(QPalette.WindowText, QColor(236, 239, 241))
-            darkPalette.setColor(QPalette.Base, QColor(55, 71, 79))
-            darkPalette.setColor(QPalette.AlternateBase, QColor(69, 90, 100))
+            darkPalette.setColor(QPalette.Window, QColor(64, 64, 64))
+            darkPalette.setColor(QPalette.WindowText,  QColor(236, 239, 241))
+            darkPalette.setColor(QPalette.Base, QColor(44, 44, 44))
+            darkPalette.setColor(QPalette.AlternateBase,  QColor(64, 64, 64))
             darkPalette.setColor(QPalette.ToolTipBase, QColor(236, 239, 241))
             darkPalette.setColor(QPalette.ToolTipText, QColor(236, 239, 241))
-            darkPalette.setColor(QPalette.Text, QColor(236, 239, 241))
-            darkPalette.setColor(QPalette.Button, QColor(38, 50, 56))
+            darkPalette.setColor(QPalette.Text, QColor(212, 208, 200))
+            darkPalette.setColor(QPalette.Button, QColor(64, 64, 64))
             darkPalette.setColor(QPalette.ButtonText, QColor(236, 239, 241))
             darkPalette.setColor(QPalette.BrightText, Qt.red)
             darkPalette.setColor(QPalette.Highlight, QColor(42, 130, 218))
@@ -146,7 +161,7 @@ class OpenShotApp(QApplication):
             path = args[0][1]
             if ".mvxp" in path:
                 # Auto load project passed as argument
-                self.window.OpenProjectSignal.emit(path)
+                self.window.open_project(path)
             else:
                 # Auto import media file
                 self.window.filesTreeView.add_file(path)

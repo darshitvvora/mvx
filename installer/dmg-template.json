@@ -1,5 +1,5 @@
 {
-  "title": "MagicVideoX",
+  "title": "EditXPro",
   "icon": "dmg-icon.icns",
   "background": "dmg-background.png",
   "icon-size": 80,
@@ -14,7 +14,7 @@
       "x": 140,
       "y": 155,
       "type": "file",
-      "path": "../build/Magic VideoX Pro.app"
+      "path": "../build/EditX Pro.app"
     }
   ]
 }

@@ -9,8 +9,8 @@
 #endif
 
 
-#define MyAppName "Magic VideoX Pro"
-#define MyAppPublisher "Magic VideoX Pro"
+#define MyAppName "EditX Pro"
+#define MyAppPublisher "EditX Pro"
 #define MyAppURL ""
 #define MyAppExeName "launch.exe"
              
@@ -30,7 +30,7 @@ AppCopyright=Copyright (c) 2019 {#MyAppPublisher}
 DefaultDirName={pf}\{#MyAppName}
 DisableProgramGroupPage=yes
 LicenseFile=..\COPYING
-OutputBaseFilename=MagicVideoX
+OutputBaseFilename=EditXPro
 ArchitecturesInstallIn64BitMode={#ONLY_64_BIT}
 ArchitecturesAllowed={#ONLY_64_BIT}
 ChangesEnvironment=yes
@@ -79,7 +79,7 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 ; Remove previous installed versions of Magic
 Type: filesandordirs; Name: "{app}\*"
 Type: dirifempty; Name: "{app}\*"
-Type: files; Name: "{group}\Magic VideoX Pro"
+Type: files; Name: "{group}\EditX Pro"
 
 [Registry]
 ; Remove previously installed registry keys (no longer needed)

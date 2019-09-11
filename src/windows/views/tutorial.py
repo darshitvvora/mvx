@@ -100,7 +100,7 @@ class TutorialDialog(QWidget):
 
             # create spinner
             checkbox_metrics = QCheckBox()
-            checkbox_metrics.setText(_("Yes, I would like to improve Magic VideoX Pro!"))
+            checkbox_metrics.setText(_("Yes, I would like to improve EditX Pro!"))
             checkbox_metrics.setStyleSheet("margin-left: 25px; margin-bottom: 5px;")
             if s.get("send_metrics"):
                 checkbox_metrics.setCheckState(Qt.Checked)
@@ -290,7 +290,7 @@ class TutorialManager(object):
         self.tutorial_ids = s.get("tutorial_ids").split(",")
 
         # Add all possible tutorials
-        self.tutorial_objects = [    {"id":"0", "x":400, "y":0, "object_id":"filesTreeView", "text":_("<b>Welcome!</b> Magic VideoX Pro is an award-winning, open-source video editing application! This tutorial will walk you through the basics.<br><br>Would you like to automatically send errors and metrics to help improve Magic VideoX Pro?"), "arrow":False},
+        self.tutorial_objects = [    {"id":"0", "x":400, "y":0, "object_id":"filesTreeView", "text":_("<b>Welcome!</b> EditX Pro is an award-winning, open-source video editing application! This tutorial will walk you through the basics.<br><br>Would you like to automatically send errors and metrics to help improve EditX Pro?"), "arrow":False},
                                      {"id":"1", "x":20, "y":0, "object_id":"filesTreeView", "text":_("<b>Project Files:</b> Get started with your project by adding video, audio, and image files here. Drag and drop files from your file system."), "arrow":True},
                                      {"id":"2", "x":200, "y":-15, "object_id":"timeline", "text":_("<b>Timeline:</b> Arrange your clips on the timeline here. Overlap clips to create automatic transitions. Access lots of fun presets and options by right-clicking on clips."), "arrow":True},
                                      {"id":"3", "x":200, "y":100, "object_id":"dockVideoContents", "text":_("<b>Video Preview:</b> Watch your timeline video preview here. Use the buttons (play, rewind, fast-forward) to control the video playback."), "arrow":True},

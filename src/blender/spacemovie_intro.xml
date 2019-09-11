@@ -16,7 +16,7 @@
 	</param>
 
 	<param name="TitleSpaceMovie" type="text" title="Flying Title" description="">
-		<default>open\nshot</default>
+		<default>magic\nvideo</default>
 	</param>
 
 	<param name="Episode" type="text" title="Episode" description="">
@@ -24,7 +24,7 @@
 	</param>
 
 	<param name="EpisodeTitle" type="text" title="Episode Title" description="">
-		<default>A NEW OPENSHOT</default>
+		<default>A NEW MAGIC</default>
 	</param>
 
 	<param name="MainText" type="multiline" title="Main Text" description="">

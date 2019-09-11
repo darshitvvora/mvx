@@ -1,6 +1,6 @@
 """ 
  @file
- @brief Setup script to install Magic VideoX Pro (on Linux and without any dependencies such as libopenshot)
+ @brief Setup script to install EditX Pro (on Linux and without any dependencies such as libopenshot)
  @author DV
  """
 
@@ -119,5 +119,5 @@ if ROOT and dist != None:
         sys.stderr.write(FAILED)
     sys.stdout.write("\n-----------------------------------------------")
     sys.stdout.write("\nInstallation Finished!")
-    sys.stdout.write("\nRun Magic VideoX Pro by typing 'openshot-qt' or through the Applications menu.")
+    sys.stdout.write("\nRun EditX Pro by typing 'openshot-qt' or through the Applications menu.")
     sys.stdout.write("\n-----------------------------------------------\n")

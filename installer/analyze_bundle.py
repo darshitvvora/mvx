@@ -6,7 +6,7 @@ PATH = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 unique_dependencies = {}
 
 # Find files matching patterns
-for root, dirs, files in os.walk(os.path.join(PATH, 'build', 'Magic VideoX Pro.app')):
+for root, dirs, files in os.walk(os.path.join(PATH, 'build', 'EditX Pro.app')):
     for basename in files:
         file_path = os.path.join(root, basename)
 

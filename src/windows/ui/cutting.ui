@@ -15,7 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../../images/openshot.svg</normaloff>../../images/openshot.svg</iconset>
+    <normaloff>../../images/openshot.png</normaloff>../../images/openshot.png</iconset>
   </property>
   <property name="autoFillBackground">
    <bool>false</bool>
@@ -53,7 +53,9 @@
             <string/>
            </property>
            <property name="icon">
-            <iconset theme="media-playback-start"/>
+            <iconset>
+              <normaloff>../../images/Material/play.png</normaloff>../../images/Material/play.png
+            </iconset>
            </property>
            <property name="checkable">
             <bool>true</bool>

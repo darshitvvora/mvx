@@ -114,6 +114,12 @@ def get_icon(theme_name):
 
 def setup_icon(window, elem, name, theme_name=None):
     """Using the window xml, set the icon on the given element, or if theme_name passed load that icon."""
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+
+    if name == "actionPlay":
+        elem.setIcon(QIcon(dir_path+"\\play.png"))
+    elif name == "actionPause": 
+        elem.setIcon(QIcon(dir_path+"\\pause.png"))   
 
     type_filter = 'action'
     if isinstance(elem, QWidget):  # Search for widget with name instead
@@ -127,6 +133,7 @@ def setup_icon(window, elem, name, theme_name=None):
         icon = get_icon(theme_name)
         if icon:
             elem.setIcon(icon)
+        
 
 
 def init_element(window, elem):

@@ -20,11 +20,11 @@
    <cursorShape>ArrowCursor</cursorShape>
   </property>
   <property name="windowTitle">
-   <string>About Magic VideoX Pro</string>
+   <string>About EditX Pro</string>
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../../images/openshot.svg</normaloff>../../images/openshot.svg</iconset>
+    <normaloff>../../images/openshot.png</normaloff>../../images/openshot.png</iconset>
   </property>
   <property name="locale">
    <locale language="English" country="UnitedStates"/>
@@ -103,13 +103,6 @@
          </property>
         </widget>
        </item>-->
-       <item>
-        <widget class="QPushButton" name="btnchangelog">
-         <property name="text">
-          <string>Changelog</string>
-         </property>
-        </widget>
-       </item>
        <item>
         <widget class="QPushButton" name="pushButton_3">
          <property name="text">

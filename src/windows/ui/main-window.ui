@@ -20,7 +20,7 @@
    <enum>Qt::StrongFocus</enum>
   </property>
   <property name="windowTitle">
-   <string>Magic VideoX Pro</string>
+   <string>Edit X Pro</string>
   </property>
   <property name="windowIcon">
    <iconset>
@@ -118,14 +118,12 @@
      <string>Title</string>
     </property>
     <addaction name="actionTitle"/>
-    <addaction name="actionAnimatedTitle"/>
+   <!-- <addaction name="actionAnimatedTitle"/> -->
    </widget>
     <addaction name="actionUndo"/>
     <addaction name="actionRedo"/>
     <addaction name="separator"/>
     <addaction name="actionClearHistory"/>
-    <addaction name="separator"/>
-    <addaction name="menuTitle"/>
    </widget>
 
    <widget class="QMenu" name="menuView">
@@ -165,8 +163,8 @@
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menu_Edit"/>
-   <!--<addaction name="menuTitle"/>-->
- <!--  <addaction name="menuView"/>-->
+   <addaction name="menuTitle"/>
+  <addaction name="menuView"/>
    <addaction name="menuHelp"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
@@ -221,6 +219,9 @@
       <number>9</number>
      </property>
      <item row="0" column="0">
+      <layout class="QVBoxLayout" name="tabFiles1"/>
+     </item>
+     <item row="0" column="1">
       <layout class="QVBoxLayout" name="tabFiles"/>
      </item>
     </layout>
@@ -281,6 +282,9 @@
       <number>9</number>
      </property>
      <item row="0" column="0">
+      <layout class="QVBoxLayout" name="tabTransitions1"/>
+     </item>
+     <item row="0" column="1">
       <layout class="QVBoxLayout" name="tabTransitions"/>
      </item>
     </layout>
@@ -454,7 +458,7 @@
     <set>QDockWidget::DockWidgetFloatable|QDockWidget::DockWidgetMovable</set>
    </property>
    <property name="windowTitle">
-    <string>Timeline</string>
+    <string>Sequencer</string>
    </property>
    <attribute name="dockWidgetArea">
     <number>8</number>
@@ -467,8 +471,11 @@
      <enum>Qt::NoContextMenu</enum>
     </property>
     <layout class="QGridLayout" name="gridLayout_7">
-     <item row="0" column="0">
+     <item row="0" column="1">
       <layout class="QVBoxLayout" name="frameWeb"/>
+     </item>
+      <item row="0" column="0">
+      <layout class="QHBoxLayout" name="frameWeb1"/>
      </item>
     </layout>
    </widget>
@@ -710,10 +717,14 @@
     <enum>QAction::PreferencesRole</enum>
    </property>
   </action>
-  <action name="actionPlay">
+	
+
+
+ <action name="actionPlay">
    <property name="icon">
-    <iconset theme="media-playback-start" resource="../../images/openshot.qrc">
-     <normaloff>:/icons/Humanity/actions/16/media-playback-start.svg</normaloff>:/icons/Humanity/actions/16/media-playback-start.svg</iconset>
+    <iconset>
+      <normaloff>../../images/Material/play.png</normaloff>../../images/Material/play.png
+    </iconset>
    </property>
    <property name="text">
     <string>Play</string>
@@ -722,10 +733,12 @@
     <string>Play</string>
    </property>
   </action>
+
   <action name="actionJumpStart">
    <property name="icon">
     <iconset>
-      <normaloff>../../images/Material/SkipPrevious.png</normaloff>../../images/Material/SkipPrevious.png</iconset>
+      <normaloff>../../images/Material/SkipPrevious.png</normaloff>../../images/Material/SkipPrevious.png
+    </iconset>
    </property>
    <property name="text">
     <string>Jump To Start</string>
@@ -1103,10 +1116,10 @@
       <normaloff>../../images/Material/info.png</normaloff>../../images/Material/info.png</iconset>
    </property>
    <property name="text">
-    <string>About Magic VideoX Pro</string>
+    <string>About EditX Pro</string>
    </property>
    <property name="toolTip">
-    <string>About Magic VideoX Pro</string>
+    <string>About EditX Pro</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+H</string>

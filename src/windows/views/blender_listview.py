@@ -8,7 +8,6 @@ import os
 import uuid
 import shutil
 import subprocess
-import sys
 import re
 import xml.dom.minidom as xml
 import functools
@@ -466,7 +465,7 @@ class BlenderListView(QListView):
         # Handle exception
         msg = QMessageBox()
         msg.setText(_(
-            "Blender, the free open source 3D content creation suite is required for this action (http://www.blender.org).\n\nPlease check the preferences in Magic VideoX Pro and be sure the Blender executable is correct.  This setting should be the path of the 'blender' executable on your computer.  Also, please be sure that it is pointing to Blender version {} or greater.\n\nBlender Path:\n{}{}").format(
+            "Blender, the free open source 3D content creation suite is required for this action (http://www.blender.org).\n\nPlease check the preferences in EditX Pro and be sure the Blender executable is correct.  This setting should be the path of the 'blender' executable on your computer.  Also, please be sure that it is pointing to Blender version {} or greater.\n\nBlender Path:\n{}{}").format(
             blender_version, s.get("blender_command"), version_message))
         msg.exec_()
 
@@ -593,9 +592,10 @@ class BlenderListView(QListView):
         self.setGridSize(QSize(102, 92))
         self.setViewMode(QListView.IconMode)
         self.setResizeMode(QListView.Adjust)
-        self.setUniformItemSizes(True)
+        self.setUniformItemSizes(False)
         self.setWordWrap(True)
         self.setTextElideMode(Qt.ElideRight)
+        self.setStyleSheet('QTreeView::item { padding-top: 2px; }')
 
         # Hook up button
         self.win.btnRefresh.clicked.connect(functools.partial(self.btnRefresh_clicked))
@@ -697,16 +697,11 @@ class Worker(QObject):
         self.is_running = True
         _ = get_app()._tr
 
-        startupinfo = None
-        if sys.platform == 'win32':
-            startupinfo = subprocess.STARTUPINFO()
-            startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
-
         try:
             # Shell the blender command to create the image sequence
             command_get_version = [self.blender_exec_path, '-v']
             command_render = [self.blender_exec_path, '-b', self.blend_file_path, '-P', self.target_script]
-            self.process = subprocess.Popen(command_get_version, stdout=subprocess.PIPE, stderr=subprocess.PIPE, startupinfo=startupinfo)
+            self.process = subprocess.Popen(command_get_version, stdout=subprocess.PIPE)
 
             # Check the version of Blender
             self.version = self.blender_version.findall(str(self.process.stdout.readline()))
@@ -726,7 +721,7 @@ class Worker(QObject):
                                                              command_render[3], command_render[4]))
 
             # Run real command to render Blender project
-            self.process = subprocess.Popen(command_render, stdout=subprocess.PIPE, stderr=subprocess.PIPE, startupinfo=startupinfo)
+            self.process = subprocess.Popen(command_render, stdout=subprocess.PIPE)
 
         except:
             # Error running command.  Most likely the blender executable path in the settings
