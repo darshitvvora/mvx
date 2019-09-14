@@ -1,7 +1,7 @@
 html {
     height: 100%;
 }
-body { 
+body {
 	height: 100%;
     margin: 0;
     background-repeat: no-repeat;
@@ -57,15 +57,15 @@ img {
 .track_menu { cursor: pointer; float:left;margin-top:4px;margin-left:4px;margin-right:4px;width:12px;height:12px;background-image: url(../images/menu.png);}
 .track_menu:hover { background-image: url(../images/menu_hover.png); }
 .track_lock { float: left; background-image: url(../images/lock.png); width:14px;height:14px; margin-top: 2px; }
-.track_label { padding-top: 2px; padding-left: 2px; padding-left: 4px; text-shadow: 0 0 10px #ffffff; }
+.track_label { margin: 15%; display: inline-block; text-shadow: 0 0 10px #ffffff; }
 .track_name { width: 140px; height: 64px; color: #fff; font-size: 9pt; margin-left: 5px; margin-bottom: 8px; background-color:  rgb(102, 102, 102); border: 1px solid #2c2c2c; }
 .track_disabled { background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(20,20,20,1)), color-stop(100%,rgba(6,6,6,1))) !important; }
 .track { height: 64px; background-color: rgb(58, 58, 58); margin-bottom: 8px; border-top: 1px solid #2c2c2c; border-bottom: 1px solid #2c2c2c; border-right: 1px solid #2c2c2c; }
 
 /* Playhead */
-.playhead-line { z-index: 9998; position: absolute; height:316px; top:0px; margin-left: 12px; width:1px; background-color: #ffe017; opacity:1;}
+.playhead-line { z-index: 9998; position: absolute; height:316px; top:0px; margin-left: 8px; width:1px; background-color: #ffe017; opacity:1;}
 .playhead-line-small { z-index: 9999; position: absolute; height:20px; top:32px;; margin-left: 12px; width:1px; background-color:#ffe017; opacity:1;}
-.playhead-top { cursor:move; z-index: 9999; position: absolute; margin-left: 0px; margin-top: 12px; width:25px; height:32px; background-image: url(../images/play_head.png); opacity:1;}
+.playhead-top { cursor:move; z-index: 9999; position: absolute; margin-left: -4px; margin-top: 12px; width:25px; height:32px; background-image: url(../images/play_head.png); opacity:1;}
 .marker {position:absolute; top:30px;}
 
 /* Clips */
