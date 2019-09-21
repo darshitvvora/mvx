@@ -91,6 +91,9 @@ class OpenShotApp(QApplication):
 
         if is_connected() == False:
             log.info("Internet Connection Not Available")
+            _ = self._tr
+            QMessageBox.warning(None, _("Internet Connection Error"),
+                                _("Please check your Internet connectivity"))
             sys.exit()
 
         # Tests of project data loading/saving

@@ -9,16 +9,28 @@ import sys
 import uuid
 import threading
 import datetime
+import socket
 from datetime import date
 from classes.app import get_app
 from classes import info
 from classes.logger import log
 from classes import  settings
+from PyQt5.QtCore import QCoreApplication
+from PyQt5.QtWidgets import QMessageBox
 try:
     import json
 except ImportError:
     import simplejson as json
 
+
+
+def connected(host='http://google.com'):
+    try:
+        socket.create_connection(("www.google.com", 80))
+        return True
+    except OSError:
+        pass
+    return False
 
 def get_current_Version():
     """Get the current version """
@@ -61,68 +73,95 @@ def get_activation_from_http():
 
     url = "https://api.backendless.com/7585ECA1-8714-3061-FFAB-5ECD6D8E8000/4F4067A2-24E1-5EC2-FF3C-F1BA2AA1D900/users/login"
 
-    # Send metric HTTP data
-    try:
+    if connected():
+        # Send metric HTTP data
+        try:
 
-        s = settings.get_settings()
-        email = s.get("activation_email")
-        password = hex(uuid.getnode())
-        payload = {"login": email, "password": password}
-        log.info("email: %s" % email)
-        log.info("password: %s" % password)
+            s = settings.get_settings()
+            email = s.get("activation_email")
+            password = hex(uuid.getnode())
+            payload = {"login": email, "password": password}
+            log.info("email: %s" % email)
+            log.info("password: %s" % password)
 
-        r = requests.post(url, data=json.dumps(payload), headers={"Content-Type": "application/json"}, verify=False)
+            r = requests.post(url, data=json.dumps(payload), headers={"Content-Type": "application/json"}, verify=False)
 
-        # Parse version
-        status_code = r.status_code
-        account_activation = False
-        if status_code == 200:
-            account_activation = r.json()["account_activated"]
-            validity = r.json()["validity"]
-            now = datetime.datetime.now()
-            valid_date = datetime.datetime.fromtimestamp(validity/1000)          
-            
-            if valid_date < now:
-                log.info("Validity Expired. Please contact developers")
-                account_activation=False
+            # Parse version
+            status_code = r.status_code
+            account_activation = False
+            if status_code == 200:
+                account_activation = r.json()["account_activated"]
+                validity = r.json()["validity"]
+                now = datetime.datetime.now()
+                valid_date = datetime.datetime.fromtimestamp(validity/1000)
+
+                if valid_date < now:
+                    log.info("Validity Expired. Please contact developers")
+                    account_activation=False
 
 
-        log.info("Login Details: %s" %r.json())   
+            log.info("Login Details: %s" %r.json())
 
-        #openshot_version = "2.4.3"
+            #openshot_version = "2.4.3"
 
-        # Emit signal for the UI
-        get_app().window.FoundActivationSignal.emit(account_activation)
+            # Emit signal for the UI
+            get_app().window.FoundActivationSignal.emit(account_activation)
 
-    except Exception as Ex:
-        log.error("Failed to get activation from: %s" % Ex)
+        except Exception as Ex:
+            log.error("Failed to get activation from: %s" % Ex)
+    else:
+        log.error("No Internet Connection")
+        _ = QCoreApplication.instance()._tr
+        QMessageBox.warning(None, _("Internet Connection Error"),
+                            _("Login Failed. Please check your Internet connectivity"))
+        sys.exit()
 
 def register_new_user_from_http():
     """Get the current version # from openshot.org"""
 
     url =  "http://api.backendless.com/7585ECA1-8714-3061-FFAB-5ECD6D8E8000/4F4067A2-24E1-5EC2-FF3C-F1BA2AA1D900/data/Users"
     # Send metric HTTP data
-    try:
+    if connected():
+        try:
 
+            s = settings.get_settings()
+            email = s.get("activation_email")
+            password = hex(uuid.getnode())
+
+            payload = {"email": email, "password": password, "account_activated": False, "name": email}
+            log.info("%s", payload)
+
+            r = requests.post(url, data=json.dumps(payload), headers={"Content-Type": "application/json"})
+
+            status_code = r.status_code
+            account_activation = False
+            if status_code == 200:
+                account_activation = r.json()["account_activated"]
+                validity = r.json()["validity"]
+                now = datetime.datetime.now()
+                valid_date = datetime.datetime.fromtimestamp(validity / 1000)
+
+                if valid_date < now:
+                    log.info("Validity Expired. Please contact developers")
+                    account_activation = False
+
+            log.info("Login Details: %s" % r.json())
+
+            # openshot_version = "2.4.3"
+
+
+            # Emit signal for the UI
+            get_app().window.FoundSetActivationSignal.emit(account_activation)
+
+        except Exception as Ex:
+            log.error("Failed to set activation from: %s" % Ex)
+
+    else:
+        log.error("No Internet Connection")
         s = settings.get_settings()
-        email = s.get("activation_email")
-        password = hex(uuid.getnode())
+        s.set("activation_email", "")
+        _ = QCoreApplication.instance()._tr
+        QMessageBox.warning(None, _("Internet Connection Error"),
+                            _("Registration Failed. Please check your Internet connectivity."))
+        sys.exit()
 
-        payload = {"email": email, "password": password, "account_activated": False, "name": email}
-        log.info("%s", payload)
-
-        r = requests.post(url, data=json.dumps(payload), headers={"Content-Type": "application/json"})
-
-        status_code = r.status_code
-        account_activation = False
-        if status_code == 200:
-            account_activation = r.json()["account_activated"]
-
-        #log.info("Login Details: %s" % r.json())       
-
-
-        # Emit signal for the UI
-        get_app().window.FoundSetActivationSignal.emit(account_activation)
-
-    except Exception as Ex:
-        log.error("Failed to set activation from: %s" % Ex)
