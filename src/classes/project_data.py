@@ -814,6 +814,17 @@ class ProjectDataStore(JsonDataStore, UpdateInterface):
         # Loop through each files (in reverse order)
         for file in reversed(self._data["files"]):
             path = file["path"]
+
+            s = settings.get_settings()
+            montageEnabled = s.get("montage_enabled")
+
+            if montageEnabled:
+                fileName = path.split("/")[-1]
+                s = settings.get_settings()
+                montageFolder = s.get("montage_folder")
+                path = montageFolder + "/" + fileName
+                file["path"] = path
+
             parent_path, file_name_with_ext = os.path.split(path)
 
             log.info("checking file %s" % path)
@@ -846,6 +857,17 @@ class ProjectDataStore(JsonDataStore, UpdateInterface):
         for clip in reversed(self._data["clips"]):
             path = clip["reader"]["path"]
             parent_path, file_name_with_ext = os.path.split(path)
+
+            s = settings.get_settings()
+            montageEnabled = s.get("montage_enabled")
+
+            if montageEnabled:
+                fileName = path.split("/")[-1]
+                s = settings.get_settings()
+                montageFolder = s.get("montage_folder")
+                path = montageFolder + "/" + fileName
+                clip["reader"]["path"] = path
+
 
             log.info("checking file %s" % path)
             while not os.path.exists(path) and "%" not in path:
@@ -894,7 +916,7 @@ class ProjectDataStore(JsonDataStore, UpdateInterface):
     def generate_id(self, digits=10):
         """ Generate random alphanumeric ids """
 
-        chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        chars = "ABCDEFGfilesHIJKLMNOPQRSTUVWXYZ0123456789"
         id = ""
         for i in range(digits):
             c_index = random.randint(0, len(chars) - 1)

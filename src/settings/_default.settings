@@ -60,6 +60,21 @@
     },
     {
         "category": "General",
+        "setting": "montage_folder",
+        "title": "Montage Folder (path)",
+        "type": "browse",
+        "value": "/home/darshit/montage"
+    },
+     {
+        "category": "General",
+        "setting": "montage_enabled",
+        "title": "",
+        "type": "hidden",
+        "value": true
+    },
+
+    {
+        "category": "General",
         "setting": "blender_command",
         "title": "Blender Command (path)",
         "title_tr": "Blender Command (path)",
